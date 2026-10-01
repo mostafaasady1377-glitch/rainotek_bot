@@ -1,0 +1,22 @@
+{
+  "MSI Gaming": {
+    "file": "msi-laptop.jpg",
+    "source": "https://sg-store.msi.com/cdn/shop/files/MSI_NB_Thin_15_photo_03.png?v=1724731555&width=1214",
+    "kind": "sample_laptop"
+  },
+  "Sony Vaio": {
+    "file": "vaio-laptop.jpg",
+    "source": "https://vaio.com/wp-content/uploads/2025/06/product_f162_top.jpg",
+    "kind": "sample_laptop"
+  },
+  "NEC Japan": {
+    "file": "nec-laptop.jpg",
+    "source": "https://p2-nec.static.pub/resource/NEC_Public_Resource/pictures/pc/lavie/202507/nt/n15r-w-o.jpg",
+    "kind": "sample_laptop"
+  },
+  "Fujitsu Japan": {
+    "file": "fujitsu-laptop.jpg",
+    "source": "https://www.fmworld.net/fmv/etc/2210/images/img_ah40f_wh_ja.png",
+    "kind": "sample_laptop"
+  }
+}

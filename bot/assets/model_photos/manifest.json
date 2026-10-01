@@ -1,0 +1,2580 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-09-30",
+  "photos": [
+    {
+      "query": "Apple MacBook Air M1 2020",
+      "identities": [
+        {
+          "brand": "Apple",
+          "model": "air m1 cycle87",
+          "cpu": "m1",
+          "screen": "13.3 Retina"
+        }
+      ],
+      "status": "reviewed",
+      "file": "c890aceccf4cc542.jpg",
+      "width": 1600,
+      "height": 1600,
+      "sha256": "a8970cd65b7507db3b6de4fa436081f908f1a7b3d01d68080165d0e679930fb6",
+      "source": {
+        "title": "Apple MacBook Air M1 (2020) Silver 8GB/1TB (MGN93FN/A-1TB) - MacBook - LDLC | Holy Moley",
+        "page_url": "https://www.ldlc.com/en/product/PB00505017.html",
+        "image_url": "https://media.ldlc.com/r1600/ld/products/00/05/81/99/LD0005819967_1_0005960081_0005966833.jpg",
+        "description": " Apple MacBook Air M1 (2020) Silver"
+      }
+    },
+    {
+      "query": "Apple MacBook Pro 15 inch 2018",
+      "identities": [
+        {
+          "brand": "Apple",
+          "model": "macbook pro2018",
+          "cpu": "i9",
+          "screen": "15.4 Retina"
+        },
+        {
+          "brand": "Apple",
+          "model": "macbook pro 2018",
+          "cpu": "i9",
+          "screen": "15.4 Retina"
+        }
+      ],
+      "status": "reviewed",
+      "file": "0b2c96b6e6077c12.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "ae83bf5e91c132f90436c4cced6233e3ee64079c9285794394d98b10c11944ac",
+      "source": {
+        "title": "What's My MacBook Pro (15-inch, 2018) - Apple Serial Number Lookup - MacFinder",
+        "page_url": "https://macfinder.co.uk/model/macbook-pro-15-inch-2018/?srsltid=AfmBOopKPjMih350US1zOW6qVDeDmzTMn8YqnlNPqqAIZiGpbW6hMei7",
+        "image_url": "https://macfinder.co.uk/wp-content/uploads/2021/12/macbookpro-15-high-sierra.png",
+        "description": " MacBook Pro (15-inch, 2018) Front View"
+      }
+    },
+    {
+      "query": "Apple MacBook Pro 16 inch 2019",
+      "identities": [
+        {
+          "brand": "Apple",
+          "model": "macbook pro 2019",
+          "cpu": "i9",
+          "screen": "16.1 Retina"
+        }
+      ],
+      "status": "reviewed",
+      "file": "f4f399a5f62cbd86.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "9946bcd564bfe7b61d7ca2897c2b5c9c29349d2f2a1cee14df6b234dd9fd3e31",
+      "source": {
+        "title": "What's My MacBook Pro (16-inch, 2019) - Apple Serial Number Lookup - MacFinder",
+        "page_url": "https://macfinder.co.uk/model/macbook-pro-16-inch-2019/?srsltid=AfmBOornRRRu4aOtPHCjhmi-YLiW6WIxKJsCGeP6_V-vnR3XjmaOvCeY",
+        "image_url": "https://macfinder.co.uk/wp-content/uploads/2021/12/macbookpro-16-catalina.png",
+        "description": " MacBook Pro 16-inch (2019) Display"
+      }
+    },
+    {
+      "query": "Asus K54C",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "K54c",
+          "cpu": "i3 2350M",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "2b210da970f92f94.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "c749ac659b5880d16ddfbb95f9ab552d5a9de9d1b3a21508f8e8827237ada1ec",
+      "source": {
+        "title": "Refurbished Asus K54C Core i3 2350M 6GB 320GB 15.6 Inch DVD-RW Windows 10 Laptop - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/refurbished-asus-k54c-core-i3-2350m-6gb-320gb-15.6-inch-dvd-rw-windows-10-l-tr-18-408/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/TR18408_3_Supersize.jpg?v=2",
+        "description": " Refurbished Asus K54C Laptop"
+      }
+    },
+    {
+      "query": "Asus VivoBook X540",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "vivo book 15 x540",
+          "cpu": "i3 7020u",
+          "screen": "15 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "0eee9df40d08c582.jpg",
+      "width": 1448,
+      "height": 948,
+      "sha256": "15d855612c577ae1a898ca832dc831a1793c7f476fc6cfc49acab08066512023",
+      "source": {
+        "title": "ASUS VivoBook X540 - Specs, Tests, and Prices | LaptopMedia.com",
+        "page_url": "https://laptopmedia.com/series/asus-vivobook-x540/",
+        "image_url": "https://laptopmedia.com/wp-content/uploads/2017/06/815jEQmIY8L._SL1500_.jpg",
+        "description": " ASUS VivoBook X540 Windows 10 Interface"
+      }
+    },
+    {
+      "query": "Asus P453UJ",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "Asus P453UJ",
+          "cpu": "i7 6500U",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "32463a43f6bc0c97.jpg",
+      "width": 600,
+      "height": 600,
+      "sha256": "84fdff59e4cff08b37a8cc2bed957f950cec1e88167b44acd886220ce964dcbc",
+      "source": {
+        "title": "P453UJ   | 笔记本电脑 | ASUS中国",
+        "page_url": "https://www.asus.com.cn/commercial-laptops/p453uj/helpdesk_emi/",
+        "image_url": "https://www.asus.com/media/CN/products/lVEGE53DrTWitzn0/P_setting_fff_1_90_end_600.png",
+        "description": " ASUSPRO P453UJ Business Laptop Overview"
+      }
+    },
+    {
+      "query": "Asus X441UV",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "asus x441 uvk",
+          "cpu": "i7 7500 u",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "d448ec167c66de26.jpg",
+      "width": 550,
+      "height": 550,
+      "sha256": "a1e51c6479b1c9b430f484e98ce4e0f296249cb595d37f105dc9ec515457bc6c",
+      "source": {
+        "title": "قیمت خرید لپ تاپ ایسوس X441UV کد4171 | Asus X441",
+        "page_url": "https://www.bprshop.com/product/4171-ASUS-X441UV-%D9%84%D9%BE-%D8%AA%D8%A7%D9%BE-%D8%A7%DB%8C%D8%B3%D9%88%D8%B3",
+        "image_url": "https://www.bprshop.com/uploads/products/gallery/big/606603525-0a248b3a558dddf959d1eecafa6dc13a_-_1.jpg",
+        "description": " ASUS X441UV Laptop Display"
+      }
+    },
+    {
+      "query": "Asus ZenBook UX325",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "Zenbook UX325",
+          "cpu": "i7 1165G7",
+          "screen": "13 FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "d1a1675f4aad9537.jpg",
+      "width": 1500,
+      "height": 1112,
+      "sha256": "045f197188dfc0d467151e7b90dcf1e3a0b6f3029d2c934224df020f351c02ff",
+      "source": {
+        "title": "Trung tâm bảo hành Asus Zenbook 13  Ux325Ja-Xb51 trên toàn quốc",
+        "page_url": "https://vienmaytinh.com/products/asus-zenbook-13-ultra-slim-ux325ja-xb51",
+        "image_url": "https://product.hstatic.net/1000187560/product/us_zenbook_13_ultra-slim_ux325ja-xb51_078033d2cd314532b76e8de1efb4c03c_edf411bdcd5a4ea68da912b188a2147d.jpg",
+        "description": " Asus ZenBook 13 UX325JA-XB51 Ultra-Slim Laptop"
+      }
+    },
+    {
+      "query": "HP probook 650g 3",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "650 g3",
+          "cpu": "i7-7820 hq",
+          "screen": "15/6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "e20aabf70f757e53.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "3cbf64acb3cbdc27dc87747980ed31f2bee479644cce0ca5542750f365e7c601",
+      "source": {
+        "title": "HP ProBook 650 G3 Core i5-7200U 8GB 256GB 15.6 Inch Windows 10 Professional Laptop - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/hp-probook-650-g3-core-i5-7200u-8gb-256gb-ssd-15.6-inch-windows-10-pro-lapt-z2w48ea/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/Z2W48EA_1_supersize.jpg?v=2",
+        "description": " HP ProBook 650 G3 Business Laptop"
+      }
+    },
+    {
+      "query": "HP zbook 15g 3",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "zbook 15 g3",
+          "cpu": "i7-6820HQ",
+          "screen": "15/6"
+        },
+        {
+          "brand": "HP",
+          "model": "zbook 15 G3",
+          "cpu": "i7 6700HQ",
+          "screen": "15 inch FHD"
+        },
+        {
+          "brand": "HP",
+          "model": "Zbook 15 G3",
+          "cpu": "i7-6820HQ",
+          "screen": "15.6"
+        },
+        {
+          "brand": "HP",
+          "model": "zbook 15 g3",
+          "cpu": "i7-6600u",
+          "screen": "15/6"
+        },
+        {
+          "brand": "HP",
+          "model": "zbook 15 G3",
+          "cpu": "i7- 6820 hq",
+          "screen": "15 inch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "f93a5810a7b759e7.jpg",
+      "width": 805,
+      "height": 600,
+      "sha256": "414f1033be47fa5edd5e7bac61d4dfc15343ae9abc9c0e80e5b2942a18c74150",
+      "source": {
+        "title": "HP ZBook 15 G3 - Notebookcheck.fr",
+        "page_url": "https://www.notebookcheck.biz/HP-ZBook-15-G3.163669.0.html",
+        "image_url": "https://www.notebookcheck.biz/uploads/tx_nbc2/4zu3_HPZBook15G3.png",
+        "description": " HP ZBook 15 G3 Mobile Workstation"
+      }
+    },
+    {
+      "query": "HP elitebook 8440p",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "8440p",
+          "cpu": "i7-740Q",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "bce7a374db3c7127.jpg",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "e226ae5b74825b783c42ec3e36046aca34d111233c5f026f2d60503b3a0ff597",
+      "source": {
+        "title": "NOTEBOOK HP ELITEBOOK 8440P I5 M540 14\" RAM 8GB SSD 240GB WINDOWS 10",
+        "page_url": "https://www.simpletek.net/computer-portatili-simpletek-arezzo/3390-notebook-hp-elitebook-8440p-i5-m540-14-ram-8gb-ssd-240gb-windows-10-0715007670704.html",
+        "image_url": "https://media.simpletek.net/img/p/2/0/9/6/9/20969-large_default.jpg",
+        "description": " HP EliteBook 8440p Refurbished Laptop"
+      }
+    },
+    {
+      "query": "HP probook 6470b",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "Probook 6470b",
+          "cpu": "i5-3230M",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "0fc3d63f98f2ce5f.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "8484ff1fc179e97fbabd168f21b2060100821e381f39b4968f477ca9973465a5",
+      "source": {
+        "title": "HP ProBook 6470b Notebook kaufen",
+        "page_url": "https://www.harlander.com/hp-probook-6470b-35-6cm-14-notebook-i5-2-6ghz-4gb-128gb-ssd-dvd-rw-umts-swg-ohne-bs-49169.html",
+        "image_url": "https://images.harlander.com/artikel/1000x1000/hp-probook-6470b-1.jpg",
+        "description": " HP ProBook 6470b Business Notebook"
+      }
+    },
+    {
+      "query": "HP probook 640g 1",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "Probook 640 G1",
+          "cpu": "i5-4200U",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "4ca4d3bdd10d9139.jpg",
+      "width": 560,
+      "height": 560,
+      "sha256": "c40233b9fe3b63e581eec2d716d85888de033575cce274ed1547c575001c2e64",
+      "source": {
+        "title": "HP PROBOOK 640 G1 OVERVIEW Pdf Download | ManualsLib",
+        "page_url": "https://www.manualslib.com/manual/641929/Hp-Probook-640-G1.html",
+        "image_url": "https://static-data2.manualslib.com/product-images/cb1/641929/hp-probook-640-g1-laptop.jpg",
+        "description": " HP ProBook 640 G1 Notebook PC"
+      }
+    },
+    {
+      "query": "HP elitebook 850g 3",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "elitebook 850 g3",
+          "cpu": "i5-6300u",
+          "screen": "15.6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "6ccaf18797264e67.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "f538001e7849dad498e9d34434d8b18b2019e8dc209b59739b613d1c1075afa5",
+      "source": {
+        "title": "Refurbished HP EliteBook 850 G3 Ultrabook Core i5 6th gen 16GB 256GB 15.6 Inch Windows 10 Professional Laptop - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/refurbished-hp-elitebook-850-g3-ultrabook-core-i5-6th-gen-16gb-256gb-15.6-i-t3-850g3i516gb256gbw10p/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/T1850G3i58GB256GBW10P_2_Supersize.jpg?v=3",
+        "description": " Refurbished HP EliteBook 850 G3 Ultrabook"
+      }
+    },
+    {
+      "query": "HP probook 645g 4",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "hp probook 645 g4",
+          "cpu": "R3-2300u/",
+          "screen": "14"
+        },
+        {
+          "brand": "HP",
+          "model": "PRO BOOK 645 G4",
+          "cpu": "RYZEN 3 2300 U",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "93832c3d5c8df531.jpg",
+      "width": 1140,
+      "height": 780,
+      "sha256": "b76bc387980574a384e79f3f7125336e834916fe2dfdbc6a2bec0ba3dd767a95",
+      "source": {
+        "title": "HP ProBook 645 G4 - Specs, Tests, and Prices | LaptopMedia.com",
+        "page_url": "https://laptopmedia.com/series/hp-probook-645-g4/",
+        "image_url": "https://laptopmedia.com/wp-content/uploads/2019/08/1-40-e1596529150327.jpg",
+        "description": " HP ProBook 645 G4 Business Laptop"
+      }
+    },
+    {
+      "query": "HP zbook 17g 2",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "hp zbook 17 g2",
+          "cpu": "i7-4710 mq",
+          "screen": "17 inch"
+        },
+        {
+          "brand": "HP",
+          "model": "zbook 17 G2",
+          "cpu": "i7-4940mx",
+          "screen": "17 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "b661dd19da1ed39e.jpg",
+      "width": 550,
+      "height": 550,
+      "sha256": "20324613d50d2cfcd3d669c81108d99f1eaf642c3f2c73a93468b5a9444f5a9e",
+      "source": {
+        "title": "HP ZBook 17 G2 i7, 8GB, SSD 256GB, 17.3\" Full HD",
+        "page_url": "https://ecoportatil.es/producto/hp-zbook-17-g2-173-i7-4710mq-8gb-ssd-256gb-full-hd-nvidia-quadro-k3100m-4gb-a",
+        "image_url": "https://ecoportatil.es/29272-medium_default/hp-zbook-17-g2-173-i7-4710mq-8gb-ssd-256gb-full-hd-nvidia-quadro-k3100m-4gb-a.jpg",
+        "description": " HP ZBook 17 G2 Workstation Laptop"
+      }
+    },
+    {
+      "query": "HP probook 650g 2",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "650 G2",
+          "cpu": "i7-6600U",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "9e76f3f2a84bd3f1.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "843938be1bcef9e310036ac4c13b6d092050239e839584830ee85607b712d08e",
+      "source": {
+        "title": "HP ProBook 650 G2 15.6\" HD i5-6300U 16GB RAM 512GB SSD HD 520 Windows",
+        "page_url": "https://www.dnprintersolutions.com/products/hp-probook-650-g2-15-6-hd-i5-6300u-16gb-ram-512gb-ssd-hd-520-windows-10-pro?srsltid=AfmBOorHHZUGqLE-4PTmRaG4zeNxxlM-2jrdFivwsY35hAREDYWWfDnW",
+        "image_url": "https://www.dnprintersolutions.com/cdn/shop/files/HP_Probook_650_g2-3_front_875cdfd3-4525-49c3-9a95-6946c79b4cbb.png?v=1711638862",
+        "description": " HP ProBook 650 G2 Business Laptop"
+      }
+    },
+    {
+      "query": "HP zbook 15g 1",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "zbook 15 g1",
+          "cpu": "i7-4800mq",
+          "screen": "15/6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "3efbac65966e58d7.jpg",
+      "width": 600,
+      "height": 600,
+      "sha256": "8c6fdf73768281d04e3ee815f1a741aadeafdb5d79eb8c6c57e839e1dfbd0774",
+      "source": {
+        "title": "HP ZBook 15 G1 | 15.6 inch FHD | 4e generatie i7 | 500GB HDD | 8GB RAM | NVIDIA Quadro K1100M | QWERTY/AZERTY/QWERTZ | Refurbished.be",
+        "page_url": "https://www.refurbished.be/laptops/hp/zbook-15-g1/i7-500gb-8gb-k100m-qaq",
+        "image_url": "https://www.refurbished.be/cache/images/hp-zbook-15-g1-front-goed_600x600_BGresize_16777215-tj.png",
+        "description": " HP ZBook 15 G1 Refurbished Workstation"
+      }
+    },
+    {
+      "query": "HP zbook 15g 2",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "zbook 15 g2",
+          "cpu": "i7-4810mq",
+          "screen": "15/6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "592709d94d6975cc.jpg",
+      "width": 755,
+      "height": 755,
+      "sha256": "301f7c2cb0ef60619c9a2eadafd1c1ccec0bb485d0f5c23476a6b26570932df1",
+      "source": {
+        "title": "Laptop HP ZBook 15 G2 dành để thiết kế đồ họa",
+        "page_url": "https://techcare.vn/hp-zbook-15-g2/",
+        "image_url": "https://techcare.vn/image/laptop-hp-zbook-15-g2-12-2t78o22.jpg",
+        "description": " HP ZBook 15 G2 Mobile Workstation"
+      }
+    },
+    {
+      "query": "HP elitebook 850g 4",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "elitebook 850 g4",
+          "cpu": "i5-7300u",
+          "screen": "15.6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "833c97ece847c0ed.jpg",
+      "width": 600,
+      "height": 600,
+      "sha256": "259fab7df842d4ea6059d7ca8a9f15f417990f8cbb563855e5f04f36294c84c6",
+      "source": {
+        "title": "HP EliteBook 850 G4 | 15.6 inch FHD | 7e generatie i5 | 500GB SSD | 16GB RAM | W10 Pro | QWERTY | Refurbished.store",
+        "page_url": "https://www.refurbished.store/laptops/hp/elitebook-850-g4/i5-500gb-16gb-26ghz-w10p-qwerty-en",
+        "image_url": "https://www.refurbished.store/cache/images/hp-elitebook-850-g4-front-goed_600x600_BGresize_16777215-tj.png",
+        "description": " HP EliteBook 850 G4 Front View"
+      }
+    },
+    {
+      "query": "HP probook 455rg 6",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "probook 455R G6",
+          "cpu": "R3 3200U",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "c4e6e5901f6c9b6c.jpg",
+      "width": 1500,
+      "height": 1334,
+      "sha256": "4a2d3628c753bd509736588e3b43e3d3b7f5942f605f4880dbf52b551cf3c197",
+      "source": {
+        "title": "HP ProBook 455R G6 Laptop, 15.6\" Ryzen 5, 8GB RAM, 256GB SSD, Windows  – Blackmore IT",
+        "page_url": "https://www.blackmoreit.com/products/hp-probook-455-g6-laptop-15-6-ryzen-5-3500u-8gb-ram-256gb-ssd",
+        "image_url": "https://www.blackmoreit.com/cdn/shop/files/IMG_0228.jpg?v=1729602033&width=1500",
+        "description": " HP ProBook 455R G6 Laptop Overview"
+      }
+    },
+    {
+      "query": "HP probook 470g 5",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "probook 470 g5",
+          "cpu": "i5-8250 u",
+          "screen": "15/6 fhd"
+        },
+        {
+          "brand": "HP",
+          "model": "probook470 g5",
+          "cpu": "i5-8",
+          "screen": "17"
+        },
+        {
+          "brand": "HP",
+          "model": "hp probook 470 g5",
+          "cpu": "i5-8250u",
+          "screen": "17"
+        }
+      ],
+      "status": "reviewed",
+      "file": "1f6d34b17e523912.jpg",
+      "width": 600,
+      "height": 600,
+      "sha256": "a4af530bda1608007b51abec0b348abee6dfc30475ee4952a334d30354b1eff4",
+      "source": {
+        "title": "HP ProBook 470 G5 | 17,3 Zoll FHD | 8. Generation i5 | 256 GB SSD | 8 GB RAM | NVIDIA GeForce 930MX | QWERTY/AZERTY | Refurbished.at",
+        "page_url": "https://www.refurbished.at/laptops/hp/probook-470-g5/i5-256gb-8gb",
+        "image_url": "https://www.refurbished.at/cache/images/hp-probook-470-g5-front-goed_600x600_BGresize_16777215-tj.png",
+        "description": " Refurbished HP ProBook 470 G5 Overview"
+      }
+    },
+    {
+      "query": "HP zbook 15ug 3",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "Zbook 15 G3 u",
+          "cpu": "i7-6200U",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "e8e211540200bd00.jpg",
+      "width": 600,
+      "height": 600,
+      "sha256": "4a941fbfd14832ad0057f264c7b19de549234fc2d25f9e6461fb6fd31ee060ff",
+      "source": {
+        "title": "| Refurbished.store",
+        "page_url": "https://www.refurbished.store/laptops/hp/hp-16/hp-zbook-15u-g3-156-inch-fhd-6e-generation-i7-512gb-ssd-16gb-ram-qwerty-azerty-qwertz",
+        "image_url": "https://www.refurbished.store/cache/images/hp-zbook-15u-g3-front-goed_600x600_BGresize_16777215-tj.png",
+        "description": " HP ZBook 15U G3 Front View"
+      }
+    },
+    {
+      "query": "HP zbook 17g 3",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "Zbook 17 G3",
+          "cpu": "i7-6820HQ",
+          "screen": "17 inch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "d5153cff6fc15fcf.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "127f587be152385c195c9c688e62b6a0092a01699fe4418305cbc3a612bdc7a3",
+      "source": {
+        "title": "HP ZBook 17 G3 Notebook kaufen",
+        "page_url": "https://www.harlander.com/hp-zbook-17-g3-43-9cm-17-3-workstation-i7-6820hq-16gb-512gb-ssd-m5000m-8gb-ohne-bs-gebrauchte-a-ware.html",
+        "image_url": "https://images.harlander.com/artikel/1000x1000/hp-zbook17-g3-ohne-webcam-ohne-fp-mit-akku-deutsch-5.jpg",
+        "description": " HP ZBook 17 G3 Mobile Workstation"
+      }
+    },
+    {
+      "query": "HP zbook 17g 6",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "Zbook 17 G6",
+          "cpu": "i7 9750H",
+          "screen": "17 FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "63b9d33e241cdce4.jpg",
+      "width": 1200,
+      "height": 900,
+      "sha256": "42b60627899d00ec1195845dada68a8fb0fadfcad02ab0d26352261db64fcec9",
+      "source": {
+        "title": "HP ZBOOK 17 G6 - Eurotech.cz",
+        "page_url": "https://www.eurotech.cz/hp-zbook-17-g6-5/",
+        "image_url": "https://www.eurotech.cz/imgcache/a/a/pp6511-17g6_-1_-1_130258.jpg",
+        "description": " HP ZBook 17 G6 Mobile Workstation"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad L420",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "L420",
+          "cpu": "i5 2430M",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "a0def3802dc8260a.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "fa993c9fe2c1021b1859562d12bcf6b1b71904afaea0aa2633e301255fe3dedb",
+      "source": {
+        "title": "Lenovo ThinkPad L420 «  Harlander.com Bildergalerie mit vielen gebrauchten Notebooks und Computer",
+        "page_url": "https://images.harlander.com/lenovo-thinkpad-l420/",
+        "image_url": "https://images.harlander.com/cloud/lenovo/thinkpad_l420/1000x1000_1.jpg",
+        "description": " Lenovo ThinkPad L420 Business Laptop"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad E440",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "E440",
+          "cpu": "i5-4300U",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "d0ea5d5090bca4b7.jpg",
+      "width": 800,
+      "height": 750,
+      "sha256": "dcfea971ec8619aba5a1cca83de4231a5a960dadb917cb30f666aa1d68092234",
+      "source": {
+        "title": "Product Specifications Reference(PSREF) Product",
+        "page_url": "https://psref.lenovo.com/Product/ThinkPad/ThinkPad_E440",
+        "image_url": "https://psrefstuff.lenovo.com/syspool/Sys/Image/ThinkPad/ThinkPad_E440/Compressedimage/E440%20Touch_Black_hero_01.jpg",
+        "description": " Lenovo ThinkPad E440 Open Laptop"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad E540",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "E540",
+          "cpu": "i5 4300M",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "b7afed3596ec8807.jpg",
+      "width": 617,
+      "height": 530,
+      "sha256": "05ff609781342f561bbea7d69dd16d8aeb6150f72653a83b77c1171c9d50c3ef",
+      "source": {
+        "title": "Lenovo ThinkPad E540 i5-4200M/8GB/1000 GT740M FHD - Laptop 15\" - 16\" - najlepsze ceny, tysiące opinii w x-kom.pl",
+        "page_url": "https://www.x-kom.pl/p/172724-laptop-15-16-lenovo-thinkpad-e540-i5-4200m-8gb-1000-gt740m-fhd.html",
+        "image_url": "https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big%2C%2Cpr_2013_12_6_14_2_28_350.jpg",
+        "description": " Lenovo ThinkPad E540"
+      }
+    },
+    {
+      "query": "Lenovo V480c",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "V480c",
+          "cpu": "i5-3230M",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "4a43279fabad646d.jpg",
+      "width": 800,
+      "height": 399,
+      "sha256": "9fbeed1dcb7d6c657bced71ae9baa970d63b50944c1265921fe891e1fe8c1f50",
+      "source": {
+        "title": "Lenovo V480c-59351762 ซีพียู Intel Core i3-3110M / GeForce 610M ราคาพร้อมสเปค",
+        "page_url": "https://notebookspec.com/notebook/4895-LENOVO-V480c-59351762.html",
+        "image_url": "https://notebookspec.com/storage/notebook/notebook_4895_LENOVO%20V480-bk.jpg",
+        "description": " Lenovo V480c-59351762 Notebook Views"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad T460",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "T460",
+          "cpu": "i5-6200U",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "3e986fc0a7b42c02.jpg",
+      "width": 942,
+      "height": 526,
+      "sha256": "3c158c2476c34b68068feb23118a7d900a557c52b8dec3e559badf5fbd5caaff",
+      "source": {
+        "title": "Lenovo ThinkPad T460 Full Specifications | DeviceBeast.com",
+        "page_url": "https://devicebeast.com/laptops/lenovo-thinkpad-t460",
+        "image_url": "https://cdn.devicebeast.com/laptop/img/optimised-poster/lenovo-thinkpad-t460.jpg",
+        "description": " Lenovo ThinkPad T460 Front View"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad T440P",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "T440p",
+          "cpu": "i5-4200U",
+          "screen": "14"
+        },
+        {
+          "brand": "Lenovo",
+          "model": "t440p",
+          "cpu": "i5-4200m",
+          "screen": "14 inch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "be8b72cf0ac6883c.jpg",
+      "width": 617,
+      "height": 530,
+      "sha256": "1193b3b94b82ed18360e27c6b143ebed350d5ca9f46555cc1cc459c8ac7cac20",
+      "source": {
+        "title": "Lenovo ThinkPad T440p i7-4910MQ/4GB/500/DVD/7Pro64 GT730M - najlepsze ceny, tysiące opinii w x-kom.pl",
+        "page_url": "https://www.x-kom.pl/p/230360-lenovo-thinkpad-t440p-i7-4910mq-4gb-500-dvd-7pro64-gt730m.html",
+        "image_url": "https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big%2C%2C8/230360_922447770.jpg",
+        "description": " Lenovo ThinkPad T440p Front View"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad T540P",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "lenovo t540p",
+          "cpu": "i5-4200m",
+          "screen": "15/6"
+        },
+        {
+          "brand": "Lenovo",
+          "model": "think ppadpad t540p",
+          "cpu": "i7-4600m",
+          "screen": "15.6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "fe3f618635c4c5c4.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "5b641b914fad7b86cfee6f4d9c0500ee6f31f20e8866d408cddc42091a3d310e",
+      "source": {
+        "title": "HTTPS Not Available",
+        "page_url": "https://support.harlander.com/artikelsupport/notebooks/ibm-lenovo-1/ibmlenovo-thinkpad-t540p.html",
+        "image_url": "https://images.harlander.com/artikel/1000x1000/lenovo-thinkpad-t540p-mit-webcam-mit-fp-mit-akku-deutsch-1.jpg",
+        "description": " Lenovo ThinkPad T540p Laptop"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad T470",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "lenovo T470",
+          "cpu": "i5-7300u",
+          "screen": "14 fhd"
+        },
+        {
+          "brand": "Lenovo",
+          "model": "lenovo T470",
+          "cpu": "i5-7300u",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "3b0a216809e47694.jpg",
+      "width": 1600,
+      "height": 1600,
+      "sha256": "ee7e0ee9f90e4350369e9ca12b707b9569a1da0dd3dc6ae837f210a757dccb83",
+      "source": {
+        "title": "Used Lenovo ThinkPad T470 14\" Laptop Core i5 8GB 256GB SSD 2.5\" Integrated Graphics Win 10 - Walmart.com",
+        "page_url": "https://www.walmart.com/ip/Used-Lenovo-ThinkPad-T470-14-Laptop-Core-i5-8GB-256GB-SSD-2-5-Integrated-Graphics-Win-10/15049607971?conditionGroupCode=3",
+        "image_url": "https://i5.walmartimages.com/seo/Used-Lenovo-ThinkPad-T470-14-Laptop-Core-i5-8GB-256GB-SSD-2-5-Integrated-Graphics-Win-10_3c7fc744-3f64-434a-a746-9f5f73544344.e73f1d93ab3a57775250641212fe3da8.jpeg",
+        "description": " Lenovo ThinkPad T470 Laptop"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad W541",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "thinkpad w541",
+          "cpu": "Core i7 4600M",
+          "screen": "15FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "21e9ec760e131516.jpg",
+      "width": 617,
+      "height": 530,
+      "sha256": "8bed0504d9575ff8d3a7d29fce9f0e3f47f23e4bc3f056040e034dcaa5320dcc",
+      "source": {
+        "title": "Lenovo ThinkPad W541 i7-4810MQ/8GB/500/DVD-RW/7Pro64 - Laptop 15\" - 16\" - najlepsze ceny, tysiące opinii w x-kom.pl",
+        "page_url": "https://www.x-kom.pl/p/226092-laptop-15-16-lenovo-thinkpad-w541-i7-4810mq-8gb-500-dvd-rw-7pro64.html",
+        "image_url": "https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big%2C%2Cpr_2016_3_10_11_38_12_182.jpg",
+        "description": " Lenovo ThinkPad W541 Professional Laptop"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad T550",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "thinkpad T550",
+          "cpu": "i7-5600U",
+          "screen": "15.6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "fbd39265db1d09d1.jpg",
+      "width": 800,
+      "height": 800,
+      "sha256": "7bddbafa0a0a19d9e6c3c3003cf1de6e4a8a7597fd26809c84a37889c791b1a8",
+      "source": {
+        "title": "User manual Lenovo ThinkPad T550 (English - 188 pages)",
+        "page_url": "https://www.manua.ls/lenovo/thinkpad-t550/manual",
+        "image_url": "https://www.manua.ls/thumbs/products/l/798426-lenovo-thinkpad-t550.jpg",
+        "description": " Lenovo ThinkPad T550 Front View"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad L570",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "thinkpad L570",
+          "cpu": "i5-7200U",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "202c01c1e38f5cee.jpg",
+      "width": 1060,
+      "height": 596,
+      "sha256": "908a010b24b7c6c6b097d1ce08f7c36b5687e0c212d48521f31e9299bb2b5e5d",
+      "source": {
+        "title": "Lenovo ThinkPad L570 | 15.6\" Business Laptop  | Lenovo US",
+        "page_url": "https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadl/thinkpad-l570/22tp2tbl570",
+        "image_url": "https://p1-ofp.static.pub/medias/bWFzdGVyfGltYWdlc3wxMDAyNjR8aW1hZ2UvanBlZ3xpbWFnZXMvaDJlL2g0My85NDE0ODg3MjQzODA2LmpwZ3wzNzI4NjQ3OGVhNzRhMjIwMmU2YTVjMWY1NTQ3OWI2NjhlOGFlYzZlNGY1ZGNkMWI0MTBkNTJjOGNlMTIyYTlk/lenovo-laptop-thinkpad-l570-gallery-08.jpg",
+        "description": " Lenovo ThinkPad L570 Business Laptop"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad T480",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "Think Pad T480",
+          "cpu": "i5 8350U",
+          "screen": "14 FHD Touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "8e5f864f3b460401.jpg",
+      "width": 1060,
+      "height": 596,
+      "sha256": "da327fd71e0f3a7d734dd4b759513bb365866960b59a44e59374f7e423defc52",
+      "source": {
+        "title": "Fastest delivery Services | Order Lenovo ThinkPad T480",
+        "page_url": "https://computerstore.ae/product/lenovo-thinkpad-t480-core-i7-16gb-ram-used-laptop/?srsltid=AfmBOoqxPakZKeAjliVyhbDRGYE1m81fZJXFiU84Z6nLq79jc3k6Gx9H",
+        "image_url": "https://computerstore.ae/images/detailed/9/Lenovo_ThinkPad_T480_Core_i7_16GB_RAM_Used_Laptop.png",
+        "description": " Lenovo ThinkPad T480 Laptop"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad T490",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "think pad T490",
+          "cpu": "i5-8265u",
+          "screen": "14 FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "819604b24e2f7b31.jpg",
+      "width": 1800,
+      "height": 1200,
+      "sha256": "45570c017789fbb5160f991388a61ce5585a22c36b38565e3e1211431553c022",
+      "source": {
+        "title": "Breve Análise do Portátil Lenovo ThinkPad T490 (i7, MX250, Low Power FHD) - Notebookcheck.info",
+        "page_url": "https://www.notebookcheck.info/Breve-Analise-do-Portatil-Lenovo-ThinkPad-T490-i7-MX250-Low-Power-FHD.421493.0.html",
+        "image_url": "https://www.notebookcheck.info/fileadmin/_processed_/1/6/csm_DSC_004291_739f9c22c6.jpg",
+        "description": " Lenovo ThinkPad T490 Business Laptop"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad X1 Carbon Gen 6",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "think pad X1 carbon",
+          "cpu": "i7 8650 u",
+          "screen": "14 3k touch tab"
+        }
+      ],
+      "status": "reviewed",
+      "file": "0cc257ef6fc22ecf.jpg",
+      "width": 1060,
+      "height": 596,
+      "sha256": "08f47f08ac7f843240270c83ae54b94378e445542438182b06cdcc30aebd7967",
+      "source": {
+        "title": "X1 Carbon Gen 6 | Business Laptop | Lenovo US",
+        "page_url": "https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadx1/thinkpad-x1-carbon-%286th-gen%29/22tp2txx16g",
+        "image_url": "https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8ODAyMDB8aW1hZ2UvanBlZ3xoNTIvaDY0LzE0NDQ3MTYzMjQ0NTc0LmpwZ3wxZDIzM2FiOTA3ZTdlYzVmZGI0ZjFjOWFlN2NiZDdkZDQxYzJkMGRlYjgwMDAwODYwMGZiN2RkNTdiMGMyNDU0/lenovo-gallery-01-Thinkpad-X1-Carbon-Hero-Front-forward-facing-HD-Camera-Black.jpg",
+        "description": " Lenovo ThinkPad X1 Carbon Gen 6 Front View"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad P1 Gen 1",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "thinkpad p1",
+          "cpu": "i7-8750H",
+          "screen": "15"
+        }
+      ],
+      "status": "reviewed",
+      "file": "7bc8d9421867fbb9.jpg",
+      "width": 700,
+      "height": 497,
+      "sha256": "09c753e78eb1eb640deb5c139510fddc552d710721def5046cc15c85290bb440",
+      "source": {
+        "title": "ThinkPad P1 (Gen 1) Mobile Workstation | Workstation-Leistung, Notebook-Mobilität | Lenovo Deutschland",
+        "page_url": "https://www.lenovo.com/de/de/p/laptops/thinkpad/thinkpadp/thinkpad-p1/22ws2wpp101",
+        "image_url": "https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8MjgyMDQ0fGltYWdlL3BuZ3xoYzUvaDM5LzE0NDQ3MTU0NTYxMDU0LnBuZ3w4NDc5NWY2ZmEwNDFjOWFhNzFlMTViMTZmNjY5M2UwNTU3MDBkOTJlYzc1Y2IzMzdkYzQ4MDhmZmY1OTUzYjMz/lenovo-laptop-thinkpad-p1-hero.png?height=700&width=700",
+        "description": " Lenovo ThinkPad P1 Gen 1 Mobile Workstation"
+      }
+    },
+    {
+      "query": "Microsoft Surface Go 1",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "go 1 سایکل0 آکبند",
+          "cpu": "pentium",
+          "screen": "10 inch 2k touch tab"
+        }
+      ],
+      "status": "reviewed",
+      "file": "fb55769c7863d3fb.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "e65a2422a255b2330d8bec9a1439935451f7b10dc14a23de652be62ecf4c22c2",
+      "source": {
+        "title": "Bedienungsanleitung Microsoft Surface Go 10\" 4415Y 4GB/64GB | Handbuchbibliothek in deutscher Sprache",
+        "page_url": "https://www.bedienungsanleitung-pdf.de/microsoft-surface-go-10-4415y-4gb-64gb-emmc-win10-s-mhn-00003-tc-platin-grau-33205-bedienungsanleitung",
+        "image_url": "https://www.bedienungsanleitung-pdf.de/op/pictures3/microsoft-surface-go-10-4415y-4gb-64gb-emmc-win10-s-mhn-00003-tc-platin-grau-33205-5.jpg",
+        "description": " Microsoft Surface Go with Signature Type Cover"
+      }
+    },
+    {
+      "query": "Microsoft Surface Pro 2017",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "Pro 5",
+          "cpu": "i5 7300U",
+          "screen": "12.2 2k touch tab"
+        }
+      ],
+      "status": "reviewed",
+      "file": "fd58acc94df05a77.jpg",
+      "width": 1000,
+      "height": 640,
+      "sha256": "ff7bf58a5aead5aa6a6d71bc56179d15552d2e04df3d0ae3849b5e565e17ed51",
+      "source": {
+        "title": "Microsoft Surface Pro (2017) - Specs, Tests, and Prices | LaptopMedia.com",
+        "page_url": "https://laptopmedia.com/series/microsoft-surface-pro-2017/",
+        "image_url": "https://laptopmedia.com/wp-content/uploads/2017/08/0090405_microsoft-surface-pro-2017-123-1tb-intel-core-i7-multi-touch-tablet.jpeg",
+        "description": " Microsoft Surface Pro (2017) with Type Cover"
+      }
+    },
+    {
+      "query": "Microsoft Surface Pro 2017 LTE",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "Pro 5 sim",
+          "cpu": "i5 7300U",
+          "screen": "12.2 2k touch tab"
+        }
+      ],
+      "status": "reviewed",
+      "file": "999572af6aedbfc4.jpg",
+      "width": 400,
+      "height": 400,
+      "sha256": "82dfe7b229e06229f2ee2ffb0b5942d8feb096f4eea1906b47d92d815eaadd6d",
+      "source": {
+        "title": "Surface Pro 2017 LTE Advanced GWL-00009citeCore i5(2.6GHz)/4GB/128GB SSD/Win10Pro |中古タブレット格安販売のciteイオシス",
+        "page_url": "https://iosys.co.jp/items/tablet/windows/surface/simfree/surface_pro_2017_lte_advanced_gwl-00009/370089",
+        "image_url": "https://d27ea4kkb8flj9.cloudfront.net/370089_1_L.jpg",
+        "description": " Surface Pro 2017 LTE Advanced GWL-00009"
+      }
+    },
+    {
+      "query": "Microsoft Surface Laptop 2",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "lapto 2",
+          "cpu": "i7(8)",
+          "screen": "13.3 touch tab"
+        },
+        {
+          "brand": "Microsoft Surface",
+          "model": "lapto 2",
+          "cpu": "i5(8)",
+          "screen": "13.3 touch tab"
+        }
+      ],
+      "status": "reviewed",
+      "file": "99f2f4b923c7ede9.jpg",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "94e68f9c07b386eeebf216da142a390fdc16f1d28709ef6412919d5703780ad9",
+      "source": {
+        "title": "MICROSOFT SURFACE LAPTOP 2 I5 256 GB BLACK - Power.fi",
+        "page_url": "https://www.power.fi/tietotekniikka/tietokoneet/kannettavat-tietokoneet/microsoft-surface-laptop-2-i5-256-gb-black/p-847055/",
+        "image_url": "https://media.power-cdn.net/images/h-93945a775f9711528038bfe9b69c39a8/products/847055/847055_6_1200x1200_w_g.jpg",
+        "description": " Microsoft Surface Laptop 2 in Black"
+      }
+    },
+    {
+      "query": "Microsoft Surface Laptop 1",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "surface lap1",
+          "cpu": "i7-7",
+          "screen": "13.3 2k touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "77cedbc3bb59f5ce.jpg",
+      "width": 452,
+      "height": 452,
+      "sha256": "98f563855df18b173a5aba202fb9c52a38aab1522593948d4e12f91a7a7fa8d6",
+      "source": {
+        "title": "Microsoft Surface Laptop 1st Gen i5 8GB 256GB (beg*) | Microsoft | ...",
+        "page_url": "https://billigteknik.eu/used-laptop-13/34104-microsoft-surface-laptop-1st-gen-i5-8gb-256gb-beg-0889842170597.html",
+        "image_url": "https://billigteknik.eu/123740-medium_default/microsoft-surface-laptop-1st-gen-i5-8gb-256gb-beg.jpg",
+        "description": " Microsoft Surface Laptop 1st Gen i5 8GB 256GB"
+      }
+    },
+    {
+      "query": "Microsoft Surface Laptop Go 1",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "surface laptop go",
+          "cpu": "i5-1035g1",
+          "screen": "13 touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "24295079170396e6.jpg",
+      "width": 1024,
+      "height": 576,
+      "sha256": "be38ebf51fea1f8879c70e1f932ca0a1d96e92483602d303260933545d122b38",
+      "source": {
+        "title": "Microsoft Surface Laptop Go (1943) review - CHOICE",
+        "page_url": "https://www.choice.com.au/products/electronics-and-technology/computers/desktop-and-laptop-computers/microsoft-surface-laptop-go-1943",
+        "image_url": "https://pdbimg.choice.com.au/microsoft-surface-laptop-go-1943_3.jpg",
+        "description": " Microsoft Surface Laptop Go (1943)"
+      }
+    },
+    {
+      "query": "Microsoft Surface Laptop 3",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "surface lap3",
+          "cpu": "i7-1035g8",
+          "screen": "13.3 2k touch"
+        },
+        {
+          "brand": "Microsoft Surface",
+          "model": "surface lap3",
+          "cpu": "i5-1035g7",
+          "screen": "13.3 2k touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "b0373a90b10164fd.jpg",
+      "width": 1038,
+      "height": 705,
+      "sha256": "fe0a1b1ce5babf74036a2ad59b8341c336a69a34c9d0e6fa380bf56d7fdbb0d0",
+      "source": {
+        "title": "Microsoft Surface Laptop 3 (15.0\") - Specs, Tests, and Prices | LaptopMedia.com",
+        "page_url": "https://laptopmedia.com/series/microsoft-surface-laptop-3-15-0/",
+        "image_url": "https://laptopmedia.com/wp-content/uploads/2019/10/1-7-e1570084952282.jpg",
+        "description": " Microsoft Surface Laptop 3 (15.0\")"
+      }
+    },
+    {
+      "query": "Microsoft Surface Book 3",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "surface book 3",
+          "cpu": "i5 1035 g7",
+          "screen": "13.3 touch3k"
+        }
+      ],
+      "status": "reviewed",
+      "file": "8997b575dcfb987b.jpg",
+      "width": 678,
+      "height": 436,
+      "sha256": "2df262da758d6ae6fea5ae729aad3c930fa3a2e9c155765dc9719e96f163ce06",
+      "source": {
+        "title": "The Microsoft Surface Book 3 (15-Inch) Review and more",
+        "page_url": "https://www.ntcompatible.com/story/the-microsoft-surface-book-3-15inch-review-and-more/",
+        "image_url": "https://www.ntcompatible.com/data/publish/176/969ab3164776cb3948974df3b1d14aaca2334c/d7539bfbb76819ada821b75a3da76c5fab47aa28.jpg",
+        "description": " Microsoft Surface Book 3 Front View"
+      }
+    },
+    {
+      "query": "Microsoft Surface Laptop 5",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "Laptop 5",
+          "cpu": "i5 1235U",
+          "screen": "13.3 2K touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "79f2b35bad7b1eae.jpg",
+      "width": 1600,
+      "height": 900,
+      "sha256": "16f718a1d712704d5a95bc61ea754f6d9e7917a0a0ec819aa874d16269eceb40",
+      "source": {
+        "title": "Microsoft Surface Laptop 5 13.5-inch i5-1235U/16GB/512GB SSD Laptop - Graphite | Harvey Norman",
+        "page_url": "https://www.harveynorman.com.au/microsoft-surface-laptop-5-13-5-inch-i5-1235u-16gb-512gb-ssd-laptop-graphite.html",
+        "image_url": "https://hnau.imgix.net/media/catalog/product/s/u/surface-laptop-5-graphite-5_1_4.jpg",
+        "description": " Microsoft Surface Laptop 5 in Graphite"
+      }
+    },
+    {
+      "query": "Microsoft Surface Laptop 4",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "Laptop 4",
+          "cpu": "i7 1137G7",
+          "screen": "13.3 2K touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "b309623703328bc6.jpg",
+      "width": 800,
+      "height": 600,
+      "sha256": "aec6c866f3779ef0d82a7849d5f449d33107a7d398d539085d1ee22543b87440",
+      "source": {
+        "title": "Microsoft Surface Laptop 4 | Overview, Specs, Details | SHI",
+        "page_url": "https://www.shi.com/product/42540984/Microsoft-Surface-Laptop-4",
+        "image_url": "https://cdn.cs.1worldsync.com/49/f9/49f9ed5c-4c4d-4de5-ad3f-a202a8ea2a2f.jpg",
+        "description": " Microsoft Surface Laptop 4 Overview"
+      }
+    },
+    {
+      "query": "Microsoft Surface Pro 8",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "pro 8 سایکل10",
+          "cpu": "i7-11",
+          "screen": "12.2 2k touch tab"
+        }
+      ],
+      "status": "reviewed",
+      "file": "0d1425dc4f6b1b6d.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "dff1fac005f541c7b946f17be34d2869ad918aa764d712bda93fd92761dbcdc9",
+      "source": {
+        "title": "Microsoft Surface Pro 8 13\" Platinum 512GBWifi Tablet - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/microsoft-surface-pro-8-512gb-13-tablet-platinum-8py-00002/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/8PY-00002_1_Supersize.jpg?v=6",
+        "description": " Microsoft Surface Pro 8 13\" Platinum Tablet"
+      }
+    },
+    {
+      "query": "Microsoft Surface Pro 7 Plus",
+      "identities": [
+        {
+          "brand": "Microsoft Surface",
+          "model": "Pro7 plus",
+          "cpu": "i7 1165G7",
+          "screen": "12.2 2K touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "60f10df8c425ba7d.jpg",
+      "width": 1200,
+      "height": 639,
+      "sha256": "7ad9041d9a33946924a8632f264718b963ff60dbe548821c17a532b2f64da172",
+      "source": {
+        "title": "Microsoft Surface Pro 7 Plus 11th Gen Core i7 Laptop Price in Pakistan - TechGlobe.pk",
+        "page_url": "https://www.techglobe.pk/laptops/microsoft/microsoft-surface-pro-7-plus-11th-gen-core-i7-16gb-256gb-ssd-12-3-touch-windows-10?srsltid=AfmBOop6eLQm3wu258V_viNzqJZV3MGaWHQvMq2i12KGILY_r8aOLABh",
+        "image_url": "https://static3.webx.pk/files/4012/Images/2-4012-616527-030421063706.jpg",
+        "description": " Microsoft Surface Pro 7 Plus Overview"
+      }
+    },
+    {
+      "query": "Toshiba dynabook b65h",
+      "identities": [
+        {
+          "brand": "Toshiba Dynabook",
+          "model": "dynabook b65h",
+          "cpu": "i5-7200u",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "6729dd4db755d5a2.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "a5678500223dff2603f9d2ea06d2617d31252655a18dd4afd62dff8321aae288",
+      "source": {
+        "title": "TOSHIBA dynabook B65/H - パソコン専門店 バスアンドタグ",
+        "page_url": "https://www.bustag.co.jp/Search/shousai_kensaku_shousai/175831",
+        "image_url": "https://www.bustag.co.jp/pictures/175831.jpg",
+        "description": " Toshiba dynabook B65/H Laptop"
+      }
+    },
+    {
+      "query": "Apple MacBook Pro 15 inch 2019",
+      "identities": [
+        {
+          "brand": "Apple",
+          "model": "macbook pro 2019",
+          "cpu": "i9",
+          "screen": "15.4 Retina"
+        }
+      ],
+      "status": "reviewed",
+      "file": "511e94c8d8b79eb8.jpg",
+      "width": 1382,
+      "height": 805,
+      "sha256": "a89ef34a070001f9cbb56ae3c21e2f402411532ab5aab23ee62ddf2c1b9a882d",
+      "source": {
+        "title": "Macbook Pro 15 inch 2019 Cũ giá đẹp | Mac24h",
+        "page_url": "https://mac24h.vn/macbook-pro-15-inch-2019-used.html",
+        "image_url": "https://mac24h.vn/images/detailed/94/macbook_pro_15_inch.jpeg",
+        "description": " Space Gray 2019 15-inch MacBook Pro"
+      }
+    },
+    {
+      "query": "Apple iPhone 13 Green",
+      "identities": [
+        {
+          "brand": "Apple iPhone",
+          "model": "iPhone 13 (Green / 128GB)",
+          "cpu": "",
+          "screen": "Za"
+        }
+      ],
+      "status": "reviewed",
+      "file": "e82c097cbd3eeedc.jpg",
+      "width": 1800,
+      "height": 1800,
+      "sha256": "a90847806a4ea71a596072c46caed1fc653a433a21d5e5c8c72b8dcf715e19cc",
+      "source": {
+        "title": "Apple iPhone 13 - buy at Digitec",
+        "page_url": "https://www.digitec.ch/en/s1/product/apple-iphone-13-256-gb-green-610-sim-esim-5g-smartphones-19816947",
+        "image_url": "https://static01.galaxus.com/productimages/5/9/5/1/7/1/8/4/iPhone_13_Green_PDP_Image_Position-1A__WWEN.jpg_sea.jpeg",
+        "description": " Apple iPhone 13 in Green"
+      }
+    },
+    {
+      "query": "Apple iPhone 13 Midnight",
+      "identities": [
+        {
+          "brand": "Apple iPhone",
+          "model": "iPhone 13 (Midnight / 256GB)",
+          "cpu": "",
+          "screen": "Za"
+        }
+      ],
+      "status": "reviewed",
+      "file": "94365dfe97223539.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "b120c3214d872a9e6d7c6ac40bddd8426bfa793ac87a515ea09f8d68e2653de0",
+      "source": {
+        "title": "Apple iPhone 13 256GB 5G SIM Free Smartphone - Midnight - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/apple-iphone-13-midnight-6.1-256gb-5g-unlocked-sim-free-mlq63b-a/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/TRV25913_3_Supersize.png?v=26",
+        "description": " Apple iPhone 13 Midnight Overview"
+      }
+    },
+    {
+      "query": "Acer Aspire V3-772G",
+      "identities": [
+        {
+          "brand": "Acer",
+          "model": "aspire v3-772g",
+          "cpu": "i7-4702mq",
+          "screen": "17 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "e708fd62bd4a968e.jpg",
+      "width": 450,
+      "height": 450,
+      "sha256": "1d8a4a97a66d0d8770a10d71c7d6d3095806dbdcbee2817eaa48366427227ab3",
+      "source": {
+        "title": "Acer Aspire V3-772G 4th Gen Core i7 16GB 1TB 17.3 inch Full HD Entertainment Laptop  - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/acer_v3-772g_17.3_inch_core_i7_16gb_1000gb_wifi_laptop_black_shared_blu_ray_nx.m8sek.014/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/NX.M74EK.008_2_LargeProductImage.jpg?v=2",
+        "description": " Acer Aspire V3-772G Entertainment Laptop"
+      }
+    },
+    {
+      "query": "Dell vostro 1015",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "vostro 1015",
+          "cpu": "celeron",
+          "screen": "15"
+        }
+      ],
+      "status": "reviewed",
+      "file": "05b6dd679de8af84.jpg",
+      "width": 534,
+      "height": 422,
+      "sha256": "b2835f8b4612b8febe25c947b15dfbb7389c55028fd4fabc72dfd218ea1c7d52",
+      "source": {
+        "title": "Dell Vostro 1015 - Notebookcheck.org",
+        "page_url": "https://www.notebookcheck.org/Dell-Vostro-1015.21507.0.html",
+        "image_url": "https://www.notebookcheck.org/uploads/tx_nbc2/image01_Oct._10_22.27.jpg",
+        "description": " Dell Vostro 1015 Notebook Overview"
+      }
+    },
+    {
+      "query": "Dell latitudee 5440",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "dell latitude E5440",
+          "cpu": "i5-4300u",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "2c90eb2d8027a5be.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "3073769c6aaaddc3157af4ad6941eac090eb684c20a16873eab28b32360ea74b",
+      "source": {
+        "title": "Dell Latitude E5440 (Core i5-4300U, RAM 4GB, SSD 120GB, VGA Intel HD Graphics 4400, 14 inch)",
+        "page_url": "https://laptopkhanhtran.vn/dell-latitude-e5440-core-i5-4300u-ram-4gb-ssd-120gb-vga-intel-hd-graphics-4400-14-inch.htm",
+        "image_url": "https://laptopkhanhtran.vn/pic/product/images/laptop_dell_latitude_e5440_laptopkhanhtran_1.JPG",
+        "description": " Dell Latitude E5440 Laptop"
+      }
+    },
+    {
+      "query": "Dell Latitude E6520",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "e6520",
+          "cpu": "i7-2620M",
+          "screen": "15"
+        }
+      ],
+      "status": "reviewed",
+      "file": "5254a40a15bb82c0.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "8bd7679d8f02b9956b670d64c8787d86614d9ab1541cf1be5a722c23dd463a84",
+      "source": {
+        "title": "Dell Latitude E6520 Notebook gebraucht kaufen (NGD1256)",
+        "page_url": "https://www.harlander.com/dell-latitude-e6520-39-6cm-15-6-notebook-i7-2-2ghz-8gb-250gb-dvd-rw-nvs-4200m-fp-ohne-bs-gebrauchte-b-ware.html",
+        "image_url": "https://images.harlander.com/artikel/1000x1000/dell-latitude-e6520-ohne-webcam-mit-fp-mit-numblock-mit-akku-deutsch-3.jpg",
+        "description": " Dell Latitude E6520 Business Notebook"
+      }
+    },
+    {
+      "query": "Dell Latitude E6430",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "6430",
+          "cpu": "i5 3130M",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "a96f6b27018e27d3.jpg",
+      "width": 1600,
+      "height": 1313,
+      "sha256": "78a40da5c0c5369a656b5a8378f1bba96bd67ac931653d9ce5fcdb5129c13544",
+      "source": {
+        "title": "Laptop Dell Latitude E6430 i5 - 3 generacji / 4 GB / 240 GB SSD / 14 HD / Klasa A",
+        "page_url": "https://www.vedion.pl/pl/products/laptop-dell-latitude-e6430-i5-3-generacji-4-gb-240-gb-ssd-14-hd-klasa-a-2030.html",
+        "image_url": "https://www.vedion.pl/hpeciai/162b480fd7c9ac653749b25415555492/pol_pl_Laptop-Dell-Latitude-E6430-i5-3-generacji-4-GB-240-GB-SSD-14-HD-Klasa-A-2030_3.png",
+        "description": " Dell Latitude E6430 Refurbished Business Laptop"
+      }
+    },
+    {
+      "query": "Dell Latitude E5430",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "5430",
+          "cpu": "i5 3320M",
+          "screen": "14"
+        },
+        {
+          "brand": "Dell",
+          "model": "5430",
+          "cpu": "i5 3",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "212625f1db282ad7.jpg",
+      "width": 527,
+      "height": 397,
+      "sha256": "baea278f88e8f3c7d4346eb9ad2f10ab4ee349035c18436f3d818443b8491ba2",
+      "source": {
+        "title": "Dell Latitude E5430 - Notebookcheck.org",
+        "page_url": "https://www.notebookcheck.org/Dell-Latitude-E5430.79758.0.html",
+        "image_url": "https://www.notebookcheck.org/uploads/tx_nbc2/dellE5430.jpg",
+        "description": " Dell Latitude E5430 Business Laptop"
+      }
+    },
+    {
+      "query": "Dell Latitude E5420",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "5420",
+          "cpu": "i5 2520m",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "1aaeb85921dfc4fd.jpg",
+      "width": 900,
+      "height": 667,
+      "sha256": "107fb4322b3cf3e699a2447f654d59b83b32cea5f67182ac775545012a3b6c26",
+      "source": {
+        "title": "Dell Latitude E5420 serie - Notebookcheck.it",
+        "page_url": "https://www.notebookcheck.it/Dell-Latitude-E5420-serie.71104.0.html",
+        "image_url": "https://www.notebookcheck.it/uploads/tx_nbc2/latitude-display.png",
+        "description": " Dell Latitude E5420 Laptop Overview"
+      }
+    },
+    {
+      "query": "Dell latitudee 6540",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "latitude E 6540",
+          "cpu": "i7-4800mq",
+          "screen": "15.6 fhd"
+        },
+        {
+          "brand": "Dell",
+          "model": "latitude E 6540",
+          "cpu": "i7-4600m",
+          "screen": "15.6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "1d12672401994d68.jpg",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "55f9abff25a582f7c13967b4e61191cd0dba6c22af3c4d3152e627524bda441d",
+      "source": {
+        "title": "DELL Latitude 6000 E6540 - 6540-7242 laptop specifications",
+        "page_url": "https://www.laptoparena.net/dell/dell-latitude-6000-e6540-6540-7242-black-silver-63010",
+        "image_url": "https://www.laptoparena.net/images/DELL_Latitude_E6540_6540-7242_image_5.jpg",
+        "description": " Dell Latitude E6540 Business Laptop"
+      }
+    },
+    {
+      "query": "Dell latitude 5580",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "latitude 5580",
+          "cpu": "i5-7300u",
+          "screen": "15/6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "d1e94e4d33f6f189.jpg",
+      "width": 500,
+      "height": 612,
+      "sha256": "81d510f4d40ee66cbdcaca4f0b625483abd690048ac2a37b060716cd885a58b1",
+      "source": {
+        "title": "Buy Dell latitude 5580 i7 - 7 Gen Ultrabook refurbished laptop",
+        "page_url": "https://itechezy.com/product/dell-latitude-5580-i7-7th-gen-ultrabook-15-6%E2%80%B3-refurbished-laptop-copy/?srsltid=AfmBOoqPl38F5GW6wVz_kP3M1Qh6eP1a3xUlfTbPWZydHfN_CEFdNOvo",
+        "image_url": "https://itechezy.com/wp-content/uploads/2024/08/Dell-Latitude-5580-i5-7th-Gen-Ultrabook-15.6%E2%80%B3-Refurbished-Laptop.png",
+        "description": " Dell Latitude 5580 Refurbished Ultrabook"
+      }
+    },
+    {
+      "query": "Dell latitude 5500",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "dell latitude 5500",
+          "cpu": "i7-8665u",
+          "screen": "15.6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "52398845958fbc8d.jpg",
+      "width": 1800,
+      "height": 1162,
+      "sha256": "a5ca509d5c24626e3c2e2ce1f570f08a273f39eaaee312953eea53af35b25240",
+      "source": {
+        "title": "Dell Latitude 5500 15.6 Laptop- 8th Gen Intel Core i5, 8GB-32GB RAM, Hard Drive or Solid State Drive, Win 10 or 11 PRO - Walmart.com",
+        "page_url": "https://www.walmart.com/ip/Dell-Latitude-5500-15-6-Laptop-8th-Gen-Intel-Core-i5-8GB-32GB-RAM-Hard-Drive-or-Solid-State-Drive-Win-10-or-11-PRO/5362722675",
+        "image_url": "https://i5.walmartimages.com/asr/84bdf719-2f9c-47ee-9de8-550bcfafe056.81836b48d3001d4bf3580b772b23211d.jpeg",
+        "description": " Dell Latitude 5500 Business Laptop"
+      }
+    },
+    {
+      "query": "Dell Latitude 3570",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "3570",
+          "cpu": "i7 6200U",
+          "screen": "15.6 FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "140cba34a6630acf.jpg",
+      "width": 1200,
+      "height": 897,
+      "sha256": "3cb8e2d477a3b71f4500fb8950760b7c2e0cf559d1d410aa00f42a2b5466ace7",
+      "source": {
+        "title": "DELL Latitude 3570 - MMT8X laptop specifications",
+        "page_url": "https://www.laptoparena.net/dell/notebook-dell-latitude-3570-mmt8x-black-1076",
+        "image_url": "https://www.laptoparena.net/images/DELL_Latitude_3570_MMT8X_image_12.jpg",
+        "description": " Dell Latitude 3570 MMT8X Business Notebook"
+      }
+    },
+    {
+      "query": "Dell inspiron 5759",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "Inspiron 5759",
+          "cpu": "i5 6200U",
+          "screen": "17"
+        }
+      ],
+      "status": "reviewed",
+      "file": "69b34e8350179900.jpg",
+      "width": 1800,
+      "height": 1369,
+      "sha256": "937c8ef76823b185ff2186b561fa68093896f93056bd414e8ac65b5bed1c5b9d",
+      "source": {
+        "title": "Dell Inspiron 5759 review - a logical successor to the 5758 with a super thin profile | LaptopMedia DE",
+        "page_url": "https://laptopmedia.com/de/review/dell-inspiron-5759-review-a-logical-successor-to-the-inspiron-5758/",
+        "image_url": "https://laptopmedia.com/wp-content/uploads/2016/04/IMG_1145.jpg",
+        "description": " Dell Inspiron 5759 17.3-inch Laptop Review Image"
+      }
+    },
+    {
+      "query": "Dell latitude 3590",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "dell latitude 3590",
+          "cpu": "i5-7200u",
+          "screen": "15/6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "4ea93771a47263b5.jpg",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "b19d5ea2f6a12bde26ea67b031d8613746edc2af8dd2aa24b242c98f199ec501",
+      "source": {
+        "title": "DELL Latitude 3590 - C5PV9 laptop specifications",
+        "page_url": "https://www.laptoparena.net/dell/notebook-dell-latitude-3590-c5pv9-black-4156",
+        "image_url": "https://www.laptoparena.net/images/DELL_Latitude_3590_1162e4.jpg",
+        "description": " Dell Latitude 3590 Business Notebook"
+      }
+    },
+    {
+      "query": "Dell precision 7510",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "Precision 7510",
+          "cpu": "i7 6820HQ",
+          "screen": "15.6 FHD"
+        },
+        {
+          "brand": "Dell",
+          "model": "precision 7510",
+          "cpu": "i7-6820hq",
+          "screen": "15/6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "2c874b802314999d.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "be75c551909ad9a8ec0f4a99b046a95fb6c86e1d67e9fa8d7f2d6011934795b4",
+      "source": {
+        "title": "Dell Precision 7510 Notebook NEUWARE kaufen (AN1 Neuware)",
+        "page_url": "https://www.harlander.com/dell-precision-7510-39-6cm-15-6-workstation-i7-6820hq-8gb-256gb-ssd-4k-uhd-m1000m-win-10-neuware.html",
+        "image_url": "https://images.harlander.com/artikel/1000x1000/dell-precision-7510-mit-webcam-ohne-fp-mit-akku-deutsch-3.jpg",
+        "description": " Dell Precision 7510 Mobile Workstation"
+      }
+    },
+    {
+      "query": "Dell latitude 7410",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "Latitude 7410",
+          "cpu": "i5 10310U",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "9d5d1080e1aba703.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "7496237532de1dcbd64a6b30411af463ec93787bf462abcd2caac34c6fa279ca",
+      "source": {
+        "title": "Dell Latitude 7410 - Core i7 10610U / 1.8 GHz | Overview, Specs, Details | SHI",
+        "page_url": "https://www.shi.com/product/40242831/Dell-Latitude-7410-Core-i7-10610U-1.8-GHz",
+        "image_url": "https://cdn.cs.1worldsync.com/b4/c7/b4c745b8-b2ab-4ce1-94ad-4f98e3c6646c.jpg",
+        "description": " Dell Latitude 7410 Front View"
+      }
+    },
+    {
+      "query": "Dell precision 3510",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "precision 3510",
+          "cpu": "i7 6820 hq",
+          "screen": "15,6 fhd touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "2eb3952a0a18ebed.jpg",
+      "width": 720,
+      "height": 540,
+      "sha256": "0a67d58618936e77cc3d55343a8579218e71b0c6fccb7cc79cc3000bbb7142b1",
+      "source": {
+        "title": "Ноутбук Dell Precision 3510, i5-6440HQ, 16 GB, 256 GB, AMD FirePro W5130M, 1920x1080, IPS [SH2307015] БУ – фото, отзывы, характеристики в интернет-магазине ROZETKA от продавца: GazTrade",
+        "page_url": "https://rozetka.com.ua/388808193/p388808193/",
+        "image_url": "https://content1.rozetka.com.ua/goods/images/big/359460771.jpg",
+        "description": " Dell Precision 3510 Mobile Workstation"
+      }
+    },
+    {
+      "query": "Dell inspiron 5379",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "inspiron 5379",
+          "cpu": "i7 8550u",
+          "screen": "13 tuch tab"
+        }
+      ],
+      "status": "reviewed",
+      "file": "5575ea857676ad4b.jpg",
+      "width": 617,
+      "height": 530,
+      "sha256": "accbb303b64fed34c9c146d3f1d611c65920b3098b6044f01b2f1faeb3eb653b",
+      "source": {
+        "title": "Dell Inspiron 5379 i5-8250U/8GB/256/Win10 FHD IR + PEN - Laptop 13,3\" i mniejsze - najlepsze ceny, tysiące opinii w x-kom.pl",
+        "page_url": "https://www.x-kom.pl/p/379435-laptop-133-i-mniejsze-dell-inspiron-5379-i5-8250u-8gb-256-win10-fhd-ir-pen.html",
+        "image_url": "https://cdn.x-kom.pl/i/setup/images/prod/big/product-new-big%2C%2C2017/10/pr_2017_10_20_10_59_53_575_12.jpg",
+        "description": " Dell Inspiron 5379 Convertible Laptop"
+      }
+    },
+    {
+      "query": "Dell latitude 7280",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "latitude 7280",
+          "cpu": "i7-7600u",
+          "screen": "13"
+        }
+      ],
+      "status": "reviewed",
+      "file": "229eaeeb9dd229b0.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "af9c051f186ae1234b7f6ba58dcdbfffcb207a3895a15b4cda64b9e20380124d",
+      "source": {
+        "title": "Dell Latitude 7280 - Ultrabook | Overview, Specs, Details | SHI",
+        "page_url": "https://www.shi.com/product/33288228/Dell-Latitude-7280-Ultrabook",
+        "image_url": "https://cdn.cs.1worldsync.com/4b/1c/4b1c2701-8e2a-4ae2-948a-1f621415239b.jpg",
+        "description": " Dell Latitude 7280 Ultrabook Overview"
+      }
+    },
+    {
+      "query": "Dell precision 7520",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "precision 7520",
+          "cpu": "i7 6820 hq",
+          "screen": "15 fhd"
+        },
+        {
+          "brand": "Dell",
+          "model": "Precision 7520",
+          "cpu": "i7 7820HQ",
+          "screen": "15.6 FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "1ed1dbc00b2adf5f.jpg",
+      "width": 1200,
+      "height": 1045,
+      "sha256": "7e9ef96897a194488b410643894b664965e3101943d623c57b630015b00fca3c",
+      "source": {
+        "title": "DELL Precision 7520 - G2FX5 laptop specifications",
+        "page_url": "https://www.laptoparena.net/dell/mobile-workstation-dell-precision-7520-g2fx5-black-46636",
+        "image_url": "https://www.laptoparena.net/images/DELL_Precision_7520_1ca105.jpg",
+        "description": " Dell Precision 7520 Mobile Workstation"
+      }
+    },
+    {
+      "query": "Dell vostro 3583",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "dell vostro 3583",
+          "cpu": "i7 8565U",
+          "screen": "15.6 FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "9a581a72b45106fc.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "3c797242d65faff34ae7625e83e26572527c2e553077498960aa8324b6402aa2",
+      "source": {
+        "title": "Refurbished Dell Vostro 3583 Core i7 8GB 256GB Radeon 520 15 Inch Windows 10 Laptop - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/refurbished-dell-vostro-3583-core-i7-8gb-256gb-radeon-520-15-inch-windows-1-a1-f7l4dx2/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/A1F7L4DX2_3_Supersize.jpg?v=2",
+        "description": " Refurbished Dell Vostro 3583 Core i7 Laptop"
+      }
+    },
+    {
+      "query": "Dell latitude 3420",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "latitude 3420",
+          "cpu": "i5-1135g7",
+          "screen": "14 fhd touch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "2b16c9be3ede4b9a.jpg",
+      "width": 1800,
+      "height": 1262,
+      "sha256": "10a15f96534f2dd1de65bca4b3cab8874fd81b201cc986ce920b1c84d1330172",
+      "source": {
+        "title": "14-calowy notebook biznesowy Latitude 3420 z obsługą wideokonferencji | Dell Polska",
+        "page_url": "https://www.dell.com/pl-pl/shop/notebooki-firmy-dell/notebook-biznesowy-latitude-3420/spd/latitude-14-3420-laptop",
+        "image_url": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/14-3420/media-gallery/peripherals_laptop_latitude_3420nt_gallery_3.psd?chrss=full&fmt=pjpg&hei=2548&imwidth=5000&pscan=auto&qlt=100%2C1&resMode=sharp2&scl=1&size=3635%2C2548&wid=3635",
+        "description": " Dell Latitude 3420 Business Laptop"
+      }
+    },
+    {
+      "query": "Dell inspiron 5502",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "inspiron 5502",
+          "cpu": "i5-1135g7",
+          "screen": "15.6 HD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "283b502241f384a7.jpg",
+      "width": 850,
+      "height": 850,
+      "sha256": "172f122752cc1846bb5fd843c4a783469acc4773acc29140ed1139b6e28f54cb",
+      "source": {
+        "title": "Laptop DELL Inspiron 5502 (N5502AP102F002) - Silver",
+        "page_url": "https://gland.vn/laptop-dell-inspiron-5502-n5502ap102f002-silver/",
+        "image_url": "https://hanoicomputercdn.com/media/product/57373_inspiron5502__4_.png",
+        "description": " Dell Inspiron 5502 Silver Laptop"
+      }
+    },
+    {
+      "query": "Dell latitude 5520",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "Latitude 5520",
+          "cpu": "i5 1145G7",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "234c111d95b3a2c8.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "466e23b55099a97a96eaddfd8769d19ef2b2e2eebbbac908a155c36433873f65",
+      "source": {
+        "title": "Dell Latitude 5520 Core i5-1135G7 8GB 256GB SSD 15.6 Inch FHD Windows 10 Pro Laptop - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/dell-latitude-5520-core-i5-1135g7-8gb-256gb-ssd-15.6-inch-fhd-windows-10-pr-fpm6j/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/FPM6J_1_Supersize.jpg?v=27",
+        "description": " Dell Latitude 5520 Business Laptop"
+      }
+    },
+    {
+      "query": "Dell inspiron 7586",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "inspiron 7586",
+          "cpu": "I7 8565H",
+          "screen": "15.6 TUCH TAB"
+        }
+      ],
+      "status": "reviewed",
+      "file": "19e12305d50eca92.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "84db2782188bf7b3b4eb9a2b863670dc67327cad2d64f39e62eee06cf71ee9b0",
+      "source": {
+        "title": "Dell Inspiron 7586 2-in-1 - Flip design - Intel Core i5 - 8265U / up to 3.9 GHz - Win 10 Home 64-bit - UHD Graphics 620 - 8 GB RAM - 256 GB SSD NVMe - 15.6\" IPS touchscreen 1920 x 1080 (Full HD) - Bluetooth, IEEE 802.11b, IEEE 802.11a, IEEE 802.11g, IEEE 802.11n, IEEE 802.11ac - Wi-Fi 5 - silver - Walmart.com",
+        "page_url": "https://www.walmart.com/ip/Dell-Inspiron-7586-2-in-1-Flip-design-Intel-Core-i5-8265U-3-9-GHz-Win-10-Home-64-bit-UHD-Graphics-620-8-GB-RAM-256-SSD-NVMe-15-6-IPS-touchscreen-1920/933405548",
+        "image_url": "https://i5.walmartimages.com/seo/Dell-Inspiron-7586-2-in-1-Flip-design-Intel-Core-i5-8265U-3-9-GHz-Win-10-Home-64-bit-UHD-Graphics-620-8-GB-RAM-256-SSD-NVMe-15-6-IPS-touchscreen-1920_b12b1b4d-30e6-4e51-8c39-534c03325619_1.822945e0fe1ce6808b97a04e1cf085cf.jpeg",
+        "description": " Dell Inspiron 7586 2‑in‑1 Laptop in Tent Mode"
+      }
+    },
+    {
+      "query": "Dell inspiron 3793",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "Inspiron 3793",
+          "cpu": "i7 1065G7",
+          "screen": "17"
+        }
+      ],
+      "status": "reviewed",
+      "file": "2018f57906aa0fe7.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "e6f33eba4b25d2fb3d56113bffc87669e6bffd322c7dc189e4ede319fa8fdafd",
+      "source": {
+        "title": "Dell Inspiron 3793 - full specs, details and review",
+        "page_url": "https://www.productindetail.com/pn/dell-inspiron-3793",
+        "image_url": "https://cdn.cs.1worldsync.com/df/b4/dfb4cd28-5890-4156-8928-b18d9a4f9c19.jpg",
+        "description": " Dell Inspiron 3793 Front View"
+      }
+    },
+    {
+      "query": "Dell inspiron 5770",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "DELL INSPIRON 5770",
+          "cpu": "i7 8550U",
+          "screen": "17 FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "54a7726f39aee855.jpg",
+      "width": 1200,
+      "height": 826,
+      "sha256": "a52bb59c8694fb139b46b5b6dbf43331059515aa4da2691686ce72b793c47c46",
+      "source": {
+        "title": "DELL Inspiron 5770 Specs, Reviews & Prices | Techlitic",
+        "page_url": "https://techlitic.com/dell-inspiron-5770/",
+        "image_url": "https://techlitic.com/images/dell-inspiron-5770.jpg",
+        "description": " Dell Inspiron 5770 Overview"
+      }
+    },
+    {
+      "query": "Dell inspiron 3520",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "inspiron 3520",
+          "cpu": "i7-12",
+          "screen": "15.6fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "3debbbec849cee4e.jpg",
+      "width": 800,
+      "height": 800,
+      "sha256": "a1c5af06a57226dcadc137eabc63150aadfa1694920f3009ae8491b422defd56",
+      "source": {
+        "title": "Laptop Price in Sri Lanka | Best Laptop Deals in Sri Lanka – Sense.lk",
+        "page_url": "https://www.sense.lk/product-category/laptops",
+        "image_url": "https://www.sense.lk/images/uploads/product/2026/02/20260213150938_1.webp",
+        "description": " Dell Inspiron 3520 Laptop"
+      }
+    },
+    {
+      "query": "Dell xps 9570",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "dell xps 9570",
+          "cpu": "i7-8700h",
+          "screen": "15/6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "5d5403427966f6b9.jpg",
+      "width": 973,
+      "height": 1000,
+      "sha256": "5ec67c78198b820a5f78e851a103fb6c354e6056dc2355cff8905743d5e70f14",
+      "source": {
+        "title": "Ordinateur Portable Dell XPS 9570 (BERLCFL1901_1603) prix Maroc",
+        "page_url": "https://www.iris.ma/10278-ordinateur-portable-dell-xps-9570-i7-16gb-512gb-156.html",
+        "image_url": "https://www.iris.ma/42317-large_default/ordinateur-portable-dell-xps-9570-i7-16gb-512gb-156.jpg",
+        "description": " Dell XPS 9570 Front View"
+      }
+    },
+    {
+      "query": "Dell inspiron 7590",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "inspiron 7590",
+          "cpu": "i7-9750 h",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "bd1768c931dbb189.jpg",
+      "width": 800,
+      "height": 800,
+      "sha256": "f33595fdd92916c73f1f6b7113a748b1a2391d6b2b658dee6864a2a319f3e051",
+      "source": {
+        "title": "Jual Dell Inspiron 7590 (nebula) I7-9750h Ssd 512gb Nvidia Gtx1650 Win10 Di Seller Oc Tech - Pradah Kali Kendal, Kota Surabaya | Blibli",
+        "page_url": "https://www.blibli.com/p/dell-inspiron-7590-nebula-i7-9750h-ssd-512gb-nvidia-gtx1650-win10/ps--OCT-70007-00102",
+        "image_url": "https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full/102/MTA-55038575/dell_dell-inspiron-7590-nebula-i7-9750h-ssd-512gb-nvidia-gtx1650-win10_full01.jpg",
+        "description": " Dell Inspiron 7590 Nebula Laptop"
+      }
+    },
+    {
+      "query": "Dell precision 7760",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "Precision 7760",
+          "cpu": "i7-11800",
+          "screen": "17 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "09bcaf37f9955d1e.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "df95fd3477300f031c260a02458011f2f227fffe6868f84ae184c1c3d1b030a7",
+      "source": {
+        "title": "Dell Precision 7760 Core i7-11800H 16GB 512GB SSD 17.3 Inch Windows 10 Pro Laptop - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/dell-precision-7760-intel-core-i7-11800h-16gb-512gb-ssd-17.3-inch-windows-1-w12w0/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/W12W0_2_Supersize.jpg?v=3",
+        "description": " Dell Precision 7760 Mobile Workstations"
+      }
+    },
+    {
+      "query": "Dell vostro 7620",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "vostro 7620",
+          "cpu": "i7-12700H",
+          "screen": "15 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "ba39e7c1f09129f3.jpg",
+      "width": 570,
+      "height": 400,
+      "sha256": "8f89b225384f33d445b966b7d3beb1cde3f3304719ec603b31834e0138f9cded",
+      "source": {
+        "title": "Vostro 7620 Laptop | Dell Deutschland",
+        "page_url": "https://www.dell.com/de-de/shop/cty/pdp/spd/vostro-16-7620-laptop",
+        "image_url": "https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/vostro-notebooks/vostro-16-7620-plus/media-gallery/notebook-vostro-7620-nt-gray-gallery-5.psd?fmt=png-alpha&hei=400&wid=570",
+        "description": " Dell Vostro 7620 Laptop Showcase"
+      }
+    },
+    {
+      "query": "Asus TUF Gaming F15 FX506HC 2021",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "Tuf f15",
+          "cpu": "i5 11400H",
+          "screen": "15.6FHD 144hz"
+        }
+      ],
+      "status": "reviewed",
+      "file": "391202a3df8b6eb0.jpg",
+      "width": 1200,
+      "height": 1200,
+      "sha256": "319231d08ea21d29cf2c2af410e78589b05343be57a879c801325d26237de113",
+      "source": {
+        "title": "Asus TUF Gaming F15 FX506HC-HN011 Intel Core i5 11400H 8GB RAM 512GB SSD RTX 3050 FreeDOS 15 15.6 inç Oyun Bilgisayarı Fiyatları",
+        "page_url": "https://www.cimri.com/dizustu-bilgisayar/en-ucuz-asus-fx506hc-hn011-tuf-gaming-intel-core-i5-11400h-8gb-512gb-ssd-rtx3050-freedos-15-tasinabilir-bilgisayar-fiyatlari%2C2171201599",
+        "image_url": "https://cdn.cimri.io/image/1200x1200/asus-tuf-gaming-f15-fx506hc-hn011-intel-core-i5-11400h-8gb-ram-512gb-ssd-rtx-3050-freedos-15-15-6-inc-oyun-bilgisayari_910134486.jpg",
+        "description": " ASUS TUF Gaming F15 FX506HC-HN011 Overview"
+      }
+    },
+    {
+      "query": "Asus TUF Gaming F15 FX507VV 2023",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "Tuf F15",
+          "cpu": "i7 13700H",
+          "screen": "15.6 FHD 144Hz"
+        }
+      ],
+      "status": "reviewed",
+      "file": "8b653ba9998eadb1.jpg",
+      "width": 748,
+      "height": 561,
+      "sha256": "9fc50aa71d2aceb6ea083445f2b44db309c1cf90584f05eb08e216e626b485dc",
+      "source": {
+        "title": "ASUS TUF Gaming F15 FX507VV-LP148 (90NR0BV7-M00AA0) Gaming Laptop - ASUS ROG / TUF",
+        "page_url": "https://gamenotebaku.az/en/product/asus-tuf-gaming-f15-fx507vv-lp148-90nr0bv7-m00aa0-gaming-laptop",
+        "image_url": "https://cdn.gamenotebaku.az/productimg/107/540/gamenote_img_55_1720178589.png.webp",
+        "description": " ASUS TUF Gaming F15 FX507VV-LP148"
+      }
+    },
+    {
+      "query": "Asus TUF Gaming A15 FA507NVR",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "tuf a15",
+          "cpu": "ryzen7-7435hs",
+          "screen": "15.6fhd 144hz"
+        }
+      ],
+      "status": "reviewed",
+      "file": "d0933f8f1bdd5072.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "37ea3b05f0422d484a8d0025a77b7154c617440a8428a3715e4101d389ff4c40",
+      "source": {
+        "title": "ROG - Republic of Gamers｜日本 | For Those Who Dare",
+        "page_url": "https://rog.asus.com/jp/content/gaming-all/",
+        "image_url": "https://dlcdnwebimgs.asus.com/files/media/84c45a96-15eb-4622-aca9-3384adffc0cc/images/241216/FA507NVR.jpg",
+        "description": "ASUS TUF Gaming A15 FA507NVR official model image"
+      }
+    },
+    {
+      "query": "HP ZBook Firefly 15 G8",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "zbook firefly G8",
+          "cpu": "i7-11g7",
+          "screen": "15/6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "645c11184a584a7f.jpg",
+      "width": 800,
+      "height": 698,
+      "sha256": "955e329a57aa8a937e66a650f49cd0b7f452ba04a7a9dda5762b6dced9fa65ba",
+      "source": {
+        "title": "Hp firefly 15g8 zbook,Laptop cũ Hà Nội,laptop cu, laptop gia re, lapto",
+        "page_url": "https://laptopphuctho.vn/products/hp-firefly-15g8-zbook",
+        "image_url": "https://product.hstatic.net/1000331874/product/hp_firefly_15g8_zbook_0cdaff07eafc460abf5c37952b9f54b0.jpg",
+        "description": " HP Zbook Firefly 15 G8 Laptop"
+      }
+    },
+    {
+      "query": "HP ZBook Firefly 14 G7",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "Zbook firefly G7",
+          "cpu": "i7 10810U",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "15c7413d2acedd8e.jpg",
+      "width": 800,
+      "height": 600,
+      "sha256": "d1b8cb9873e1e2619feac61504b148e181a9043c16546832d4b10271f178df9c",
+      "source": {
+        "title": "HP ZBook Firefly 14 G7, i7-10610U, Quadro P520 - Notebookcheck.fr",
+        "page_url": "https://www.notebookcheck.biz/HP-ZBook-Firefly-14-G7-i7-10610U-Quadro-P520.509864.0.html",
+        "image_url": "https://www.notebookcheck.biz/uploads/tx_nbc2/HPZBookFirefly14-G7__1__01.JPG",
+        "description": " HP ZBook Firefly 14 G7 Mobile Workstation"
+      }
+    },
+    {
+      "query": "Lenovo IdeaPad 110 15IBR",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "80T7",
+          "cpu": "Pentium",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "7e2e89699fcc33da.jpg",
+      "width": 500,
+      "height": 412,
+      "sha256": "03c4ecf6d7677236e5b583cdc1413489ad2fd27df438356096976f17d38fb5f9",
+      "source": {
+        "title": "Lenovo IdeaPad 110-15IBR Black  - Laptop | Alza.cz",
+        "page_url": "https://m.alza.cz/lenovo-ideapad-110-15ibr-black-d4373406.htm",
+        "image_url": "https://image.alza.cz/products/NT356n7m7n/NT356n7m7n-05.jpg?height=500&width=500",
+        "description": " Lenovo IdeaPad 110-15IBR Black"
+      }
+    },
+    {
+      "query": "Lenovo IdeaPad Z510",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "ideapad 20287",
+          "cpu": "i5 4200u",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "01cd3b381c515621.jpg",
+      "width": 726,
+      "height": 679,
+      "sha256": "cb7c42b80f519839292acfa11338d38add3d80fa9495a1588a3885ad74e3c5a7",
+      "source": {
+        "title": "Test Toshiba Satellite M50-A-11L Notebook - Notebookcheck Test",
+        "page_url": "https://www.notebookcheck.com/Test-Toshiba-Satellite-M50-A-11L-Notebook.106486.0.html",
+        "image_url": "https://www.notebookcheck.com/fileadmin/Notebooks/Lenovo/IdeaPad_Z510/Z510_Teaser.jpg",
+        "description": " Lenovo IdeaPad Z510 Notebook"
+      }
+    },
+    {
+      "query": "Lenovo G710",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "lenovo 20252",
+          "cpu": "i7-4702MQ",
+          "screen": "17"
+        }
+      ],
+      "status": "reviewed",
+      "file": "6a34d1e71c0bd9e4.jpg",
+      "width": 600,
+      "height": 584,
+      "sha256": "e225641e9bd659a97a545539db48cb1041900ae492019373ce33dbabaea372cc",
+      "source": {
+        "title": "Notebook Lenovo IdeaPad G710 i7-4702MQ, 8GB, 8+1000GB, 17.3\", DVD±R/RW, nVidia GT 820M, 2GB, BT, CAM, Win 8.1 / Win10  - černý | OnlineShop.cz",
+        "page_url": "https://www.onlineshop.cz/notebooky/notebook-lenovo-ideapad-g710-i7-4702mq-8gb-81000gb-17-3-dvdr-rw-nvidia-gt-820m-2gb-bt-cam-win-8-1-wi-191975P.html",
+        "image_url": "https://static.onlineshop.cz/data/eshop_online/product/191975/notebook-lenovo-ideapad-g710-i7-4702mq-8gb-81000gb-17-3-dvdr-rw-nvidia-gt-820m-2gb-bt-cam-win-8-1-win10-cerny.jpg",
+        "description": " Lenovo IdeaPad G710 Open Laptop"
+      }
+    },
+    {
+      "query": "Lenovo V15 G2 ALC",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "lenovo 82 kd",
+          "cpu": "ryzen 5 5500u",
+          "screen": "15.6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "ef0ac943e0cc7227.jpg",
+      "width": 1000,
+      "height": 1000,
+      "sha256": "01bc96a226189d35357bf863d2cf519ba6c4eaa3bae94185295d02181082034b",
+      "source": {
+        "title": "Product Specifications Reference(PSREF) Product",
+        "page_url": "https://psref.lenovo.com/Product/Lenovo/Lenovo_V15_G2_ALC",
+        "image_url": "https://psrefstuff.lenovo.com/syspool/Sys/Image/Lenovo/Lenovo_V15_G2_ALC/Compressedimage/Lenovo_V15_G2_ALC_CT2_04.png",
+        "description": " Lenovo V15 G2 ALC Laptop Overview"
+      }
+    },
+    {
+      "query": "Lenovo IdeaPad 320 15IKB",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "Ideapad320",
+          "cpu": "i7 7500u",
+          "screen": "15.6"
+        },
+        {
+          "brand": "Lenovo",
+          "model": "Ideapad320",
+          "cpu": "I5 7200U",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "11797f1a5a72c975.jpg",
+      "width": 832,
+      "height": 558,
+      "sha256": "8710cd3da034a77335add66adfc44a46772590250838fc0f291e07748e461d2d",
+      "source": {
+        "title": "Lenovo IdeaPad 320-15IKB Price (25 Aug 2026) Specification & Reviews । Lenovo Laptops",
+        "page_url": "https://www.gadgets360.com/lenovo-ideapad-320-15ikb-8405",
+        "image_url": "https://i.gadgets360cdn.com/products/laptops/large/1546456464_635_lenovo_ideapad-320-15ikb.jpg",
+        "description": " Lenovo IdeaPad 320-15IKB Overview"
+      }
+    },
+    {
+      "query": "Lenovo IdeaPad 310 15IKB",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "ideapad 310",
+          "cpu": "i7 7500U",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "69caeadf298cc3a8.jpg",
+      "width": 800,
+      "height": 800,
+      "sha256": "874a2a46af15daaca1b4da863b4b73fe57bf53b338f93677b3ee325897071954",
+      "source": {
+        "title": "Lenovo Laptop 15.6\" Intel Core i5-7200U (7th Gen) - Jarir Bookstore KSA",
+        "page_url": "https://www.jarir.com/sa-en/intel-core-i5-devices/lenovo-310-15ikb-laptops-478933.html",
+        "image_url": "https://ak-asset.jarir.com/akeneo-prod/asset/m1images/4/7/478933.jpg",
+        "description": " Lenovo IdeaPad 310-15IKB Laptop"
+      }
+    },
+    {
+      "query": "Lenovo IdeaPad 330S 15ARR",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "ideapad330s",
+          "cpu": "amd ryzen7 2700",
+          "screen": "15FHD"
+        }
+      ],
+      "status": "reviewed",
+      "file": "aa58388bafeb441e.jpg",
+      "width": 1200,
+      "height": 900,
+      "sha256": "6dedd4ee0c98a0104bf278d689f59ec034e522a93ac2298fce0b2899941abf40",
+      "source": {
+        "title": "Lenovo IdeaPad 330S-15ARR 81FB | Overview, Specs, Details | SHI",
+        "page_url": "https://www.shi.com/product/35002214/Lenovo-IdeaPad-330S-15ARR-81FB",
+        "image_url": "https://cdn.cs.1worldsync.com/70/e0/70e09b9d-de2c-4163-8edf-1f03d213f8e4.jpg",
+        "description": " Lenovo IdeaPad 330S-15ARR Notebook Overview"
+      }
+    },
+    {
+      "query": "HP 17 by 2020 laptop",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "hp laptop 17 by",
+          "cpu": "i5-1035 g1",
+          "screen": "17 inch"
+        },
+        {
+          "brand": "HP",
+          "model": "hp laptop 17 by",
+          "cpu": "",
+          "screen": "17 inch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "43d52a7fbb4f4d6e.jpg",
+      "width": 1443,
+      "height": 1011,
+      "sha256": "9b281d2bae38c4ee37d762be37b822c4e0598d0d43dc7bdc863885a1113ddaa7",
+      "source": {
+        "title": "HP 17 (17-by2053cl) - i5-10210U · Intel UHD Graphics · 17.3”, Full HD (1920 x 1080), IPS · 128GB SSD · 1TB HDD · 12GB DDR4 · Windows 10 Home · 32GB TELA USB Card | LaptopMedia.com",
+        "page_url": "https://laptopmedia.com/laptop-specs/hp-17-17-by2053cl/",
+        "image_url": "https://laptopmedia.com/wp-content/uploads/2018/09/HP-17-by-1.jpg",
+        "description": " HP 17-by2053cl Laptop Overview"
+      }
+    },
+    {
+      "query": "Acer Aspire 3 A317 52",
+      "identities": [
+        {
+          "brand": "Acer",
+          "model": "acer aspire a317",
+          "cpu": "i5 1035 g1",
+          "screen": "17"
+        }
+      ],
+      "status": "reviewed",
+      "file": "210034ef18a6eb1f.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "b53687615305384ec847a92fc0a3429bc3258e436da9ebed1de6d9ab89e14281",
+      "source": {
+        "title": "Acer Aspire 3 (A317-52) - pictures, photos and images",
+        "page_url": "https://www.productindetail.com/pn/acer-aspire-3-a317-52-39d4/pictures",
+        "image_url": "https://cdn.cs.1worldsync.com/ae/17/ae17d71c-67c5-424b-ba99-3702e05ee0e0.jpg",
+        "description": " Acer Aspire 3 A317-52 Laptop"
+      }
+    },
+    {
+      "query": "Dell Latitude E5450",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "dell latitude 5450",
+          "cpu": "i5-5200u",
+          "screen": "14"
+        }
+      ],
+      "status": "reviewed",
+      "file": "7fce4792da028140.jpg",
+      "width": 1800,
+      "height": 1800,
+      "sha256": "7b68749ca01570c834e5e4345b93da2a5193c4560c2adbd0961bf1884c251373",
+      "source": {
+        "title": "Used - Dell Latitude E5450, 14 FHD Laptop, Intel Ireland | Ubuy",
+        "page_url": "https://www.ubuy.ie/en/product/7UDR9EBSG-used-dell-latitude-e5450-14-fhd-laptop-intel-core-i5-5300u-2-30-ghz-16gb-ddr3-new-1tb-ssd-bluetooth-webcam-win10-pro-64",
+        "image_url": "https://i5.walmartimages.com/seo/Used-Dell-Latitude-E5450-14-FHD-Laptop-Intel-Core-i5-5300U-2-30-GHz-16GB-DDR3-NEW-1TB-SSD-Bluetooth-Webcam-Win10-Pro-64_8313ac8a-1276-4eb7-8499-5428b06707d6.216bac27156b0f02aa1d20a4d72c3d5a.jpeg",
+        "description": " Dell Latitude E5450 Business Laptop"
+      }
+    },
+    {
+      "query": "Dell Latitude E5540",
+      "identities": [
+        {
+          "brand": "Dell",
+          "model": "latitude E 5540",
+          "cpu": "i5-4210u",
+          "screen": "15.6"
+        },
+        {
+          "brand": "Dell",
+          "model": "latitude E 5540",
+          "cpu": "i7-4600u",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "eff2f4c8b66540e4.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "b4782e0d5ab4585b4eed9d6f876e211f745ab7fadcb1c01b5751ca509e6ae8d4",
+      "source": {
+        "title": "Refurbished Dell Latitude E5540 Core i5-4200U 4GB 500GB 15.6 Inch Windows 10 Laptop - Laptops Direct",
+        "page_url": "https://www.laptopsdirect.co.uk/refurbished-dell-latitude-e5540-core-i5-4200u-4gb-500gb-15.6-inch-windows-1-tr-44-274/version.asp",
+        "image_url": "https://www.laptopsdirect.co.uk/Images/TR44274_1_Supersize.jpg?v=5",
+        "description": " Refurbished Dell Latitude E5540 Laptop"
+      }
+    },
+    {
+      "query": "HP ZBook 15u G2",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "hp zbook15 u g2",
+          "cpu": "i7-5500u",
+          "screen": "15 inch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "63dd45d75eaa7d3a.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "1be5f9d29394b79dab5627b51c6450740296a0ffdce0a201441f15bd3feb92d8",
+      "source": {
+        "title": "HP ZBook 15u G2 Mobile Workstation | Overview, Specs, Details | SHI",
+        "page_url": "https://www.shi.com/product/30335331/HP-ZBook-15u-G2-Mobile-Workstation",
+        "image_url": "https://cdn.cs.1worldsync.com/96/0b/960bb7f1-6e8b-411c-9710-77aaac839c7c.jpg",
+        "description": " HP ZBook 15u G2 Mobile Workstation"
+      }
+    },
+    {
+      "query": "HP ZBook 14u G4",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "zbook 14 g4",
+          "cpu": "i5-7200u",
+          "screen": "14 inch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "c262d530f10ccefd.jpg",
+      "width": 1500,
+      "height": 1500,
+      "sha256": "e7d77277dd87ee791ca5ffb72f1966bf44c78ae53834dfb8847077279b904127",
+      "source": {
+        "title": "Test HP ZBook 14u G4 Workstation (7500U, FirePro W4190M) - Notebookcheck Test",
+        "page_url": "https://www.notebookcheck.com/Test-HP-ZBook-14u-G4-Workstation-7500U-FirePro-W4190M.258202.0.html",
+        "image_url": "https://www.notebookcheck.com/fileadmin/Notebooks/HP/ZBook_14u_G4/HP_ZBook_14uG4_1.jpg",
+        "description": " HP ZBook 14u G4 Workstation with 3D CAD Model"
+      }
+    },
+    {
+      "query": "Asus ROG Strix G731GT",
+      "identities": [
+        {
+          "brand": "Asus",
+          "model": "Rog",
+          "cpu": "i7 9750H",
+          "screen": "17"
+        }
+      ],
+      "status": "reviewed",
+      "file": "49afb779a189ccd1.jpg",
+      "width": 1800,
+      "height": 1350,
+      "sha256": "316026b85748ac4deb70b07d5ec6cfce34db038b884ec76585a84688d8bc3f43",
+      "source": {
+        "title": "ASUS ROG Strix G731GT (AU028T) - pictures, photos and images",
+        "page_url": "https://www.productindetail.com/pn/asus-rog-strix-g731gt-au028t/pictures",
+        "image_url": "https://cdn.cs.1worldsync.com/c8/15/c8155b4b-e8fa-44fc-9280-35bbb66613c3.jpg",
+        "description": " ASUS ROG Strix G731GT Gaming Laptop"
+      }
+    },
+    {
+      "query": "HP ZBook 17 G1",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "Zbook 17",
+          "cpu": "i7-4700mq",
+          "screen": "17 fhd"
+        },
+        {
+          "brand": "HP",
+          "model": "zbook 17",
+          "cpu": "i7-4700mq",
+          "screen": "17"
+        }
+      ],
+      "status": "reviewed",
+      "file": "414c8b27798106b2.jpg",
+      "width": 1800,
+      "height": 1800,
+      "sha256": "cccf922e9a37669086be415ebc4cc4a30739d25083f27b930c296e6ea602145e",
+      "source": {
+        "title": "Workstation HP ZBook 17 G1 | Marmax",
+        "page_url": "https://marmaxcomputers.com/product-1208-workstation-hp-zbook-17-g1",
+        "image_url": "https://marmaxcomputers.com/img/170223020244PC-portable-HP-ZBook-17-Mobile-Workstation-1.jpg",
+        "description": " HP ZBook 17 G1 Mobile Workstation"
+      }
+    },
+    {
+      "query": "Lenovo ThinkPad Yoga 11e 4th Gen",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "yoga 11e",
+          "cpu": "i3 7100u",
+          "screen": "11 touch tab"
+        }
+      ],
+      "status": "reviewed",
+      "file": "91159c310f1e9421.jpg",
+      "width": 1000,
+      "height": 563,
+      "sha256": "c90fa100cb98e3438cef3b5ff274b43e6205840806867e591e621f3ce215bb19",
+      "source": {
+        "title": "Lenovo ThinkPad Yoga 11e Gen 4 / 20HU | Lapstore.de",
+        "page_url": "https://www.lapstore.de/a.php/shop/lapstore/lang/de/a/33230/kw/Lenovo-ThinkPad-Yoga-11e-Gen-4-20HU/",
+        "image_url": "https://www.lapstore.de/sd.php?d=33362&s=C&shop=lapstore",
+        "description": " Lenovo ThinkPad Yoga 11e Gen 4 Convertible Laptop"
+      }
+    },
+    {
+      "query": "Lenovo IdeaPad 5 15ITL05",
+      "identities": [
+        {
+          "brand": "Lenovo",
+          "model": "ideapad 5",
+          "cpu": "i5-1135g7",
+          "screen": "15/6 fhd"
+        }
+      ],
+      "status": "reviewed",
+      "file": "97546876156b1075.jpg",
+      "width": 1000,
+      "height": 750,
+      "sha256": "df6169b06550b266291761c4037c3eed370554001e0328491ab95caf08487b55",
+      "source": {
+        "title": "Product Specifications Reference(PSREF) Product",
+        "page_url": "https://psref.lenovo.com/Product/IdeaPad/IdeaPad_5_15ITL05",
+        "image_url": "https://psrefstuff.lenovo.com/syspool/Sys/Image/IdeaPad/IdeaPad_5_15ITL05/Compressedimage/IdeaPad_5_15ITL05_CT1_01.png",
+        "description": " Lenovo IdeaPad 5 15ITL05 Laptop"
+      }
+    },
+    {
+      "query": "Acer Nitro 5 AN515-51",
+      "identities": [
+        {
+          "brand": "Acer",
+          "model": "nitro5",
+          "cpu": "i7-7hq",
+          "screen": "15inch"
+        }
+      ],
+      "status": "reviewed",
+      "file": "74fef202250b0e44.jpg",
+      "width": 1280,
+      "height": 960,
+      "sha256": "d26e22b2038327267dc11c20c26c576631c83002d7eb4d9b26eaabfabf45546e",
+      "source": {
+        "title": "Mua Acer Nitro 5 Gaming Laptop, Intel Core i5-7300HQ, GeForce GTX 1050 Ti, 15.6\" Full HD, 8GB DDR4, 256GB SSD, AN515-51-55WL trên Amazon Mỹ chính hãng 2025 | Fado",
+        "page_url": "https://fado.vn/us/amazon/acer-nitro-5-gaming-laptop-intel-core-i5-7300hq-geforce-gtx-1050-ti-156-full-hd-8gb-ddr4-256gb-ssd-an515-51-55wl-B074Q54GSR.html",
+        "image_url": "https://images-na.ssl-images-amazon.com/images/I/71T3bzdGilL.jpg",
+        "description": " Acer Nitro 5 AN515-51-55WL Gaming Laptop"
+      }
+    },
+    {
+      "query": "HP Victus 15-fa i5 13420H RTX 3050",
+      "identities": [
+        {
+          "brand": "HP",
+          "model": "Victus",
+          "cpu": "i5 13420H",
+          "screen": "15.6"
+        }
+      ],
+      "status": "reviewed",
+      "file": "702cdfac96b7489e.jpg",
+      "width": 1456,
+      "height": 1246,
+      "sha256": "c56e3fbe396390b0c1cc3bb89fbccbb93fa622a8338521ff8c3fa5af97e1bb47",
+      "source": {
+        "title": "HP Victus 15-fa1000 ab € 837,00 (2026) | Preisvergleich Geizhals Deutschland",
+        "page_url": "https://geizhals.de/hp-victus-15-fa1000-v130801.html",
+        "image_url": "https://gzhls.at/pix/de/9c/de9c426f55149c7f-l.webp",
+        "description": " HP Victus 15-fa1000 Gaming Laptop"
+      }
+    }
+  ]
+}
