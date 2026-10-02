@@ -147,7 +147,9 @@ def get_laptop_image_source(brand: str, model: str) -> tuple[str, str, Optional[
     return key, remote_url, None
 
 
-def get_laptop_photo_input(brand: str, model: str, custom_url: Optional[str] = None, *, cpu: Optional[str] = None, screen: Optional[str] = None) -> FSInputFile | URLInputFile | None:
+def get_laptop_photo_input(brand: str, model: str, custom_url: Optional[str] = None, *, cpu: Optional[str] = None, screen: Optional[str] = None) -> FSInputFile | URLInputFile | str | None:
+    if custom_url and custom_url.startswith("tgfile:"):
+        return custom_url.removeprefix("tgfile:")
     local_file = resolve_model_photo(brand, model, cpu=cpu, screen=screen)
     if local_file:
         return FSInputFile(local_file)

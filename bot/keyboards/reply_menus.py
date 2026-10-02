@@ -3,6 +3,9 @@ from __future__ import annotations
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 
 
+AI_MENU_LABEL = "\u200f🤖 هوش مصنوعی \u2066ai\u2069"
+
+
 def main_menu_kb(role: str = "customer") -> ReplyKeyboardMarkup:
     if role == "admin":
         keyboard = [
@@ -27,7 +30,7 @@ def main_menu_kb(role: str = "customer") -> ReplyKeyboardMarkup:
         ]
 
     keyboard.append([KeyboardButton(text="💬 کارشناس و پشتیبانی آنلاین")])
-    keyboard.append([KeyboardButton(text="🤖 هوش مصنوعی AI")])
+    keyboard.append([KeyboardButton(text=AI_MENU_LABEL)])
     return ReplyKeyboardMarkup(
         keyboard=keyboard,
         resize_keyboard=True,

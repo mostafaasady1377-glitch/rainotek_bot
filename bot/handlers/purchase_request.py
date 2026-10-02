@@ -10,6 +10,7 @@ from aiogram.fsm.state import State, StatesGroup
 from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
 from loguru import logger
 from sqlalchemy import select
+from sqlalchemy.orm import joinedload
 
 from bot.config import get_settings
 from bot.services.inventory_service import InventoryService
@@ -215,10 +216,14 @@ async def _finalize_order(
     item_price = data.get("order_price", "")
 
     async with AsyncSessionLocal() as session:
+        customer = await session.scalar(select(User).where(User.telegram_id == customer_tg_id))
+        referrer_id = customer.referrer_telegram_id if customer else None
+        admin_ids = set((await session.scalars(select(User.telegram_id).where(User.role == "admin", User.is_active.is_(True)))).all())
         req = PurchaseRequest(
             customer_telegram_id=customer_tg_id,
             customer_name=customer_name,
             customer_phone=customer_phone,
+            referrer_telegram_id=referrer_id,
             laptop_id=laptop_id,
             branch_id=branch_id,
             quantity=1,
@@ -234,7 +239,7 @@ async def _finalize_order(
 
     # پیام تأیید به مشتری
     await message.answer(
-        f"✅ <b>درخواست خرید شما با موفقیت ثبت شد!</b>\n\n"
+        f"✅ <b>درخواست خرید و رزرو شما با موفقیت ثبت شد!</b>\n\n"
         f"کد رهگیری سفارش: <code>#{order_id}</code>\n"
         f"💻 محصول: <b>{escape(item_title)}</b>\n"
         f"⚙️ مشخصات: {escape(item_specs)}\n"
@@ -254,6 +259,7 @@ async def _finalize_order(
         f"⚙️ مشخصات: {escape(item_specs)}\n"
         f"🏢 شعبه: {escape(branch_name)}\n"
         f"📝 یادداشت مشتری: {escape(notes)}\n"
+        f"🔗 کارشناس معرف: <code>{referrer_id or '-'}</code>\n"
     )
 
     admin_kb = InlineKeyboardMarkup(inline_keyboard=[
@@ -263,7 +269,10 @@ async def _finalize_order(
         ]
     ])
 
-    for admin_id in settings.ADMIN_TELEGRAM_IDS:
+    recipients = set(settings.ADMIN_TELEGRAM_IDS) | admin_ids
+    if referrer_id:
+        recipients.add(referrer_id)
+    for admin_id in recipients:
         try:
             await message.bot.send_message(admin_id, admin_text, reply_markup=admin_kb)
         except Exception as e:
@@ -279,13 +288,18 @@ async def handle_order_admin_action(callback: CallbackQuery, current_user: User)
     parts = callback.data.split(":")
     order_id = int(parts[1])
     new_status = parts[2]
+    if new_status not in {"contacted", "completed", "cancelled", "pending"}:
+        await callback.answer("وضعیت نامعتبر است.", show_alert=True)
+        return
 
     async with AsyncSessionLocal() as session:
+        from database.models import StaffActivity
         order = await session.get(PurchaseRequest, order_id)
         if not order:
             await callback.answer("سفارش یافت نشد.", show_alert=True)
             return
         order.status = new_status
+        session.add(StaffActivity(actor_telegram_id=current_user.telegram_id, action="order_status", target_id=order_id, detail=new_status))
         await session.commit()
 
     status_labels = {
@@ -354,6 +368,8 @@ async def admin_orders_command(message: Message, current_user: User) -> None:
         )
         if current_user.role == "branch_manager" and current_user.managed_branch_id:
             statement = statement.where(PurchaseRequest.branch_id == current_user.managed_branch_id)
+        elif current_user.role == "seller":
+            statement = statement.where(PurchaseRequest.referrer_telegram_id == current_user.telegram_id)
 
         orders = list((await session.scalars(statement)).all())
 
@@ -375,7 +391,57 @@ async def admin_orders_command(message: Message, current_user: User) -> None:
         lines.append(
             f"🔸 <b>#{o.id}</b> | {escape(o.customer_name)} (<code>{escape(o.customer_phone)}</code>)\n"
             f"   💻 {escape(model_name)} | 📍 {escape(b_name)}\n"
-            f"   وضعیت: {status_labels.get(o.status, o.status)}\n"
+            f"   معرف: <code>{o.referrer_telegram_id or '-'}</code> | وضعیت: {status_labels.get(o.status, o.status)}\n"
         )
 
     await message.answer("\n".join(lines))
+
+
+@router.message(F.text == "📋 رزروهای ارجاعی من")
+async def referred_orders(message: Message, current_user: User) -> None:
+    if current_user.role not in {"seller", "branch_manager", "admin"} and current_user.telegram_id not in get_settings().ADMIN_TELEGRAM_IDS:
+        await message.answer("دسترسی مجاز نیست.")
+        return
+    async with AsyncSessionLocal() as session:
+        orders = list((await session.scalars(
+            select(PurchaseRequest).options(joinedload(PurchaseRequest.laptop), joinedload(PurchaseRequest.branch))
+            .where(PurchaseRequest.referrer_telegram_id == current_user.telegram_id)
+            .order_by(PurchaseRequest.id.desc()).limit(15)
+        )).all())
+    if not orders:
+        await message.answer("هنوز رزروی از لینک معرفی شما ثبت نشده است.")
+        return
+    lines = ["📋 <b>رزروهای ارجاعی شما:</b>"]
+    for order in orders:
+        lines.append(f"#{order.id} · {escape(order.customer_name)} · <code>{escape(order.customer_phone)}</code>\n"
+                     f"💻 {escape(order.laptop.model if order.laptop else 'نامشخص')} · "
+                     f"{escape(order.branch.name if order.branch else 'ارسال')}\n"
+                     f"⚙️ {escape(order.laptop.cpu or '-' if order.laptop else '-')} / {escape(order.laptop.ram or '-' if order.laptop else '-')} · "
+                     f"💰 {(order.laptop.price or 0) if order.laptop else 0:,} تومان\n"
+                     f"📝 {escape(order.notes or '-')} · {order.created_at:%Y-%m-%d %H:%M} · {escape(order.status)}")
+    await message.answer("\n\n".join(lines))
+
+
+@router.message(F.text == "📋 رزروهای مشتریان")
+async def all_reservations(message: Message, current_user: User) -> None:
+    if current_user.role != "admin" and current_user.telegram_id not in get_settings().ADMIN_TELEGRAM_IDS:
+        await message.answer("دسترسی مجاز نیست.")
+        return
+    async with AsyncSessionLocal() as session:
+        orders = list((await session.scalars(
+            select(PurchaseRequest).options(joinedload(PurchaseRequest.laptop), joinedload(PurchaseRequest.branch))
+            .order_by(PurchaseRequest.id.desc()).limit(15)
+        )).all())
+    if not orders:
+        await message.answer("رزروی ثبت نشده است.")
+        return
+    lines = ["📋 <b>آخرین رزروهای مشتریان:</b>"]
+    for order in orders:
+        lines.append(f"#{order.id} · {escape(order.customer_name)} · <code>{escape(order.customer_phone)}</code>\n"
+                     f"💻 {escape(order.laptop.model if order.laptop else 'نامشخص')} · "
+                     f"{escape(order.branch.name if order.branch else 'ارسال')}\n"
+                     f"⚙️ {escape(order.laptop.cpu or '-' if order.laptop else '-')} / {escape(order.laptop.ram or '-' if order.laptop else '-')} · "
+                     f"💰 {(order.laptop.price or 0) if order.laptop else 0:,} تومان\n"
+                     f"🔗 معرف: <code>{order.referrer_telegram_id or '-'}</code> · "
+                     f"📝 {escape(order.notes or '-')} · {order.created_at:%Y-%m-%d %H:%M} · {escape(order.status)}")
+    await message.answer("\n\n".join(lines))

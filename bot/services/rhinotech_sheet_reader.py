@@ -279,7 +279,7 @@ class RhinotechSheetReader:
     async def sync_sheet_to_database(cls, session, csv_content=None, gid="0"):
         import hashlib, json
         from bot.services.stock_lock import stock_lock
-        from database.models import SheetSyncState, StockAuditChecklist, InventoryAuditLog
+        from database.models import SheetSyncState, StockAuditChecklist, InventoryAuditLog, LaptopStaffOverride
         try:
             content = csv_content if csv_content is not None else await cls.fetch_sheet_csv(gid)
             items = cls.parse_csv(content)
@@ -332,6 +332,14 @@ class RhinotechSheetReader:
                     # Generic stock photographs are not evidence of a model's appearance.
                     if laptop.image_url and 'images.unsplash.com' in laptop.image_url:
                         laptop.image_url = None
+                    override = await session.get(LaptopStaffOverride, laptop.id)
+                    if override:
+                        for field in ('cpu', 'ram', 'storage', 'gpu', 'screen_size', 'color', 'condition', 'price'):
+                            value = getattr(override, field)
+                            if value is not None:
+                                setattr(laptop, field, value)
+                        if override.image_file_id:
+                            laptop.image_url = 'tgfile:' + override.image_file_id
                     series_name = infer_series_name(item['brand'], item['model'])
                     series = await session.scalar(select(LaptopSeries).where(LaptopSeries.brand_id==brand.id, LaptopSeries.name==series_name))
                     if series is None:
@@ -346,7 +354,7 @@ class RhinotechSheetReader:
                     variant.model_id=model.id; variant.is_active=True
                     variant.generation=infer_generation(item['cpu'],item['model']) + ' ' + item['screen']
                     for field in ('cpu','ram','storage','gpu','condition'):
-                        setattr(variant,field,item[field])
+                        setattr(variant,field,getattr(laptop,field))
                     variant.price=laptop.price; variant.warranty=get_settings().STORE_WARRANTY
                     await session.flush()
                     # Find prior baseline even when an unambiguous specification edit changed its key.

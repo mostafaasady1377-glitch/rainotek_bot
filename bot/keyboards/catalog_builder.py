@@ -41,24 +41,21 @@ def laptop_detail_keyboard(
     laptop_id: int,
     variant_id: int | None = None,
     brand_id: int | None = None,
+    from_ai: bool = False,
 ) -> InlineKeyboardMarkup:
     v_id = variant_id or laptop_id
-    rows = [
-        [
-            InlineKeyboardButton(text="🛍 ثبت درخواست خرید / رزرو حضوری", callback_data=f"order:laptop:{laptop_id}"),
-        ],
-        [
-            InlineKeyboardButton(text="🏢 شعب دارای این کالا", callback_data=f"branches:laptop:{laptop_id}"),
-            InlineKeyboardButton(text="📸 تصاویر بیشتر", callback_data=f"photos:laptop:{laptop_id}"),
-        ],
-        [
-            InlineKeyboardButton(
-                text="↩️ بازگشت به لیست مدل‌ها",
-                callback_data=f"tree:brand:{brand_id}" if brand_id else "tree:back",
-            ),
-            InlineKeyboardButton(text="🏷 منوی اصلی کاتالوگ", callback_data="tree:brands_root"),
-        ],
-    ]
+    order = InlineKeyboardButton(text="🛍 ثبت درخواست خرید / رزرو حضوری", callback_data=f"order:laptop:{laptop_id}")
+    branch = InlineKeyboardButton(text="🏢 شعبه دارای این کالا", callback_data=f"branches:laptop:{laptop_id}")
+    catalog = InlineKeyboardButton(text="🏷 منوی اصلی کاتالوگ", callback_data="tree:brands_root")
+    if from_ai:
+        rows = [[order], [catalog], [branch], [InlineKeyboardButton(
+            text="↩️ بازگشت به تحلیل سیستم با AI", callback_data="ai:assistant",
+        )]]
+    else:
+        rows = [[order], [branch], [
+            InlineKeyboardButton(text="↩️ بازگشت به لیست مدل‌ها", callback_data=f"tree:brand:{brand_id}" if brand_id else "tree:back"),
+            catalog,
+        ]]
     return InlineKeyboardMarkup(inline_keyboard=rows)
 
 

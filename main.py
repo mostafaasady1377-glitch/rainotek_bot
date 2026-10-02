@@ -25,6 +25,11 @@ from bot.handlers.stock_entry_tree import router as stock_entry_tree_router
 from bot.handlers.voice_assistant import router as voice_assistant_router
 from bot.handlers.purchase_request import router as purchase_request_router
 from bot.handlers.online_support import router as online_support_router
+from bot.handlers.role_panels import router as role_panels_router
+from bot.handlers.management_dashboard import router as management_dashboard_router
+from bot.handlers.vpn_shop import router as vpn_shop_router
+from bot.handlers.ai_hub import router as ai_hub_router
+from bot.handlers.premium_shop import router as premium_shop_router
 from bot.middlewares.user_context import UserContextMiddleware
 from bot.config import get_settings
 from database.session import AsyncSessionLocal, create_db
@@ -41,6 +46,11 @@ async def main() -> None:
     dp = Dispatcher()
     dp.message.middleware(UserContextMiddleware())
     dp.callback_query.middleware(UserContextMiddleware())
+    dp.include_router(role_panels_router)
+    dp.include_router(vpn_shop_router)
+    dp.include_router(ai_hub_router)
+    dp.include_router(premium_shop_router)
+    dp.include_router(management_dashboard_router)
     dp.include_router(online_support_router)
     dp.include_router(purchase_request_router)
     dp.include_router(catalog_browser_router)

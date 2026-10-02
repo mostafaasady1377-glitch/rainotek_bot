@@ -28,7 +28,8 @@ class SupportTests(unittest.IsolatedAsyncioTestCase):
             self.assertEqual(await session.scalar(select(func.count(SupportRequest.id))), 1)
         rows = main_menu_kb().keyboard
         self.assertEqual([b.text for b in rows[-2]], ['💬 کارشناس و پشتیبانی آنلاین'])
-        self.assertEqual([b.text for b in rows[-1]], ['🤖 هوش مصنوعی AI'])
+        from bot.keyboards.reply_menus import AI_MENU_LABEL
+        self.assertEqual([b.text for b in rows[-1]], [AI_MENU_LABEL])
 
     async def test_staff_scope_and_customer_denial(self):
         async with self.factory() as session:

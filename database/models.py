@@ -233,6 +233,7 @@ class PurchaseRequest(Base):
     customer_telegram_id: Mapped[int] = mapped_column(BigInteger, nullable=False, index=True)
     customer_name: Mapped[str] = mapped_column(String(200), nullable=False)
     customer_phone: Mapped[str] = mapped_column(String(60), nullable=False)
+    referrer_telegram_id: Mapped[Optional[int]] = mapped_column(BigInteger, nullable=True, index=True)
     laptop_id: Mapped[int] = mapped_column(ForeignKey("laptops.id"), nullable=False, index=True)
     branch_id: Mapped[Optional[int]] = mapped_column(ForeignKey("branches.id"), nullable=True)
     quantity: Mapped[int] = mapped_column(Integer, default=1, nullable=False)
@@ -273,9 +274,143 @@ class User(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     telegram_id: Mapped[int] = mapped_column(BigInteger, unique=True, nullable=False, index=True)
+    referrer_telegram_id: Mapped[Optional[int]] = mapped_column(BigInteger, nullable=True, index=True)
     username: Mapped[Optional[str]] = mapped_column(String(120), nullable=True)
     full_name: Mapped[Optional[str]] = mapped_column(String(200), nullable=True)
     role: Mapped[str] = mapped_column(String(40), default="customer", nullable=False)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     managed_branch_id: Mapped[Optional[int]] = mapped_column(ForeignKey("branches.id"), nullable=True)
+    first_name: Mapped[Optional[str]] = mapped_column(String(120), nullable=True)
+    phone_number: Mapped[Optional[str]] = mapped_column(String(32), nullable=True, index=True)
+    joined_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    crm_stage: Mapped[Optional[str]] = mapped_column(String(40), nullable=True)
+    warranty_stage: Mapped[Optional[str]] = mapped_column(String(40), nullable=True)
+    first_seen_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
+
+class LaptopStaffOverride(Base):
+    __tablename__ = "laptop_staff_overrides"
+
+    laptop_id: Mapped[int] = mapped_column(ForeignKey("laptops.id"), primary_key=True)
+    cpu: Mapped[Optional[str]] = mapped_column(String(120), nullable=True)
+    ram: Mapped[Optional[str]] = mapped_column(String(80), nullable=True)
+    storage: Mapped[Optional[str]] = mapped_column(String(80), nullable=True)
+    gpu: Mapped[Optional[str]] = mapped_column(String(120), nullable=True)
+    screen_size: Mapped[Optional[str]] = mapped_column(String(40), nullable=True)
+    color: Mapped[Optional[str]] = mapped_column(String(60), nullable=True)
+    condition: Mapped[Optional[str]] = mapped_column(String(40), nullable=True)
+    price: Mapped[Optional[int]] = mapped_column(BigInteger, nullable=True)
+    image_file_id: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    edited_by: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    edited_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class BotDailyVisit(Base):
+    __tablename__ = "bot_daily_visits"
+    day: Mapped[str] = mapped_column(String(10), primary_key=True)
+    telegram_id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    interaction_count: Mapped[int] = mapped_column(Integer, default=1, nullable=False)
+    last_seen_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class AiFeatureVisit(Base):
+    __tablename__ = "ai_feature_visits"
+    telegram_id: Mapped[int] = mapped_column(BigInteger, primary_key=True)
+    feature: Mapped[str] = mapped_column(String(40), primary_key=True)
+    first_seen_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    last_seen_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    interaction_count: Mapped[int] = mapped_column(Integer, default=1, nullable=False)
+
+
+class StaffActivity(Base):
+    __tablename__ = "staff_activities"
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    actor_telegram_id: Mapped[int] = mapped_column(BigInteger, index=True, nullable=False)
+    action: Mapped[str] = mapped_column(String(40), nullable=False)
+    target_id: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    detail: Mapped[Optional[str]] = mapped_column(String(120), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class VpnOrder(Base):
+    __tablename__ = "vpn_orders"
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    customer_telegram_id: Mapped[int] = mapped_column(BigInteger, index=True, nullable=False)
+    duration_days: Mapped[int] = mapped_column(Integer, nullable=False)
+    user_count: Mapped[int] = mapped_column(Integer, nullable=False)
+    base_price_toman: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    price_toman: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    status: Mapped[str] = mapped_column(String(30), default="awaiting_receipt", nullable=False)
+    receipt_file_id: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    receipt_kind: Mapped[Optional[str]] = mapped_column(String(12), nullable=True)
+    delivery_text: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    reviewed_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    delivered_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+
+
+class VpnConfig(Base):
+    __tablename__ = "vpn_configs"
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    duration_days: Mapped[int] = mapped_column(Integer, nullable=False)
+    user_count: Mapped[int] = mapped_column(Integer, nullable=False)
+    connection_url: Mapped[str] = mapped_column(Text, nullable=False)
+    url_hash: Mapped[str] = mapped_column(String(64), unique=True, nullable=False)
+    order_id: Mapped[Optional[int]] = mapped_column(Integer, unique=True, nullable=True)
+    status: Mapped[str] = mapped_column(String(20), default="available", nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class VpnConfigConnection(Base):
+    __tablename__ = "vpn_config_connections"
+    config_id: Mapped[int] = mapped_column(ForeignKey("vpn_configs.id"), primary_key=True)
+    account_label: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    ssh_name: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    ssh_host: Mapped[str] = mapped_column(String(255), nullable=False)
+    ssh_port: Mapped[int] = mapped_column(Integer, nullable=False)
+    udpgw_port: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
+    ssh_username: Mapped[str] = mapped_column(String(100), nullable=False)
+    ssh_password: Mapped[str] = mapped_column(String(255), nullable=False)
+
+
+class AiApiInquiry(Base):
+    __tablename__ = "ai_api_inquiries"
+
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    customer_telegram_id: Mapped[int] = mapped_column(BigInteger, index=True, nullable=False)
+    provider_key: Mapped[str] = mapped_column(String(60), nullable=False)
+    status: Mapped[str] = mapped_column(String(30), default="awaiting_quote", nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class PremiumPlan(Base):
+    __tablename__ = "premium_plans"
+
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    source_sku: Mapped[str] = mapped_column(String(80), unique=True, nullable=False)
+    category: Mapped[str] = mapped_column(String(40), nullable=False)
+    title: Mapped[str] = mapped_column(String(160), nullable=False)
+    description: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    source_price_toman: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    stock: Mapped[int] = mapped_column(Integer, default=0, nullable=False)
+    active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
+    checked_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class PremiumOrder(Base):
+    __tablename__ = "premium_orders"
+
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    customer_telegram_id: Mapped[int] = mapped_column(BigInteger, index=True, nullable=False)
+    plan_id: Mapped[int] = mapped_column(ForeignKey("premium_plans.id"), nullable=False)
+    title_snapshot: Mapped[str] = mapped_column(String(160), nullable=False)
+    source_price_toman: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    price_toman: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    status: Mapped[str] = mapped_column(String(30), default="awaiting_receipt", nullable=False)
+    receipt_file_id: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    receipt_kind: Mapped[Optional[str]] = mapped_column(String(12), nullable=True)
+    delivery_text: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+    reviewed_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    delivered_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
 

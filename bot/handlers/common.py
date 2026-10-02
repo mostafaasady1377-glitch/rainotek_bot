@@ -5,7 +5,6 @@ from aiogram.filters import Command
 from aiogram.types import Message
 
 from bot.handlers.catalog_browser import start_catalog
-from bot.keyboards.reply_menus import main_menu_kb
 
 router = Router()
 
@@ -15,36 +14,6 @@ from database.session import AsyncSessionLocal
 from bot.services.google_sheets_service import GoogleSheetsService
 
 router = Router()
-
-
-@router.message(Command("start"))
-async def cmd_start(message: Message, current_user: User | None = None) -> None:
-    role = current_user.role if current_user else "customer"
-    role_names = {
-        "admin": "مدیر کل سیستم",
-        "branch_manager": "مسئول شعبه",
-        "seller": "کارشناس فروش",
-        "customer": "مشتری گرامی",
-    }
-    role_label = role_names.get(role, "مشتری گرامی")
-
-    if role in ("admin", "branch_manager", "seller"):
-        text = (
-            f"سلام 👋\n"
-            f"به پنل مدیریت فروشگاه و انبارچندشعبه‌ای <b>راینوتک (RAINOTEK)</b> خوش آمدید.\n"
-            f"سطح دسترسی شما: <b>{role_label}</b>\n\n"
-            f"از منوی زیر می‌توانید موجودی شعب، ورود/خروج کالا، انتقال، انبارگردانی و سفارشات را مدیریت کنید."
-        )
-    else:
-        text = (
-            f"سلام {message.from_user.first_name or ''} عزیز 👋\n"
-            f"به فروشگاه تخصصی کامپیوتر و لپ‌تاپ <b>راینوتک (RAINOTEK)</b> خوش آمدید.\n\n"
-            f"💻 بهترین مدل‌های لپ‌تاپ (نو و استوک اروپایی) با گارانتی معتبر و قیمت رقابتی\n"
-            f"📍 شعب فعال در تهران و تحویل حضوری یا ارسال به سراسر کشور\n\n"
-            f"لطفاً از دکمه‌های زیر جهت مرور کاتالوگ، بررسی مشخصات و ثبت درخواست خرید استفاده نمایید:"
-        )
-
-    await message.answer(text, reply_markup=main_menu_kb(role=role))
 
 
 @router.message(Command("help"))

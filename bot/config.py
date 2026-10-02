@@ -19,6 +19,10 @@ class Settings(BaseSettings):
     GROQ_API_KEY: str = ""
     GROQ_STT_MODEL: str = "whisper-large-v3-turbo"
     GROQ_LLM_MODEL: str = "llama-3.3-70b-versatile"
+    VPN_PAYMENT_CARD: str = ""
+    VPN_PAYMENT_HOLDER: str = ""
+    AI_ADMIN_BOT_TOKEN: str = ""
+    AI_OWNER_TELEGRAM_ID: int = 0
 
     @field_validator("ADMIN_TELEGRAM_IDS", mode="before")
     @classmethod

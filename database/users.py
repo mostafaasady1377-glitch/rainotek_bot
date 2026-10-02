@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from datetime import datetime
+
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -33,6 +35,7 @@ async def ensure_user(
             full_name=full_name,
             role=initial_role,
             is_active=True,
+            first_seen_at=datetime.utcnow(),
         )
         session.add(user)
     else:

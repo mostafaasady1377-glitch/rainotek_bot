@@ -7,7 +7,7 @@ from typing import Any, Optional
 from aiogram import F, Router
 from aiogram.dispatcher.event.bases import SkipHandler
 from aiogram.fsm.context import FSMContext
-from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
+from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, Message
 from loguru import logger
 from sqlalchemy import func, or_, select
 from sqlalchemy.orm import joinedload
@@ -21,6 +21,7 @@ from bot.keyboards.catalog_builder import (
 )
 from bot.config import get_settings
 from bot.services.ai_search_service import AISearchService
+from bot.services.ai_feature_visits import record_ai_visit
 from bot.services.branch_service import BranchService, RHINOTECH_BRANCHES
 from bot.services.branch_presentation import branch_details
 from bot.services.telegram_entities import branch_message_entities
@@ -237,7 +238,33 @@ async def callback_tree_noop(callback: CallbackQuery) -> None:
 # 2. نمایش کارت کامل محصول (عکس، مشخصات، قیمت و موجودی شعب)
 # =========================================================================
 
-async def show_laptop_card(message: Message, laptop_id: int, *, callback: CallbackQuery | None = None) -> None:
+def gallery_keyboard(laptop_id: int, index: int, total: int) -> InlineKeyboardMarkup | None:
+    if total < 2:
+        return None
+    row = []
+    if index > 0:
+        row.append(InlineKeyboardButton(text="⬅️ قبلی", callback_data=f"gallery:{laptop_id}:{index - 1}"))
+    if index + 1 < total:
+        row.append(InlineKeyboardButton(text="بعدی ➡️", callback_data=f"gallery:{laptop_id}:{index + 1}"))
+    return InlineKeyboardMarkup(inline_keyboard=[row])
+
+
+async def product_gallery_sources(session, laptop: Laptop) -> list[str]:
+    images = list((await session.scalars(
+        select(ProductImage).where(ProductImage.laptop_id == laptop.id)
+        .order_by(ProductImage.is_primary.desc(), ProductImage.display_order, ProductImage.id)
+    )).all())
+    real = [image.telegram_file_id or image.image_url.removeprefix("tgfile:") for image in images
+            if image.image_url.startswith("tgfile:")]
+    if real:
+        return real
+    catalog = [image.image_url for image in images if image.image_url.startswith(("http://", "https://"))]
+    if catalog:
+        return catalog
+    return [laptop.image_url.removeprefix("tgfile:")] if laptop.image_url else []
+
+
+async def show_laptop_card(message: Message, laptop_id: int, *, callback: CallbackQuery | None = None, from_ai: bool = False) -> None:
     async with AsyncSessionLocal() as session:
         statement = (
             select(Laptop)
@@ -255,6 +282,7 @@ async def show_laptop_card(message: Message, laptop_id: int, *, callback: Callba
             return
 
         brand_name = laptop.brand.name if laptop.brand else "راینوتک"
+        gallery_sources = await product_gallery_sources(session, laptop)
 
         # بررسی و لیست موجودی شعب
         branch_lines = []
@@ -288,9 +316,11 @@ async def show_laptop_card(message: Message, laptop_id: int, *, callback: Callba
     keyboard = laptop_detail_keyboard(
         laptop_id=laptop.id,
         brand_id=laptop.brand_id,
+        from_ai=from_ai,
     )
 
-    photo_input = get_laptop_photo_input(brand_name, laptop.model, custom_url=laptop.image_url, cpu=laptop.cpu or '', screen=laptop.screen_size or '')
+    photo_input = (gallery_sources[0] if gallery_sources else
+                   get_laptop_photo_input(brand_name, laptop.model, custom_url=laptop.image_url, cpu=laptop.cpu or '', screen=laptop.screen_size or ''))
 
     brand_photo = photo_input is None
     if brand_photo:
@@ -299,7 +329,7 @@ async def show_laptop_card(message: Message, laptop_id: int, *, callback: Callba
         await callback.answer()
     if photo_input is not None:
         try:
-            await message.answer_photo(photo=photo_input, caption=(f"📷 <b>تصویر نمونهٔ لپ‌تاپ / گروه {escape(brand_name)}</b>\nاین تصویر، عکس دستگاه انتخاب‌شده نیست." if brand_photo else f"📷 <b>تصویر کاتالوگی {escape(brand_name)} {escape(laptop.model)}</b>"))
+            await message.answer_photo(photo=photo_input, caption=(f"📷 <b>تصویر نمونهٔ لپ‌تاپ / گروه {escape(brand_name)}</b>\nاین تصویر، عکس دستگاه انتخاب‌شده نیست." if brand_photo else f"📷 <b>{'تصویر واقعی' if gallery_sources and laptop.image_url and laptop.image_url.startswith('tgfile:') else 'تصویر کاتالوگی'} {escape(brand_name)} {escape(laptop.model)}</b> · ۱ از {max(len(gallery_sources), 1)}"), reply_markup=gallery_keyboard(laptop_id, 0, len(gallery_sources)))
         except Exception as exc:
             logger.warning('Product photo unavailable for laptop {}: {}', laptop_id, type(exc).__name__)
             card_text += '\n\n📷 تصویر فعلاً قابل ارسال نیست.'
@@ -317,6 +347,40 @@ async def callback_show_laptop(callback: CallbackQuery) -> None:
         await callback.answer("شناسه محصول نامعتبر است.", show_alert=True)
         return
     await show_laptop_card(callback.message, laptop_id, callback=callback)
+
+
+@router.callback_query(F.data.startswith("ai:laptop:"))
+async def callback_show_ai_laptop(callback: CallbackQuery) -> None:
+    try:
+        laptop_id = int(callback.data.rsplit(":", 1)[1])
+    except ValueError:
+        await callback.answer("شناسه محصول نامعتبر است.", show_alert=True)
+        return
+    await show_laptop_card(callback.message, laptop_id, callback=callback, from_ai=True)
+
+
+@router.callback_query(F.data.startswith("gallery:"))
+async def callback_gallery(callback: CallbackQuery) -> None:
+    try:
+        _, laptop_id_text, index_text = callback.data.split(":")
+        laptop_id, index = int(laptop_id_text), int(index_text)
+    except (ValueError, AttributeError):
+        await callback.answer("تصویر نامعتبر است.", show_alert=True)
+        return
+    async with AsyncSessionLocal() as session:
+        laptop = await session.get(Laptop, laptop_id)
+        if laptop is None:
+            await callback.answer("محصول یافت نشد.", show_alert=True)
+            return
+        sources = await product_gallery_sources(session, laptop)
+    if not 0 <= index < len(sources):
+        await callback.answer("تصویر یافت نشد.", show_alert=True)
+        return
+    await callback.message.edit_media(
+        InputMediaPhoto(media=sources[index], caption=f"📷 تصویر {index + 1} از {len(sources)}"),
+        reply_markup=gallery_keyboard(laptop_id, index, len(sources)),
+    )
+    await callback.answer()
 
 
 @router.callback_query(F.data.startswith("tree:variant:"))
@@ -706,6 +770,8 @@ async def callback_cond_back(callback: CallbackQuery) -> None:
 @router.message(F.text == "🔎 جستجوی هوشمند")
 @router.callback_query(F.data == "smart_search:menu")
 async def open_smart_search_menu(event: Message | CallbackQuery) -> None:
+    if getattr(event, "from_user", None):
+        await record_ai_visit(event.from_user.id, "smart_search")
     text = (
         "🤖 <b>به دستیار هوشمند و جستجوی تخصصی راینوتک خوش آمدید!</b>\n\n"
         "شما می‌توانید به روش‌های زیر لپ‌تاپ دلخواه خود را بیابید:\n\n"
@@ -850,10 +916,6 @@ async def start_catalog(message: Message, state: FSMContext) -> None:
 async def open_catalog(message: Message, state: FSMContext) -> None:
     await start_catalog(message, state)
 
-
-@router.message(F.text == "🤖 هوش مصنوعی AI")
-async def show_ai_entry(message: Message):
-    await message.answer("🤖 هوش مصنوعی AI", reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔎 جستجوی هوشمند", callback_data="smart_search:menu")]]))
 
 @router.callback_query(F.data == "consultation:online")
 async def show_online_consultation(callback: CallbackQuery):

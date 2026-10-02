@@ -119,10 +119,15 @@ def _add_missing_columns(connection) -> None:
 
     if "users" in tables:
         user_columns = {column["name"] for column in inspector.get_columns("users")}
+        if "referrer_telegram_id" not in user_columns:
+            connection.exec_driver_sql("ALTER TABLE users ADD COLUMN referrer_telegram_id BIGINT")
         if "managed_branch_id" not in user_columns:
             connection.exec_driver_sql(
                 "ALTER TABLE users ADD COLUMN managed_branch_id INTEGER REFERENCES branches(id)"
             )
+        for name, sql_type in (("first_name", "VARCHAR(120)"), ("phone_number", "VARCHAR(32)"), ("joined_at", "TIMESTAMP"), ("crm_stage", "VARCHAR(40)"), ("warranty_stage", "VARCHAR(40)"), ("first_seen_at", "TIMESTAMP")):
+            if name not in user_columns:
+                connection.exec_driver_sql(f"ALTER TABLE users ADD COLUMN {name} {sql_type}")
 
     if "laptops" in tables:
         laptop_columns = {column["name"] for column in inspector.get_columns("laptops")}
@@ -134,6 +139,11 @@ def _add_missing_columns(connection) -> None:
         ):
             if name not in laptop_columns:
                 connection.exec_driver_sql(f"ALTER TABLE laptops ADD COLUMN {name} {sql_type}")
+
+    if "purchase_requests" in tables:
+        request_columns = {column["name"] for column in inspector.get_columns("purchase_requests")}
+        if "referrer_telegram_id" not in request_columns:
+            connection.exec_driver_sql("ALTER TABLE purchase_requests ADD COLUMN referrer_telegram_id BIGINT")
 
     if "laptop_variants" in tables:
         variant_columns = {column["name"] for column in inspector.get_columns("laptop_variants")}

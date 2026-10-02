@@ -8,6 +8,7 @@ from bot.services.rhinotech_sheet_reader import RhinotechSheetReader
 from bot.services.product_condition import normalize_condition
 from bot.services.branch_presentation import branch_details
 from bot.keyboards.reply_menus import main_menu_kb
+from bot.keyboards.reply_menus import AI_MENU_LABEL
 from bot.keyboards.catalog_builder import smart_search_menu_keyboard, branches_menu_keyboard
 from bot.handlers.catalog_browser import format_price
 
@@ -39,7 +40,7 @@ class FivePhasesTests(unittest.IsolatedAsyncioTestCase):
         labels=[b.text for row in main_menu_kb().keyboard for b in row]
         self.assertNotIn('🛒 پیگیری سفارش من',labels)
         self.assertNotIn('ℹ️ راهنمای خرید و تماس',labels)
-        self.assertEqual(labels[-1],'🤖 هوش مصنوعی AI')
+        self.assertEqual(labels[-1],AI_MENU_LABEL)
         self.assertIn('consultation:online',[b.callback_data for row in smart_search_menu_keyboard().inline_keyboard for b in row])
         self.assertNotIn('branches:maps_list',[b.callback_data for row in branches_menu_keyboard([]).inline_keyboard for b in row])
     def test_branch_phone_and_neshan_are_inside_text(self):

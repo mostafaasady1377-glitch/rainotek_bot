@@ -6,7 +6,7 @@ from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 
 from bot.services.rhinotech_sheet_reader import RhinotechSheetReader as Reader
 from bot.services.inventory_service import InventoryService
-from database.models import Base, Laptop, BranchInventory, LaptopVariant
+from database.models import Base, Laptop, BranchInventory, LaptopVariant, LaptopStaffOverride
 
 
 def sheet(rows):
@@ -25,6 +25,23 @@ class LiveSheetTests(unittest.IsolatedAsyncioTestCase):
             laptop = await session.scalar(select(Laptop))
             self.assertEqual(laptop.price, 50000000)
             self.assertEqual(laptop.ram, '8GB')
+
+    async def test_staff_edits_survive_sheet_refresh(self):
+        await self.sync([ROW])
+        async with self.factory() as session:
+            laptop = await session.scalar(select(Laptop))
+            session.add(LaptopStaffOverride(laptop_id=laptop.id, ram='16GB', price=57000000, image_file_id='telegram-photo-id', edited_by=123))
+            await session.commit()
+        await self.sync([ROW.replace('50000', '60000')])
+        async with self.factory() as session:
+            laptop = await session.scalar(select(Laptop))
+            variant = await session.scalar(select(LaptopVariant).where(LaptopVariant.legacy_laptop_id == laptop.id))
+            self.assertEqual((laptop.ram, laptop.price, laptop.image_url), ('16GB', 57000000, 'tgfile:telegram-photo-id'))
+            self.assertEqual((variant.ram, variant.price), ('16GB', 57000000))
+
+    def test_staff_photo_takes_precedence(self):
+        from bot.services.laptop_assets import get_laptop_photo_input
+        self.assertEqual(get_laptop_photo_input('DELL', 'Latitude 5400', 'tgfile:telegram-photo-id'), 'telegram-photo-id')
 
     async def asyncSetUp(self):
         self.engine = create_async_engine('sqlite+aiosqlite:///:memory:')

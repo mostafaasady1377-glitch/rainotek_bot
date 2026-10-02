@@ -36,6 +36,7 @@ Desktop.ini
 
 # Temporary scratch
 scratch/
+runtime-ai.pid
 
 .local-deps/
 
