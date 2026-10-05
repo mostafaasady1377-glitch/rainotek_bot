@@ -8,6 +8,7 @@ from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from bot.services.ai_voice_service import AIVoiceService
 from bot.services.inventory_service import InventoryService
+from bot.services.sales_contact import contact_phone
 from database.session import AsyncSessionLocal
 
 router = Router()
@@ -35,7 +36,7 @@ def format_voice_results(filters: dict[str, str | None], laptops, branch_details
         for branch in available_branches:
             lines.append(
                 f"📍 {escape(str(branch['name']))} ({branch['available']} عدد)\n"
-                f"تلفن: {escape(str(branch['phone'] or 'ثبت نشده'))}\n"
+                f"تلفن: {escape(str(contact_phone(branch['phone']) or 'ثبت نشده'))}\n"
                 f"آدرس: {escape(str(branch['address'] or 'ثبت نشده'))}"
             )
     return "\n".join(lines)[:4000]

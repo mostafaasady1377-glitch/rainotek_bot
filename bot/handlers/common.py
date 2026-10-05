@@ -12,6 +12,7 @@ router = Router()
 from database.models import User
 from database.session import AsyncSessionLocal
 from bot.services.google_sheets_service import GoogleSheetsService
+from bot.services.local_time import format_local
 
 router = Router()
 
@@ -65,12 +66,12 @@ async def cmd_sync_sheets(message: Message, current_user: User | None = None) ->
                 f"✅ <b>همگام‌سازی موفق کاتالوگ از Google Sheets راینوتک!</b>\n\n"
                 f"💻 تعداد محصولات فعال: <b>{res['products_synced']}</b> قلم کالا\n"
                 f"🏢 شعب شناسایی‌شده: <b>{res['branches_count']}</b> شعبه (صادقیه، میرداماد، فلاح، هروی، شهرک)\n"
-                f"🕒 زمان دریافت: <code>{res['sync_time']} UTC</code>\n\n"
+                f"🕒 زمان دریافت: <code>{format_local(res['sync_time'])}</code>\n\n"
                 f"<i>کلیه مدل‌ها و قیمت‌ها در کاتالوگ و جستجوی بات بروز شدند.</i>"
             )
         except Exception as exc:
             info = RhinotechSheetReader.get_last_sync_info()
-            last_time = info.get("last_sync_time") or "ثبت نشده"
+            last_time = format_local(info.get("last_sync_time"))
             await msg.edit_text(
                 f"❌ <b>خطا در ارتباط با گوگل شیت:</b> {exc}\n\n"
                 f"⚠️ <b>هشدار:</b> آخرین دریافت موفق مربوط به <code>{last_time}</code> است و به دلیل خطای اتصال، اطلاعات قدیمی موجودی تأییدشدهٔ فعلی تلقی نمی‌گردد."
@@ -81,7 +82,7 @@ async def cmd_sync_sheets(message: Message, current_user: User | None = None) ->
 async def cmd_sheet_status(message: Message, current_user: User | None = None) -> None:
     from bot.services.rhinotech_sheet_reader import RhinotechSheetReader
     info = RhinotechSheetReader.get_last_sync_info()
-    last_time = info.get("last_sync_time")
+    last_time = format_local(info.get("last_sync_time"))
     status = "🟢 متصل و معتبر" if info.get("last_sync_status") else "🔴 نیاز به بررسی / خطا"
 
     lines = [

@@ -8,13 +8,14 @@ from sqlalchemy import select
 
 from database.models import Branch, User
 from database.session import AsyncSessionLocal
+from bot.config import get_settings
 
 router = Router()
 ALLOWED_ROLES = {"admin", "warehouse", "branch_manager", "seller"}
 
 
 async def _require_admin(message: Message, current_user: User) -> bool:
-    if current_user.role == "admin":
+    if current_user.is_active and current_user.telegram_id in get_settings().ADMIN_TELEGRAM_IDS:
         return True
     await message.answer("این فرمان فقط برای مدیر سیستم مجاز است.")
     return False
@@ -35,6 +36,9 @@ async def cmd_user_role(message: Message, command: CommandObject, current_user: 
         return
 
     async with AsyncSessionLocal() as session:
+        if parts[1] == 'admin' and telegram_id not in get_settings().ADMIN_TELEGRAM_IDS:
+            await message.answer('پنل مدیریت فقط برای سه حساب تعیین‌شده مجاز است.')
+            return
         user = await session.scalar(select(User).where(User.telegram_id == telegram_id))
         if user is None:
             await message.answer("کاربر پیدا نشد؛ ابتدا کاربر باید /start را اجرا کند.")

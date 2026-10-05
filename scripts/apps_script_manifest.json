@@ -1,0 +1,8 @@
+{
+  "timeZone": "Asia/Tehran",
+  "runtimeVersion": "V8",
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/script.external_request"
+  ]
+}

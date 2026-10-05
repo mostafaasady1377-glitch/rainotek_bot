@@ -16,16 +16,19 @@ from database.models import (
     SupportRequest, User,
 )
 from database.session import AsyncSessionLocal
+from bot.services.local_time import format_local, period_bounds
+from bot.services.entry_reports import entry_report, LABELS
+from bot.services.sales_contact import telegram_chat_url
 
 router = Router()
 PAGE_SIZE = 10
-ROLE_LABEL = {"branch_manager": "مدیر فروش", "seller": "کارشناس فروش"}
+ROLE_LABEL = {"branch_manager": "مدیر شعبه", "seller": "کارشناس فروش"}
 ACTION_LABEL = {"product_edit": "ویرایش محصول", "order_status": "تغییر وضعیت درخواست", "role_change": "تغییر دسترسی"}
 
 
 def _day_bounds(days_ago: int = 0) -> tuple[datetime, datetime]:
-    start = datetime.combine(datetime.utcnow().date() - timedelta(days=days_ago), datetime.min.time())
-    return start, start + timedelta(days=1)
+    start, end = period_bounds()
+    return start - timedelta(days=days_ago), end - timedelta(days=days_ago)
 
 
 def _staff_keyboard(page: int, total: int, rows: list[User]) -> InlineKeyboardMarkup:
@@ -37,6 +40,7 @@ def _staff_keyboard(page: int, total: int, rows: list[User]) -> InlineKeyboardMa
         navigation.append(InlineKeyboardButton(text="صفحهٔ بعد", callback_data=f"mgmt:staff:{page+1}"))
     if navigation:
         buttons.append(navigation)
+    buttons.append([InlineKeyboardButton(text='➕ افزودن عضو و تعیین نقش', callback_data='panel:addmember')])
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
@@ -51,7 +55,7 @@ async def _send_staff(message: Message, page: int) -> None:
         return await _send_staff(message, page)
     await message.answer(
         f"👥 مدیران و کارشناسان فروش\nتعداد کل: {total}\nصفحهٔ {page+1} از {max(1, (total + PAGE_SIZE - 1)//PAGE_SIZE)}\nبرای دیدن فعالیت هر نفر، نام او را انتخاب کنید.",
-        reply_markup=_staff_keyboard(page, total, rows) if rows else None,
+        reply_markup=_staff_keyboard(page, total, rows),
     )
 
 
@@ -112,28 +116,29 @@ async def staff_detail(callback: CallbackQuery, current_user: User) -> None:
     ]
     if recent:
         lines.extend(["", "آخرین فعالیت‌های ثبت‌شده:"])
-        lines.extend(f"• {event.created_at:%Y-%m-%d %H:%M} UTC | {ACTION_LABEL.get(event.action, event.action)} | {escape(event.detail or '')}" for event in recent)
+        lines.extend(f"• {format_local(event.created_at)} | {ACTION_LABEL.get(event.action, event.action)} | {escape(event.detail or '')}" for event in recent)
     await callback.answer()
-    await callback.message.answer("\n".join(lines), reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="بازگشت به فهرست", callback_data="mgmt:staff:0")]]))
+    lines.insert(4, f"📱 {escape(user.phone_number or 'شماره ثبت نشده')}")
+    await callback.message.answer("\n\n".join(lines), reply_markup=InlineKeyboardMarkup(inline_keyboard=[
+        [InlineKeyboardButton(text=f"💬 چت با {user.full_name or user.username or 'این کارشناس'}"[:64], url=telegram_chat_url(user))],
+        [InlineKeyboardButton(text='نقش کارشناس فروش', callback_data=f'panel:role:{user.id}:seller'), InlineKeyboardButton(text='ارتقاء به مدیر شعبه', callback_data=f'panel:role:{user.id}:branch_manager')],
+        [InlineKeyboardButton(text='⛔ لغو ویرایش محصول و فایل' if user.product_edit_allowed else '✅ اجازهٔ ویرایش محصول و فایل', callback_data=f'panel:editaccess:{user.id}:{0 if user.product_edit_allowed else 1}')],
+        [InlineKeyboardButton(text='عزل از پرسنل', callback_data=f'panel:role:{user.id}:customer')],
+        [InlineKeyboardButton(text='لغو دسترسی امور مالی' if user.accounting_access else 'اعطای دسترسی حسابداری', callback_data=f'finaccess:{user.id}:{0 if user.accounting_access else 1}')],
+        [InlineKeyboardButton(text="بازگشت به فهرست", callback_data="mgmt:staff:0")],
+        [InlineKeyboardButton(text="🏠 پنل من", callback_data="panel:home")],
+    ]))
 
 
 @router.message(F.text == "🏢 عملکرد شعب")
-async def branch_performance(message: Message, current_user: User) -> None:
+async def branch_performance(message: Message, current_user: User, state=None) -> None:
     if not _is_admin(current_user):
         await message.answer("دسترسی مجاز نیست.")
         return
-    since = datetime.utcnow() - timedelta(days=7)
-    async with AsyncSessionLocal() as session:
-        branches = list((await session.scalars(select(Branch).where(Branch.is_active.is_(True)).order_by(Branch.id))).all())
-        lines = ["🏢 وضعیت شعب راینوتک | ۷ روز اخیر"]
-        for branch in branches:
-            managers = (await session.scalars(select(User).where(User.role == "branch_manager", User.managed_branch_id == branch.id, User.is_active.is_(True)))).all()
-            inventory = await session.scalar(select(func.coalesce(func.sum(BranchInventory.quantity - BranchInventory.reserved_count), 0)).where(BranchInventory.branch_id == branch.id)) or 0
-            requests = await session.scalar(select(func.count(PurchaseRequest.id)).where(PurchaseRequest.branch_id == branch.id, PurchaseRequest.created_at >= since)) or 0
-            actions = await session.scalar(select(func.count(InventoryAuditLog.id)).where(or_(InventoryAuditLog.source_branch_id == branch.id, InventoryAuditLog.destination_branch_id == branch.id), InventoryAuditLog.timestamp >= since)) or 0
-            manager_names = "، ".join(user.full_name or user.username or str(user.telegram_id) for user in managers)
-            lines.extend(["", f"{escape(branch.name)}", f"مدیر: {escape(manager_names or 'تعیین نشده')}", f"موجودی قابل فروش: {inventory} دستگاه | درخواست خرید: {requests} | عملیات انبار: {actions}"])
-    await message.answer("\n".join(lines))
+    from bot.handlers.dashboard_cards import send_branch_dashboard
+    if state:
+        await state.clear()
+    await send_branch_dashboard(message)
 
 
 @router.message(F.text == "📈 ورودی‌های روزانه")
@@ -141,14 +146,35 @@ async def daily_entries(message: Message, current_user: User) -> None:
     if not _is_admin(current_user):
         await message.answer("دسترسی مجاز نیست.")
         return
+    await send_entry_report(message)
+
+
+async def send_entry_report(message, period='daily', page=0):
     async with AsyncSessionLocal() as session:
-        lines = ["📈 ورودی‌های روزانهٔ بات | ۷ روز اخیر (UTC)", "ثبت مراجعه از زمان فعال‌شدن این پنل آغاز شده است."]
-        for days_ago in range(7):
-            start, end = _day_bounds(days_ago)
-            day = start.strftime("%Y-%m-%d")
-            visitors = await session.scalar(select(func.count(BotDailyVisit.telegram_id)).where(BotDailyVisit.day == day)) or 0
-            interactions = await session.scalar(select(func.coalesce(func.sum(BotDailyVisit.interaction_count), 0)).where(BotDailyVisit.day == day)) or 0
-            new_users = await session.scalar(select(func.count(User.id)).where(User.first_seen_at >= start, User.first_seen_at < end)) or 0
-            crm = await session.scalar(select(func.count(User.id)).where(User.joined_at >= start, User.joined_at < end)) or 0
-            lines.append(f"{day}: {visitors} مراجعه‌کننده، {interactions} تعامل، {new_users} ورودی جدید، {crm} شمارهٔ ثبت‌شده")
-    await message.answer("\n".join(lines))
+        text, total = await entry_report(session, period, page)
+    buttons = [[InlineKeyboardButton(text=label, callback_data=f'mgmt:entries:{key}:0') for key, label in LABELS.items()]]
+    navigation = []
+    if page:
+        navigation.append(InlineKeyboardButton(text='قبلی', callback_data=f'mgmt:entries:{period}:{page-1}'))
+    if (page + 1) * 5 < total:
+        navigation.append(InlineKeyboardButton(text='بعدی', callback_data=f'mgmt:entries:{period}:{page+1}'))
+    if navigation:
+        buttons.append(navigation)
+    await message.answer(text, reply_markup=InlineKeyboardMarkup(inline_keyboard=buttons))
+
+
+@router.callback_query(F.data.startswith('mgmt:entries:'))
+async def entry_period(callback, current_user: User):
+    if not _is_admin(current_user):
+        await callback.answer('دسترسی مجاز نیست.', show_alert=True)
+        return
+    try:
+        _, _, period, raw_page = callback.data.split(':')
+        page = int(raw_page)
+        if period not in LABELS or page < 0:
+            raise ValueError
+    except (ValueError, TypeError):
+        await callback.answer('بازه نامعتبر است.', show_alert=True)
+        return
+    await callback.answer()
+    await send_entry_report(callback.message, period, page)

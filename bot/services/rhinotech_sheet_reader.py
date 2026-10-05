@@ -6,6 +6,7 @@ import os
 import re
 from datetime import datetime
 from typing import Any, Optional
+from functools import wraps
 
 import aiohttp
 from loguru import logger
@@ -192,6 +193,15 @@ def infer_generation(cpu: str, model: str) -> str:
     return "استاندارد"
 
 
+def serialized_sheet(method):
+    @wraps(method)
+    async def wrapped(*args, **kwargs):
+        from bot.services.stock_lock import stock_lock
+        async with stock_lock:
+            return await method(*args, **kwargs)
+    return wrapped
+
+
 # Live inventory only; no catalog enrichment or synthetic defaults.
 class RhinotechSheetReader:
     _last_sync_time = None
@@ -208,9 +218,20 @@ class RhinotechSheetReader:
 
     @classmethod
     async def fetch_sheet_csv(cls, gid="0", timeout_seconds=20):
+        if get_settings().GOOGLE_SHEET_BRIDGE_URL:
+            from bot.services.apps_script_bridge import configured_bridge
+            rows = await configured_bridge().read(int(gid))
+            output = io.StringIO()
+            csv.writer(output).writerows(rows)
+            return output.getvalue()
         sheet_id = get_active_spreadsheet_id()
         url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/export?format=csv&gid={gid}"
-        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=timeout_seconds)) as client:
+        proxy_url = get_settings().NETWORK_PROXY_URL
+        connector = None
+        if proxy_url:
+            from aiohttp_socks import ProxyConnector
+            connector = ProxyConnector.from_url(proxy_url)
+        async with aiohttp.ClientSession(connector=connector, timeout=aiohttp.ClientTimeout(total=timeout_seconds)) as client:
             async with client.get(url) as response:
                 if response.status != 200:
                     raise ConnectionError(f"Sheet HTTP {response.status}")
@@ -257,7 +278,7 @@ class RhinotechSheetReader:
                 from bot.services.product_condition import normalize_condition
                 condition = normalize_condition(source_value(row, ("توضیحات", "شرح", "Description")) + " " + model) or "ثبت نشده"
             image_url = source_value(row, ("عکس", "تصویر", "لینک عکس", "image_url", "Image"))
-            color = ""
+            color = source_value(row, ("رنگ", "color", "Color"))
             if brand == "Apple iPhone":
                 color = cpu
                 model = "iPhone " + model + " (" + color + " / " + ram + "GB)"
@@ -276,6 +297,7 @@ class RhinotechSheetReader:
         return datetime.utcnow(), cls.parse_csv(await cls.fetch_sheet_csv(gid))
 
     @classmethod
+    @serialized_sheet
     async def sync_sheet_to_database(cls, session, csv_content=None, gid="0"):
         import hashlib, json
         from bot.services.stock_lock import stock_lock
@@ -327,14 +349,24 @@ class RhinotechSheetReader:
                         setattr(laptop, field, item[field])
                     laptop.screen_size = item['screen']; laptop.price = item['price_tomans']; laptop.status = 'active'
                     laptop.warranty = get_settings().STORE_WARRANTY
-                    if item.get("image_url", "").startswith(("https://", "http://")):
+                    if item.get("image_url", "").startswith(("https://", "http://", "tgfile:")):
                         laptop.image_url = item["image_url"]
                     # Generic stock photographs are not evidence of a model's appearance.
                     if laptop.image_url and 'images.unsplash.com' in laptop.image_url:
                         laptop.image_url = None
                     override = await session.get(LaptopStaffOverride, laptop.id)
+                    if override and get_settings().GOOGLE_SHEET_BRIDGE_URL and not override.image_file_id:
+                        await session.delete(override)
+                        override = None  # In two-way mode the sheet is authoritative.
                     if override:
+                        prior_item = (old or next((e for e in previous.values() if e['id'] == laptop.id), {})).get('item', {})
                         for field in ('cpu', 'ram', 'storage', 'gpu', 'screen_size', 'color', 'condition', 'price'):
+                            if get_settings().GOOGLE_SHEET_BRIDGE_URL:
+                                setattr(override, field, None)
+                            source_field = {'screen_size': 'screen', 'price': 'price_tomans'}.get(field, field)
+                            if prior_item and prior_item.get(source_field) != item.get(source_field):
+                                # A newer sheet edit supersedes the older local edit of this field.
+                                setattr(override, field, None)
                             value = getattr(override, field)
                             if value is not None:
                                 setattr(laptop, field, value)
@@ -420,6 +452,7 @@ class RhinotechSheetReader:
             raise
 
     @classmethod
+    @serialized_sheet
     async def check_and_sync_changes(cls, session, gid="0"):
         import hashlib
         try:

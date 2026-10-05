@@ -22,10 +22,8 @@ async def ensure_user(
     if user is None:
         if telegram_id in config.ADMIN_TELEGRAM_IDS:
             initial_role = "admin"
-        elif role:
+        elif role and role != 'admin':
             initial_role = role
-        elif username == "seller":
-            initial_role = "seller"
         else:
             initial_role = "customer"
 
@@ -43,7 +41,9 @@ async def ensure_user(
         user.full_name = full_name
         if telegram_id in config.ADMIN_TELEGRAM_IDS:
             user.role = "admin"
-        elif role:
+        elif user.role == 'admin':
+            user.role = 'customer'
+        elif role and role != 'admin':
             user.role = role
 
     await session.commit()

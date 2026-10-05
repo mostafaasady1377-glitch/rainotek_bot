@@ -132,7 +132,7 @@ async def ai_home_callback(callback: CallbackQuery, state: FSMContext) -> None:
 async def ai_main_menu(callback: CallbackQuery, state: FSMContext, current_user: User | None = None) -> None:
     await state.clear()
     await callback.answer()
-    await callback.message.answer("🏠 منوی اصلی راینوتک", reply_markup=main_menu_kb(current_user.role if current_user else "customer"))
+    await callback.message.answer("🏠 منوی اصلی راینوتک", reply_markup=main_menu_kb("customer"))
 
 
 @router.callback_query(F.data == "ai:assistant")

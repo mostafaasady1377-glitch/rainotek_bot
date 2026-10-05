@@ -14,6 +14,8 @@ from sqlalchemy.orm import joinedload
 
 from bot.config import get_settings
 from bot.services.inventory_service import InventoryService
+from bot.services.sales_contact import contact_text
+from bot.services.local_time import format_local
 from database.models import Branch, Laptop, LaptopVariant, PurchaseRequest, User
 from database.session import AsyncSessionLocal
 
@@ -247,6 +249,7 @@ async def _finalize_order(
         f"📍 محل تحویل: {escape(branch_name)}\n"
         f"📞 شماره تماس: {escape(customer_phone)}\n\n"
         f"همکاران بخش فروش راینوتک به زودی با شما تماس خواهند گرفت. با تشکر از انتخاب شما 🙏"
+        + contact_text()
     )
 
     # اطلاع‌رسانی به مدیران و مسئول شعبه
@@ -342,7 +345,7 @@ async def my_orders_command(message: Message) -> None:
     for o in orders:
         model_name = o.laptop.model if o.laptop else "مدل نامشخص"
         status_text = status_labels.get(o.status, o.status)
-        date_str = o.created_at.strftime("%Y-%m-%d %H:%M")
+        date_str = format_local(o.created_at)
         lines.append(
             f"🔹 <b>سفارش #{o.id}</b> | تاریخ: {date_str}\n"
             f"   مدل: {escape(model_name)}\n"
@@ -399,7 +402,7 @@ async def admin_orders_command(message: Message, current_user: User) -> None:
 
 @router.message(F.text == "📋 رزروهای ارجاعی من")
 async def referred_orders(message: Message, current_user: User) -> None:
-    if current_user.role not in {"seller", "branch_manager", "admin"} and current_user.telegram_id not in get_settings().ADMIN_TELEGRAM_IDS:
+    if current_user.role != 'seller' or current_user.is_active is False:
         await message.answer("دسترسی مجاز نیست.")
         return
     async with AsyncSessionLocal() as session:
@@ -411,14 +414,14 @@ async def referred_orders(message: Message, current_user: User) -> None:
     if not orders:
         await message.answer("هنوز رزروی از لینک معرفی شما ثبت نشده است.")
         return
-    lines = ["📋 <b>رزروهای ارجاعی شما:</b>"]
+    lines = ["📋 <b>رزروهای مشتریانِ لینک شما:</b>\nاین فهرست فقط درخواست‌های مشتریان با معرف ثبت‌شدهٔ شماست؛ مشاهدهٔ شرایط اقساط به‌تنهایی رزرو یا پرداخت نیست."]
     for order in orders:
         lines.append(f"#{order.id} · {escape(order.customer_name)} · <code>{escape(order.customer_phone)}</code>\n"
                      f"💻 {escape(order.laptop.model if order.laptop else 'نامشخص')} · "
                      f"{escape(order.branch.name if order.branch else 'ارسال')}\n"
                      f"⚙️ {escape(order.laptop.cpu or '-' if order.laptop else '-')} / {escape(order.laptop.ram or '-' if order.laptop else '-')} · "
                      f"💰 {(order.laptop.price or 0) if order.laptop else 0:,} تومان\n"
-                     f"📝 {escape(order.notes or '-')} · {order.created_at:%Y-%m-%d %H:%M} · {escape(order.status)}")
+                     f"📝 {escape(order.notes or '-')} · {format_local(order.created_at)} · {escape(order.status)}")
     await message.answer("\n\n".join(lines))
 
 
@@ -443,5 +446,5 @@ async def all_reservations(message: Message, current_user: User) -> None:
                      f"⚙️ {escape(order.laptop.cpu or '-' if order.laptop else '-')} / {escape(order.laptop.ram or '-' if order.laptop else '-')} · "
                      f"💰 {(order.laptop.price or 0) if order.laptop else 0:,} تومان\n"
                      f"🔗 معرف: <code>{order.referrer_telegram_id or '-'}</code> · "
-                     f"📝 {escape(order.notes or '-')} · {order.created_at:%Y-%m-%d %H:%M} · {escape(order.status)}")
+                     f"📝 {escape(order.notes or '-')} · {format_local(order.created_at)} · {escape(order.status)}")
     await message.answer("\n\n".join(lines))

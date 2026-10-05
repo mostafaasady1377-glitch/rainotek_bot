@@ -24,6 +24,8 @@ def neshan_url(latitude, longitude):
 
 
 def branch_details(name, address=None, phone=None, latitude=None, longitude=None, stock=None):
+    from bot.services.sales_contact import contact_phone
+    phone = contact_phone(phone)
     sections = [f"🏢 <b>{escape(str(name))}</b>"]
     if stock is not None:
         sections.append(f"📦 {escape(str(stock))}")

@@ -61,7 +61,7 @@ class RainotekPhaseAcceptanceTests(unittest.IsolatedAsyncioTestCase):
             admin = await ensure_user(session, 101, "owner", "مدیر", settings)
             seller = await ensure_user(session, 202, "seller", "فروشنده", settings)
             self.assertEqual(admin.role, "admin")
-            self.assertEqual(seller.role, "seller")
+            self.assertEqual(seller.role, "customer")  # A username never grants staff access.
             seller.is_active = False
             await session.commit()
             updated = await ensure_user(session, 202, "seller-new", "فروشنده جدید", settings)

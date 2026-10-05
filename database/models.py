@@ -11,6 +11,29 @@ class Base(DeclarativeBase):
     pass
 
 
+class ReferralLink(Base):
+    __tablename__ = 'referral_links'
+    __table_args__ = {'sqlite_autoincrement': True}
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    expert_user_id: Mapped[int] = mapped_column(ForeignKey('users.id'), unique=True, nullable=False)
+
+
+class FinancialDocument(Base):
+    __tablename__ = 'financial_documents'
+    __table_args__ = (UniqueConstraint('chat_id', 'message_id'),)
+    id: Mapped[int] = mapped_column(primary_key=True)
+    category: Mapped[str] = mapped_column(String(20), nullable=False)
+    file_id: Mapped[str] = mapped_column(String(255), nullable=False)
+    media_type: Mapped[str] = mapped_column(String(20), nullable=False)
+    file_name: Mapped[Optional[str]] = mapped_column(String(255))
+    caption: Mapped[Optional[str]] = mapped_column(Text)
+    uploader_telegram_id: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    branch_id: Mapped[Optional[int]] = mapped_column(ForeignKey('branches.id'))
+    chat_id: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    message_id: Mapped[int] = mapped_column(BigInteger, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+
+
 class SheetSyncState(Base):
     __tablename__ = "sheet_sync_state"
     source: Mapped[str] = mapped_column(String(180), primary_key=True)
@@ -280,6 +303,9 @@ class User(Base):
     role: Mapped[str] = mapped_column(String(40), default="customer", nullable=False)
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     managed_branch_id: Mapped[Optional[int]] = mapped_column(ForeignKey("branches.id"), nullable=True)
+    product_edit_allowed: Mapped[bool] = mapped_column(Boolean, default=True, server_default="1")
+    view_panel: Mapped[str] = mapped_column(String(20), default='customer', server_default='customer')
+    accounting_access: Mapped[bool] = mapped_column(Boolean, default=False, server_default='0')
     first_name: Mapped[Optional[str]] = mapped_column(String(120), nullable=True)
     phone_number: Mapped[Optional[str]] = mapped_column(String(32), nullable=True, index=True)
     joined_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
@@ -303,6 +329,14 @@ class LaptopStaffOverride(Base):
     image_file_id: Mapped[Optional[str]] = mapped_column(Text, nullable=True)
     edited_by: Mapped[int] = mapped_column(BigInteger, nullable=False)
     edited_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False)
+
+
+class BotInteraction(Base):
+    __tablename__ = 'bot_interactions'
+    id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
+    telegram_id: Mapped[int] = mapped_column(BigInteger, index=True, nullable=False)
+    action: Mapped[str] = mapped_column(String(40), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, index=True, nullable=False)
 
 
 class BotDailyVisit(Base):

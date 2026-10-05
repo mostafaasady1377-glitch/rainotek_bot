@@ -10,12 +10,15 @@ class Settings(BaseSettings):
     BOT_TOKEN: str = ""
     BOT_USERNAME: str = "rainotek_bot"
     ADMIN_TELEGRAM_IDS: list[int] = Field(default_factory=list)
+    ADMIN_PHONE_NUMBERS: str = ""
     DATABASE_URL: str = "sqlite+aiosqlite:///./rainotek.db"
     TZ: str = "Asia/Tehran"
     STORE_WARRANTY: str = "۲ ماه ضمانت تست و تعویض راینوتک"
     SHEET_PRICE_MULTIPLIER: int = 1000
     GOOGLE_SHEET_ID: str = ""
     GOOGLE_SERVICE_ACCOUNT_FILE: str = ""
+    GOOGLE_SHEET_BRIDGE_URL: str = ""
+    GOOGLE_SHEET_BRIDGE_SECRET: str = ""
     GROQ_API_KEY: str = ""
     GROQ_STT_MODEL: str = "whisper-large-v3-turbo"
     GROQ_LLM_MODEL: str = "llama-3.3-70b-versatile"
@@ -23,6 +26,8 @@ class Settings(BaseSettings):
     VPN_PAYMENT_HOLDER: str = ""
     AI_ADMIN_BOT_TOKEN: str = ""
     AI_OWNER_TELEGRAM_ID: int = 0
+    NETWORK_PROXY_URL: str = ""
+    SHEET_SYNC_INTERVAL_SECONDS: int = Field(default=5, ge=5, le=3600)
 
     @field_validator("ADMIN_TELEGRAM_IDS", mode="before")
     @classmethod

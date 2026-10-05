@@ -3,6 +3,7 @@
 import asyncio
 
 from aiogram import Bot, Dispatcher
+from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from loguru import logger
@@ -19,8 +20,8 @@ async def main() -> None:
     if not settings.BOT_TOKEN or settings.BOT_TOKEN == settings.AI_ADMIN_BOT_TOKEN:
         raise RuntimeError("The AI admin bot needs its own token, distinct from the customer bot")
     await create_db()
-    admin_bot = Bot(settings.AI_ADMIN_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
-    customer_bot = Bot(settings.BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    admin_bot = Bot(settings.AI_ADMIN_BOT_TOKEN, session=AiohttpSession(proxy=settings.NETWORK_PROXY_URL or None), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+    customer_bot = Bot(settings.BOT_TOKEN, session=AiohttpSession(proxy=settings.NETWORK_PROXY_URL or None), default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dispatcher = Dispatcher()
     dispatcher.include_router(router)
     try:

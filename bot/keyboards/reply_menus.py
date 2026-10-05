@@ -27,6 +27,7 @@ def main_menu_kb(role: str = "customer") -> ReplyKeyboardMarkup:
         keyboard = [
             [KeyboardButton(text="💻 کاتالوگ و مشخصات"), KeyboardButton(text="🔎 جستجوی هوشمند")],
             [KeyboardButton(text="🏷 لپ‌تاپ‌های نو و استوک"), KeyboardButton(text="🏢 شعب راینوتک")],
+            [KeyboardButton(text="💳 شرایط خرید اقساطی")],
         ]
 
     keyboard.append([KeyboardButton(text="💬 کارشناس و پشتیبانی آنلاین")])

@@ -73,11 +73,13 @@ class AiHubTests(unittest.IsolatedAsyncioTestCase):
     async def test_main_menu_return_restores_reply_keyboard(self):
         callback = SimpleNamespace(answer=AsyncMock(), message=SimpleNamespace(answer=AsyncMock()))
         state = SimpleNamespace(clear=AsyncMock())
-        user = SimpleNamespace(role='customer')
+        user = SimpleNamespace(role='admin')
         await ai_hub.ai_main_menu(callback, state, user)
         state.clear.assert_awaited_once()
         self.assertIn('منوی اصلی راینوتک', callback.message.answer.await_args.args[0])
-        self.assertTrue(callback.message.answer.await_args.kwargs['reply_markup'].keyboard)
+        labels = [button.text for row in callback.message.answer.await_args.kwargs['reply_markup'].keyboard for button in row]
+        self.assertIn('🔎 جستجوی هوشمند', labels)
+        self.assertNotIn('➕ ورود کالا', labels)
 
     async def test_guided_advice_uses_current_inventory(self):
         state = SimpleNamespace(get_data=AsyncMock(return_value={'purpose': 'gaming', 'detail': 'بازی سنگین'}), clear=AsyncMock())

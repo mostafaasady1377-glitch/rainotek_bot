@@ -155,10 +155,11 @@ class BranchService:
                 branch.name = info.name
                 branch.code = info.code
                 branch.phone = f"{info.phone} | {info.mobile}"
-                branch.address = info.address
-                branch.address_full = f"{info.address} (مترو: {info.metro_station}) - ساعات کاری: {info.working_hours}"
-                branch.latitude = info.latitude
-                branch.longitude = info.longitude
+                # Keep corrected stored locations; sync must not restore hard-coded addresses.
+                branch.address = branch.address or info.address
+                branch.address_full = branch.address_full or branch.address
+                branch.latitude = branch.latitude if branch.latitude is not None else info.latitude
+                branch.longitude = branch.longitude if branch.longitude is not None else info.longitude
                 branch.is_active = True
 
             branch_map[key] = branch

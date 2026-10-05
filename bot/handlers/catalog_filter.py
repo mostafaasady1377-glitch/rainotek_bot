@@ -13,6 +13,7 @@ from bot.keyboards.inline_catalog import (
     facet_values_keyboard,
 )
 from bot.services.inventory_service import InventoryService
+from bot.services.sales_contact import contact_phone
 from database.models import Branch, Laptop, User
 from database.session import AsyncSessionLocal
 
@@ -104,7 +105,7 @@ async def _show_facet(message: Message, state: FSMContext) -> None:
                 continue
             sections.append(
                 f"📍 {escape(str(branch['name']))} ({branch['available']} عدد)\n"
-                f"تلفن: {escape(str(branch['phone'] or 'ثبت نشده'))}\n"
+                f"تلفن: {escape(str(contact_phone(branch['phone']) or 'ثبت نشده'))}\n"
                 f"آدرس: {escape(str(branch['address'] or 'ثبت نشده'))}"
             )
     markup = branch_location_keyboard(

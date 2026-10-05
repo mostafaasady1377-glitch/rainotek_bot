@@ -44,7 +44,7 @@ SHEET_SPECIFICATIONS = {
         "موجودی کل", "تعداد رزرو", "موجودی قابل فروش", "وضعیت هشدار", "آخرین بروزرسانی"
     ],
     "گردش_کالا_و_تراکنش‌ها": [
-        "شناسه لاگ", "زمان (UTC)", "کد کالا", "مدل کالا",
+        "شناسه لاگ", "زمان شمسی (تهران)", "کد کالا", "مدل کالا",
         "شعبه مبدا", "شعبه مقصد", "نوع عملیات", "تعداد", "شناسه کاربر", "دلیل"
     ],
     "درخواست‌های_خرید_مشتریان": [
@@ -413,7 +413,8 @@ class GoogleSheetsService:
             .where(Laptop.status == "active", Branch.is_active.is_(True))
             .order_by(Branch.name, Laptop.model)
         )
-        now_str = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
+        from bot.services.local_time import format_local
+        now_str = format_local(datetime.utcnow())
         report_rows = []
         for sku, brand, model, cpu, ram, gpu, storage, b_code, b_name, qty, res, min_alert in result.all():
             available = max(qty - res, 0)

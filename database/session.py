@@ -119,6 +119,12 @@ def _add_missing_columns(connection) -> None:
 
     if "users" in tables:
         user_columns = {column["name"] for column in inspector.get_columns("users")}
+        if "accounting_access" not in user_columns:
+            connection.exec_driver_sql("ALTER TABLE users ADD COLUMN accounting_access BOOLEAN NOT NULL DEFAULT 0")
+        if "view_panel" not in user_columns:
+            connection.exec_driver_sql("ALTER TABLE users ADD COLUMN view_panel VARCHAR(20) NOT NULL DEFAULT 'customer'")
+        if "product_edit_allowed" not in user_columns:
+            connection.exec_driver_sql("ALTER TABLE users ADD COLUMN product_edit_allowed BOOLEAN NOT NULL DEFAULT 1")
         if "referrer_telegram_id" not in user_columns:
             connection.exec_driver_sql("ALTER TABLE users ADD COLUMN referrer_telegram_id BIGINT")
         if "managed_branch_id" not in user_columns:

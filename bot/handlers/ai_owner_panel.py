@@ -5,6 +5,7 @@ from __future__ import annotations
 from io import BytesIO
 from html import escape
 from datetime import datetime, timedelta
+from bot.services.local_time import format_local, period_bounds
 from urllib.parse import urlparse
 
 from aiogram import F, Router
@@ -91,9 +92,7 @@ async def owner_dashboard(callback: CallbackQuery) -> None:
         await callback.answer("دسترسی مجاز نیست.", show_alert=True)
         return
     async with AsyncSessionLocal() as session:
-        today = datetime.utcnow().date()
-        start = datetime.combine(today, datetime.min.time())
-        end = start + timedelta(days=1)
+        start, end = period_bounds()
         crm_total = await session.scalar(select(func.count(User.id)).where(User.role == "customer", User.phone_number.is_not(None))) or 0
         crm_today = await session.scalar(select(func.count(User.id)).where(User.role == "customer", User.phone_number.is_not(None), User.joined_at >= start, User.joined_at < end)) or 0
         ai_total = await session.scalar(select(func.count(func.distinct(AiFeatureVisit.telegram_id)))) or 0
@@ -104,7 +103,7 @@ async def owner_dashboard(callback: CallbackQuery) -> None:
         held = await session.scalar(select(func.count(VpnConfig.id)).where(VpnConfig.status == "held")) or 0
     await callback.answer()
     await callback.message.answer(
-        f"📊 وضعیت راینوتک\nمشتریان CRM: {crm_total}\nورودی امروز (UTC): {crm_today}\n"
+        f"📊 وضعیت راینوتک\nمشتریان CRM: {crm_total}\nورودی امروز: {crm_today}\n"
         f"بازدیدکنندگان ثبت‌شدهٔ AI: {ai_total}\n\nرسیدهای در انتظار بررسی: {pending}\n"
         f"پرداخت تأییدشده، منتظر تحویل: {approved}\nتحویل‌شده: {delivered}\n"
         f"لینک‌های آزاد: {stock}\nاکانت‌های نگه‌داری‌شده: {held}",
@@ -414,12 +413,12 @@ async def owner_crm_person(callback: CallbackQuery) -> None:
         f"اکانت: {('@' + escape(user.username)) if user.username else 'بدون نام کاربری'}",
         f"شمارهٔ اشتراک‌گذاری‌شده: <code>{escape(user.phone_number)}</code>",
         f"Chat ID: <code>{user.telegram_id}</code>",
-        f"عضویت: {user.joined_at:%Y-%m-%d %H:%M} UTC" if user.joined_at else "عضویت: ثبت نشده",
+        f"عضویت: {format_local(user.joined_at)}" if user.joined_at else "عضویت: ثبت نشده",
         f"مرحلهٔ CRM: {escape(user.crm_stage or 'ثبت نشده')}",
     ]
     if visits:
         lines.append("\n🤖 فعالیت در بخش AI:")
-        lines.extend(f"• {feature_labels.get(visit.feature, visit.feature)}: {visit.interaction_count} بار؛ آخرین بازدید {visit.last_seen_at:%Y-%m-%d %H:%M} UTC" for visit in visits)
+        lines.extend(f"• {feature_labels.get(visit.feature, visit.feature)}: {visit.interaction_count} بار؛ آخرین بازدید {format_local(visit.last_seen_at)}" for visit in visits)
     else:
         lines.append("\n🤖 فعالیت در بخش AI هنوز ثبت نشده است.")
     if orders:
