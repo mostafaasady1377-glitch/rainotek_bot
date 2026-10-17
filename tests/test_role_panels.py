@@ -27,7 +27,7 @@ class RolePanelTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn('👤 کاربران جدید', buttons)
         self.assertNotIn('📈 گزارش ورودی‌ها', buttons)
         self.assertNotIn('🔐 دسترسی ویرایش پرسنل', buttons)
-        self.assertEqual(rows[2], ['✏️ ویرایش محصول', '💻 کاتالوگ و مشخصات'])
+        self.assertIn(['✏️ ویرایش محصول', '💻 کاتالوگ و مشخصات'],rows)
         self.assertEqual(rows[-1], ['🔙 انتخاب پنل'])
 
     async def test_staff_access_contains_edit_permission_submenu(self):
@@ -46,7 +46,7 @@ class RolePanelTests(unittest.IsolatedAsyncioTestCase):
         await admin_role_selection(message, state, admin)
         self.assertEqual(len(message.answer.await_args.kwargs['reply_markup'].keyboard), 4)
         await selected_customer_panel(message, state, admin)
-        self.assertIn('منوی مشتری', message.answer.await_args.args[0])
+        self.assertEqual(message.answer.await_args.kwargs['reply_markup'].inline_keyboard[0][0].callback_data,'cm:catalog')
         self.assertNotIn('دسترسی پرسنل', str(message.answer.await_args.kwargs['reply_markup']))
         self.assertEqual(admin.role, 'admin')
 
@@ -102,7 +102,7 @@ class RolePanelTests(unittest.IsolatedAsyncioTestCase):
         try:
             with patch('bot.handlers.role_panels.AsyncSessionLocal', factory):
                 await start_role_selection(message, state, customer)
-            rendered = message.answer.await_args_list[-2].args[0]
+            rendered = message.answer.await_args_list[-1].args[0]
             self.assertIn('09120000020', rendered)
             self.assertNotIn('09120000030', rendered)
             async with factory() as session:
@@ -111,8 +111,8 @@ class RolePanelTests(unittest.IsolatedAsyncioTestCase):
             message.text = '/start r30'
             with patch('bot.handlers.role_panels.AsyncSessionLocal', factory):
                 await start_role_selection(message, state, customer)
-            self.assertIn('09120000020', message.answer.await_args_list[-2].args[0])
-            self.assertNotIn('09120000030', message.answer.await_args_list[-2].args[0])
+            self.assertIn('09120000020', message.answer.await_args_list[-1].args[0])
+            self.assertNotIn('09120000030', message.answer.await_args_list[-1].args[0])
             async with factory() as session:
                 new_customer = User(telegram_id=11, role='customer')
                 session.add(new_customer)

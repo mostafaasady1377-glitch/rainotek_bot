@@ -1,0 +1,48 @@
+{
+  "observed_date": "2026-10-15",
+  "timezone": "America/Los_Angeles",
+  "source": "https://divar.ir/s/tehran/laptop-notebook-macbook",
+  "method": "visible browser DOM; two list positions; manually transcribed structured fields",
+  "coverage": "incomplete_sample",
+  "pagination_exhausted": false,
+  "authentication": "not_verified",
+  "price_meaning": "seller asking price, not completed sale price",
+  "detail_verified_ids": ["ga05juvO", "gaQndaeS"],
+  "reference": {
+    "id": "ga05juvO",
+    "url": "https://divar.ir/v/ga05juvO",
+    "title": "انواع لپتاپ گیمینگ مهندسی ازدم قسط/بدون پیش پرداخت",
+    "price_toman": 18500000,
+    "seller_name_in_description": "PLAZZA / پلازا",
+    "condition": "در حد نو",
+    "brand_field": "Lenovo",
+    "cpu_field": "Core i7",
+    "ram_gb": 24,
+    "storage_gb": 640,
+    "screen_field": "۱۷ اینچ و بزرگ‌تر",
+    "photo_count": 20,
+    "published_text": "۲ ماه پیش",
+    "model": null,
+    "comparable": false,
+    "reason": "توضیحات چندمدلی است؛ قیمت به یک مدل دقیق و کانفیگ قابل تطبیق متصل نیست.",
+    "claims_unverified": ["۳۰ سال سابقه", "۳۰۰ مدل", "دو ماه ضمانت تعویض", "۱۵ مرحله تست", "پایین‌ترین قیمت", "اقساط با چک صیادی"],
+    "recommendation": "عنوان مختص یک مدل، قیمت واقعی همان کانفیگ، عکس واقعی خود فروشگاه؛ مزایای قابل اثبات و شرایط دقیق اقساط. ادعاها و تصاویر فروشنده کپی نشوند."
+  },
+  "details": {
+    "gaQndaeS": {
+      "model": "Lenovo LOQ 15IRX9",
+      "cpu": "Intel Core i7-13650HX",
+      "ram_gb": 16,
+      "ram_type": "DDR5 4800MHz",
+      "storage_gb": 512,
+      "storage_type": "SSD",
+      "gpu": "NVIDIA RTX 3050 6GB GDDR6",
+      "display": "15.6 FHD 144Hz",
+      "condition": "نو",
+      "price_toman": 186000000,
+      "photo_count": 5,
+      "source": "https://divar.ir/v/gaQndaeS",
+      "seller_claims_not_independently_verified": true
+    }
+  }
+}

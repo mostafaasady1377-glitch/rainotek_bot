@@ -56,6 +56,7 @@ def laptop_detail_keyboard(
             InlineKeyboardButton(text="↩️ بازگشت به لیست مدل‌ها", callback_data=f"tree:brand:{brand_id}" if brand_id else "tree:back"),
             catalog,
         ]]
+    rows.insert(0, [InlineKeyboardButton(text='💳 محاسبه اقساط این مدل', callback_data=f'installment:model:{laptop_id}')])
     return InlineKeyboardMarkup(inline_keyboard=rows)
 
 

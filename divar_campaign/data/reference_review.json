@@ -1,0 +1,61 @@
+{
+  "reviewed_on": "2026-10-15",
+  "business_id": "mWYasTCg",
+  "business_name": "فروشگاه لب تاب راینوتک",
+  "business_verified_in_ui": true,
+  "references": [
+    {
+      "id": "gaA9uAQD",
+      "url": "https://divar.ir/v/gaA9uAQD",
+      "seller": "PLAZZA",
+      "asking_price_toman": 14900000,
+      "photo_count": 20,
+      "type": "multi_model_store_ad",
+      "patterns": [
+        "معرفی فروشگاه",
+        "فهرست برندها",
+        "خدمات و دعوت به مشاوره"
+      ]
+    },
+    {
+      "id": "Qa37w5EB",
+      "url": "https://divar.ir/v/Qa37w5EB",
+      "seller": "pj store",
+      "asking_price_toman": 11600000,
+      "photo_count": 11,
+      "type": "multi_model_store_ad",
+      "patterns": [
+        "کاربردها و نرم‌افزارها",
+        "برندینگ",
+        "دعوت به مشاوره و بازدید"
+      ]
+    },
+    {
+      "id": "gav8K1H6",
+      "url": "https://divar.ir/v/gav8K1H6",
+      "seller": "لپ گیت",
+      "asking_price_toman": 19600000,
+      "photo_count": 20,
+      "type": "multi_model_store_ad",
+      "patterns": [
+        "فهرست برندها",
+        "تنوع کاربرد",
+        "خدمات و بازدید حضوری"
+      ]
+    }
+  ],
+  "pricing_note": "این مبالغ قیمت درخواستی آگهی‌های چندمدلی هستند و مبنای مقایسه یک کانفیگ مشخص یا قیمت‌گذاری موجودی راینوتک نیستند.",
+  "copy_policy": "ساختار معیار است؛ متن، تصاویر و ادعاهای تخفیف، اقساط، ضمانت و سابقه رقبا بدون تایید برای راینوتک بازنشر نمی‌شود.",
+  "campaign_mode": "single_store_overview",
+  "remote_draft_saved": false,
+  "remote_blocker": "فرم ثبت آگهی از داخل پنل فروشگاه باز شد، اما خطا در برقراری ارتباط با سرور نمایش داد؛ تلاش دوباره انجام شد.",
+  "published": false,
+  "public_store": {
+    "name": "لپ گیت",
+    "url": "https://divar.ir/pro/cZsIXcLP",
+    "active_ad_count_observed": 96,
+    "source_ad": "gav8K1H6",
+    "observed_date": "2026-10-15",
+    "full_list_collected": false
+  }
+}

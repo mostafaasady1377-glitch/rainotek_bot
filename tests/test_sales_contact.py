@@ -1,4 +1,5 @@
 import asyncio
+from datetime import datetime
 import unittest
 from types import SimpleNamespace
 from unittest.mock import AsyncMock, patch
@@ -19,9 +20,9 @@ class SalesContactTests(unittest.IsolatedAsyncioTestCase):
             session.add_all([
                 User(telegram_id=20, role='seller', phone_number='09120000020'),
                 User(telegram_id=30, role='seller', phone_number='09120000030'),
-                User(telegram_id=1, role='customer', referrer_telegram_id=20),
-                User(telegram_id=2, role='customer', referrer_telegram_id=20),
-                User(telegram_id=3, role='customer', referrer_telegram_id=30),
+                User(telegram_id=1, role='customer', referrer_telegram_id=20,first_seen_at=datetime.utcnow()),
+                User(telegram_id=2, role='customer', referrer_telegram_id=20,first_seen_at=datetime.utcnow()),
+                User(telegram_id=3, role='customer', referrer_telegram_id=30,first_seen_at=datetime.utcnow()),
             ])
             await session.commit()
 
@@ -54,7 +55,7 @@ class SalesContactTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(await asyncio.gather(render('20'), render('30')), ['20', '30'])
 
     async def test_count_is_scoped_to_current_expert(self):
-        message = SimpleNamespace(answer=AsyncMock())
-        with patch('bot.handlers.role_panels.AsyncSessionLocal', self.factory):
-            await staff_referral_count(message, User(telegram_id=20, role='seller'))
-        self.assertIn('2 مشتری یکتا', message.answer.await_args.args[0])
+        message = SimpleNamespace(answer=AsyncMock(),text='کاربران جدید')
+        with patch('bot.handlers.panel_navigation.AsyncSessionLocal', self.factory):
+            await staff_referral_count(message, User(telegram_id=20, role='seller',is_active=True),SimpleNamespace(clear=AsyncMock()))
+        self.assertIn('تعداد کاربران: 2', message.answer.await_args.args[0])

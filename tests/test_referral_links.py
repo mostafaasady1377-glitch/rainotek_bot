@@ -43,10 +43,10 @@ class ReferralCodeTests(unittest.IsolatedAsyncioTestCase):
         message = SimpleNamespace(text='/start R1', answer=AsyncMock())
         with patch('bot.handlers.role_panels.AsyncSessionLocal', self.factory):
             await start_role_selection(message, state, self.customer)
-            self.assertIn('09120000001', message.answer.await_args_list[-2].args[0])
+            self.assertIn('09120000001', message.answer.await_args_list[-1].args[0])
             message.text = '/start R2'
             await start_role_selection(message, state, self.customer)
-            self.assertNotIn('09120000002', message.answer.await_args_list[-2].args[0])
+            self.assertNotIn('09120000002', message.answer.await_args_list[-1].args[0])
         async with self.factory() as session:
             saved = await session.get(User, self.customer.id)
             self.assertEqual(saved.referrer_telegram_id, 7417661889)

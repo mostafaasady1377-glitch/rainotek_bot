@@ -7,8 +7,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
+    DIVAR_HANDOFF_BASE_URL: str = ""
     BOT_TOKEN: str = ""
     BOT_USERNAME: str = "rainotek_bot"
+    BALE_BOT_TOKEN: str = ""
+    BALE_BOT_USERNAME: str = "Rinotek_bot"
+    BALE_ADMIN_IDS: list[int] = Field(default_factory=list)
     ADMIN_TELEGRAM_IDS: list[int] = Field(default_factory=list)
     ADMIN_PHONE_NUMBERS: str = ""
     DATABASE_URL: str = "sqlite+aiosqlite:///./rainotek.db"

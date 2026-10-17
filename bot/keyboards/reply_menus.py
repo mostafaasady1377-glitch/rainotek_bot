@@ -25,16 +25,19 @@ def main_menu_kb(role: str = "customer") -> ReplyKeyboardMarkup:
         ]
     else:  # customer / default
         keyboard = [
-            [KeyboardButton(text="💻 کاتالوگ و مشخصات"), KeyboardButton(text="🔎 جستجوی هوشمند")],
-            [KeyboardButton(text="🏷 لپ‌تاپ‌های نو و استوک"), KeyboardButton(text="🏢 شعب راینوتک")],
-            [KeyboardButton(text="💳 شرایط خرید اقساطی")],
+            [KeyboardButton(text="💻 کاتالوگ و مشخصات")],
+            [KeyboardButton(text="🔎 جستجوی هوشمند"), KeyboardButton(text="🏷 لپ‌تاپ‌های نو و استوک")],
+            [KeyboardButton(text="🏢 شعب راینوتک"), KeyboardButton(text="💳 شرایط خرید اقساطی")],
+            [KeyboardButton(text="💬 کارشناس و پشتیبانی آنلاین"), KeyboardButton(text="بازگشت به منوی اصلی")],
         ]
 
-    keyboard.append([KeyboardButton(text="💬 کارشناس و پشتیبانی آنلاین")])
+    if role in {"admin", "branch_manager"}:
+        keyboard.append([KeyboardButton(text="💬 کارشناس و پشتیبانی آنلاین")])
     keyboard.append([KeyboardButton(text=AI_MENU_LABEL)])
     return ReplyKeyboardMarkup(
         keyboard=keyboard,
         resize_keyboard=True,
         one_time_keyboard=False,
+        is_persistent=True if role not in {"admin", "branch_manager"} else None,
     )
 

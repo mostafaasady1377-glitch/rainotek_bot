@@ -1,0 +1,28 @@
+{
+  "mode": "store_overview",
+  "brand": "RAINOTEK",
+  "title": "لپ‌تاپ مهندسی و اداری | دل، اچ‌پی، لنوو | راینوتک",
+  "description": "راینوتک (RAINOTEK) | لپ‌تاپ متناسب با کار و بودجه شما\n\nبرای درس، کار و پروژه‌های تخصصی، مدل‌های موجود را با مشخصات و قیمت مقایسه کنید.\n\n■ مهندسی و برنامه‌نویسی\n■ اداری، حسابداری و دانشجویی\n■ طراحی، گرافیک و تدوین\n■ گیمینگ و دستگاه‌های سبک و قابل‌حمل\nانتخاب دستگاه بر اساس نرم‌افزار، بودجه و کانفیگ واقعی انجام می‌شود.\n\nبرندها:\nدل (Dell)، اچ‌پی (HP)، لنوو (Lenovo)، ایسوس (ASUS)، ایسر (Acer)، اپل مک‌بوک (Apple MacBook)، مایکروسافت سرفیس (Microsoft Surface) و ام‌اس‌آی (MSI).\n\nمشخصات پردازنده، رم، حافظه و گرافیک همراه با قیمت همان کانفیگ اعلام می‌شود. قیمت و موجودی مدل‌ها متفاوت است؛ فهرست به‌روز را در چت بخواهید. شرایط دستگاه و خدمات پس از فروش را پیش از خرید بررسی کنید.\n\nبرای پیشنهاد دقیق بفرستید:\n۱. بودجه\n۲. کاربرد و نام نرم‌افزارها\n۳. اولویت: قدرت، وزن، باتری یا اندازه نمایشگر\n\nراینوتک؛ انتخاب آگاهانه برای کار، درس و بازی.\nبرای هماهنگی بازدید حضوری و موجودی شعب، در چت همین آگهی پیام دهید.",
+  "price_toman": null,
+  "price_note": "قیمت هر مدل متفاوت است؛ در فرم از گزینه واقعی متناسب با فروشگاه استفاده شود، نه قیمت صوری یا قیمت یک مدل برای همه.",
+  "state": "browser_text_filled_requires_photo",
+  "observed_inventory_date": "2026-10-15",
+  "duplicate_policy": "single_store_overview; do not generate 100 duplicate store ads",
+  "publication": "not_submitted",
+  "photos": [],
+  "next_checks": [
+    "تناسب آگهی کلی با دسته‌بندی و ضوابط جاری دیوار",
+    "عکس مجاز فروشگاه",
+    "انتخاب حساب کسب‌وکار صحیح"
+  ],
+  "business_id": "mWYasTCg",
+  "business_form_url": "https://divar.ir/new/PREMIUM_PANEL/QjJLzdOY_mWYasTCg",
+  "reference_review": "reference_review.json",
+  "remote_draft_saved": false,
+  "photo_requirements": {
+    "minimum_count": 10,
+    "first_photo": "multiple laptops in actual shop",
+    "background": "real environment; no white studio background",
+    "source_verification_required": true
+  }
+}

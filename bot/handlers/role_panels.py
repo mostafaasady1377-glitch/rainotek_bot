@@ -116,6 +116,9 @@ async def start_role_selection(message: Message, state: FSMContext, current_user
         welcome += f'\n<a href="{escape(telegram_chat_url(assigned_expert), quote=True)}">💬 چت تلگرام با کارشناس شما</a>'
     if current_user:
         await set_view_panel(current_user, 'admin' if _is_admin(current_user) else current_user.role)
+        if current_user.role == 'customer':
+            await customer_entry(message, state, current_user, welcome=welcome)
+            return
         await message.answer(welcome)
         await customer_entry(message, state, current_user)
     else:
@@ -150,6 +153,9 @@ def _admin_phones() -> set[str]:
 async def show_account_menu(message, user):
     if not user.is_active:
         await message.answer("این حساب غیرفعال است.")
+    elif getattr(user,'view_panel',None)=='customer' or user.role=='customer':
+        from bot.services.customer_chat_menu import open_home
+        await open_home(message,user)
     elif _is_admin(user):
         title = {'branch_manager':'پنل مدیر شعبه راینوتک', 'seller':'پنل کارشناسان فروش راینوتک', 'customer':'منوی مشتری راینوتک'}.get(getattr(user, 'view_panel', None), 'پنل مدیریت کل راینوتک')
         await message.answer(title, reply_markup=panel_menu(user))
@@ -168,8 +174,9 @@ def _staff_menu(user=None) -> ReplyKeyboardMarkup:
     rows = [
         [KeyboardButton(text="✏️ ویرایش محصول"), KeyboardButton(text="💻 کاتالوگ و مشخصات")],
         [KeyboardButton(text="🔗 لینک معرفی من"), KeyboardButton(text="📋 رزروهای ارجاعی من")],
+        [KeyboardButton(text="📣 آگهی‌های امروز راینوتک")],
         [KeyboardButton(text="👥 ورودی‌های لینک من")],
-        [KeyboardButton(text="👤 مشتریان جدید من"), KeyboardButton(text="📈 گزارش ورودی‌های من")],
+        [KeyboardButton(text="📨 پیام‌های مشتریان من")],
         [KeyboardButton(text="بازگشت به منوی اصلی")],
     ]
     if _is_admin(user):
@@ -181,7 +188,10 @@ def _staff_menu(user=None) -> ReplyKeyboardMarkup:
 
 def _manager_menu(user=None):
     rows = [
+        [KeyboardButton(text='📣 آگهی‌های امروز راینوتک')],
+        [KeyboardButton(text='👥 ورودی‌های لینک من')],
         [KeyboardButton(text='📊 عملکرد کارشناسان شعبه')],
+        [KeyboardButton(text='📨 پیام‌های مشتریان من')],
         [KeyboardButton(text='📦 مدل‌ها و موجودی شعبه')],
         [KeyboardButton(text='🔐 دسترسی ویرایش پرسنل'), KeyboardButton(text='✏️ ویرایش محصول')],
         [KeyboardButton(text='💻 کاتالوگ و مشخصات')],
@@ -219,14 +229,16 @@ def panel_menu(user):
 def customer_menu(user):
     keyboard = main_menu_kb('customer')
     if getattr(user, 'accounting_access', False):
-        keyboard.keyboard.append([KeyboardButton(text='💼 امور مالی')])
+        keyboard.keyboard.insert(-1,[KeyboardButton(text='💼 امور مالی')])
     if _is_admin(user):
-        keyboard.keyboard.append([KeyboardButton(text='🔙 بازگشت به پنل مدیریت')])
+        keyboard.keyboard.insert(-1,[KeyboardButton(text='🔙 بازگشت به پنل مدیریت')])
     return keyboard
 
 
 def _admin_menu() -> ReplyKeyboardMarkup:
     rows = [
+        [KeyboardButton(text='📣 آگهی‌های امروز راینوتک')],
+        [KeyboardButton(text='📨 پیام‌های مشتریان')],
         [KeyboardButton(text="📊 داشبورد CRM"), KeyboardButton(text="👥 مدیران و کارشناسان")],
         [KeyboardButton(text="💼 امور مالی"), KeyboardButton(text="🏢 عملکرد شعب")],
         [KeyboardButton(text="✏️ ویرایش محصول"), KeyboardButton(text="💻 کاتالوگ و مشخصات")],
@@ -245,13 +257,18 @@ async def selected_customer_panel(message: Message, state: FSMContext, current_u
     if not current_user.is_active:
         await message.answer("این حساب غیرفعال است.")
         return
-    await message.answer("منوی مشتری راینوتک", reply_markup=customer_menu(current_user))
+    from bot.services.customer_chat_menu import open_home
+    await open_home(message,current_user)
 
 
-async def customer_entry(message: Message, state: FSMContext, current_user: User) -> None:
+async def customer_entry(message: Message, state: FSMContext, current_user: User, welcome: str | None = None) -> None:
     await state.clear()
+    if _is_admin(current_user):
+        await show_account_menu(message, current_user)
+        return
     if current_user.role == 'customer':
-        await message.answer('به راینوتک خوش آمدی! 💻\nگزینهٔ موردنظر را انتخاب کن.', reply_markup=customer_menu(current_user))
+        from bot.services.customer_chat_menu import open_home
+        await open_home(message,current_user,welcome=welcome)
         return
     if current_user.phone_number and not (current_user.phone_number in _admin_phones() and not _is_admin(current_user)):
         await show_account_menu(message, current_user)
@@ -263,7 +280,7 @@ async def customer_entry(message: Message, state: FSMContext, current_user: User
     )
 
 
-@router.message(PanelState.contact, F.contact)
+@router.message(F.contact)
 async def receive_customer_contact(message: Message, state: FSMContext, current_user: User) -> None:
     contact = message.contact
     if not message.from_user or contact.user_id != message.from_user.id or current_user.telegram_id != message.from_user.id:
@@ -307,7 +324,11 @@ async def receive_customer_contact(message: Message, state: FSMContext, current_
     current_user.view_panel = user.view_panel
     if selected:
         await set_view_panel(current_user, 'customer')
-        await message.answer("منوی مشتری راینوتک", reply_markup=customer_menu(user))
+        from bot.services.customer_chat_menu import open_home
+        await open_home(message,current_user)
+    elif user.role == 'customer':
+        from bot.services.customer_chat_menu import open_home
+        await open_home(message,current_user)
     else:
         await show_account_menu(message, user)
 
@@ -377,15 +398,9 @@ async def bind_admin_branch(callback, current_user):
 
 
 @router.message(F.text == "👥 ورودی‌های لینک من")
-async def staff_referral_count(message: Message, current_user: User) -> None:
-    if not _is_staff(current_user):
-        await message.answer("دسترسی مجاز نیست.")
-        return
-    async with AsyncSessionLocal() as session:
-        count = await session.scalar(select(func.count(User.id)).where(
-            User.role == 'customer', User.referrer_telegram_id == current_user.telegram_id,
-        )) or 0
-    await message.answer(f"👥 ورودی‌های لینک راینو شما: {count} مشتری یکتا", reply_markup=_staff_menu(current_user))
+async def staff_referral_count(message: Message, current_user: User, state: FSMContext) -> None:
+    from bot.handlers.panel_navigation import open_report
+    await open_report(message,state,current_user)
 
 
 @router.message(F.text == "🔗 لینک معرفی من")
@@ -416,6 +431,7 @@ async def admin_entry(message: Message, state: FSMContext, current_user: User) -
 
 
 @router.message(F.text == "بازگشت به منوی اصلی")
+@router.message(Command("menu"))
 async def panel_exit(message: Message, state: FSMContext, current_user: User) -> None:
     await state.clear()
     await customer_entry(message, state, current_user)
@@ -490,13 +506,17 @@ async def staff_access_lookup(message: Message, state: FSMContext, current_user:
         phone = "0" + phone
     async with AsyncSessionLocal() as session:
         conditions = []
+        from bot.services.platform_identity import bale_identity, is_bale_identity, BALE_ID_BASE
+        bale_staff = is_bale_identity(current_user.telegram_id)
+        platform_scope = User.telegram_id <= -BALE_ID_BASE if bale_staff else User.telegram_id > -BALE_ID_BASE
         if value.lstrip("-").isdigit():
-            conditions.append(User.telegram_id == int(value))
+            target_id = int(value)
+            conditions.append(User.telegram_id == (bale_identity(target_id) if bale_staff and target_id > 0 else target_id))
         if value.startswith("@"):
             conditions.append(func.lower(User.username) == value[1:].lower())
         if len(phone) == 11 and phone.startswith("09"):
             conditions.append(User.phone_number == phone)
-        user = await session.scalar(select(User).where(or_(*conditions))) if conditions else None
+        user = await session.scalar(select(User).where(platform_scope, or_(*conditions))) if conditions else None
     if user is None:
         await message.answer("کاربر پیدا نشد؛ ابتدا باید /start را در همین ربات اجرا و برای جست‌وجو با شماره، شمارهٔ خودش را ثبت کند.")
         return

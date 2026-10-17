@@ -48,9 +48,14 @@ class VerifiedOnboardingTests(unittest.IsolatedAsyncioTestCase):
     async def test_start_routes_each_existing_role(self):
         settings = Settings(ADMIN_PHONE_NUMBERS='', ADMIN_TELEGRAM_IDS=[4])
         with patch('bot.handlers.role_panels.get_settings', return_value=settings):
-            for role, marker in [('customer', 'کاتالوگ'), ('seller', 'کارشناسان'), ('branch_manager', 'مدیر شعبه'), ('admin', 'مدیریت کل')]:
+            for role, marker in [('customer', 'راینوتک'), ('seller', 'کارشناسان'), ('branch_manager', 'مدیر شعبه'), ('admin', 'مدیریت کل')]:
                 user = User(telegram_id=4 if role == 'admin' else 1, role=role, phone_number='09120000000', is_active=True, managed_branch_id=1 if role == 'branch_manager' else None)
                 message = SimpleNamespace(text='/start', answer=AsyncMock())
                 state = SimpleNamespace(clear=AsyncMock())
                 await start_role_selection(message, state, user)
                 self.assertIn(marker, message.answer.await_args.args[0])
+                if role == 'customer':
+                    self.assertEqual(message.answer.await_count,2)
+                    self.assertTrue(message.answer.await_args_list[0].kwargs['reply_markup'].remove_keyboard)
+                    self.assertEqual(message.answer.await_args.kwargs['reply_markup'].inline_keyboard[-1][0].callback_data,'cm:collapse')
+                    message.answer.return_value.delete.assert_awaited_once()

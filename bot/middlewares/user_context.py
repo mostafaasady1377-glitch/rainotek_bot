@@ -69,7 +69,7 @@ class UserContextMiddleware(BaseMiddleware):
                 from bot.handlers.role_panels import PanelState, CUSTOMER
                 state = data.get('state')
                 text = getattr(event, 'text', '') or ''
-                landing = text.split(maxsplit=1)[0].split('@')[0] in {'/start', '/cancel'} if text else False
+                landing = text.split(maxsplit=1)[0].split('@')[0] in {'/start', '/cancel', '/menu'} if text else False
                 landing = landing or text == CUSTOMER
                 contact_state = isinstance(event, Message) and state and await state.get_state() == PanelState.contact.state
                 if not landing and not contact_state and not getattr(event, 'contact', None):
@@ -78,7 +78,7 @@ class UserContextMiddleware(BaseMiddleware):
                         await state.set_state(PanelState.contact)
                         await state.update_data(customer_panel=True)
                     target = event if isinstance(event, Message) else event.message
-                    await target.answer('برای ادامه، فقط یک‌بار شمارهٔ خودتان را با دکمهٔ زیر به اشتراک بگذارید؛ سپس گزینهٔ موردنظر را دوباره انتخاب کنید.', reply_markup=ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='📱 اشتراک‌گذاری شماره من', request_contact=True)]], resize_keyboard=True, one_time_keyboard=True))
+                    await target.answer('همراه عزیز راینوتک 🌷\nبرای ارتباط فروشگاه با شما و پیگیری درخواستتان، شمارهٔ تماس را فقط یک‌بار با دکمهٔ زیر ارسال کنید.\n\nاین دکمهٔ رسمی تلگرام است؛ اشتراک‌گذاری شماره فقط با تأیید خودتان انجام می‌شود. حریم خصوصی شما برای ما محترم است 💚', reply_markup=ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='📱 اشتراک‌گذاری شماره من', request_contact=True)]], resize_keyboard=True, one_time_keyboard=True))
                     if isinstance(event, CallbackQuery):
                         await event.answer()
                     return None

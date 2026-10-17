@@ -10,9 +10,10 @@ sales_expert = ContextVar('sales_expert', default=None)
 
 
 def telegram_chat_url(user):
+    from bot.services.platform_identity import is_bale_identity
     username = (user.username or '').lstrip('@')
     if re.fullmatch(r'[A-Za-z0-9_]{5,32}', username):
-        return 'https://t.me/' + username
+        return ('https://ble.ir/' if is_bale_identity(user.telegram_id) else 'https://t.me/') + username
     return f'tg://user?id={int(user.telegram_id)}'
 
 

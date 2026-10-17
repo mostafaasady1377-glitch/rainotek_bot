@@ -8,9 +8,9 @@ from bot.keyboards.catalog_builder import laptop_detail_keyboard
 class ProductReservationTests(unittest.IsolatedAsyncioTestCase):
     def test_ai_product_buttons_are_in_requested_order(self):
         keyboard = laptop_detail_keyboard(42, brand_id=3, from_ai=True)
-        self.assertEqual([len(row) for row in keyboard.inline_keyboard], [1, 1, 1, 1])
+        self.assertEqual([len(row) for row in keyboard.inline_keyboard], [1, 1, 1, 1, 1])
         self.assertEqual([row[0].callback_data for row in keyboard.inline_keyboard], [
-            "order:laptop:42", "tree:brands_root", "branches:laptop:42", "ai:assistant",
+            "installment:model:42", "order:laptop:42", "tree:brands_root", "branches:laptop:42", "ai:assistant",
         ])
         self.assertNotIn("تصاویر بیشتر", str(keyboard))
 
